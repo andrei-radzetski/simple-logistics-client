@@ -1,0 +1,47 @@
+{
+    "prod": false,
+    "distFolderName": "dist",
+    "distLibsFolderName": "dist/lib",
+    "distJSFolderName": "dist/js",
+    "distCSSFolderName": "dist/css",
+    "bundleJSFileName": "bundle.js",
+    "mainSCSSFilePath": "./src/app/app.component.scss",
+    "bundleCSSFileName": "main.css",
+    "resourcesPaths": [
+        "src/**/*.html",
+        "src/**/*.ico",
+        "src/**/*.png"
+    ],
+    "libsPaths": [
+        "core-js/client/shim.min.js",
+        "reflect-metadata/Reflect.js",
+        "rxjs/**",
+        "zone.js/dist/**",
+        "@angular/**",
+        "bootstrap/dist/**",
+        "jquery/dist/**"
+    ],
+    "tsPaths": [
+        "./src/**/*.ts"
+    ],
+    "scssPaths": [
+        "./src/**/*.scss"
+    ],
+    "browserify": {
+        "basedir": ".",
+        "debug": true,
+        "entries": [
+            "src/main.ts"
+        ],
+        "cache": {},
+        "packageCache": {}
+    },
+    
+    "babelify": {
+        "extensions": [
+            ".tsx",
+            ".ts",
+            ".js"
+        ]
+    }
+}
