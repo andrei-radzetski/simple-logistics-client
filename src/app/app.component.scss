@@ -1,3 +1,18 @@
-h1 {
-    color: grey;
+@import 'app.variable.scss';
+
+html {
+  position: relative;
+  min-height: 100%;
 }
+body {
+  margin-bottom: $body-shift;
+}
+
+.subheader {
+  padding-top: 60px;
+  background-color: #3F51B5;
+  height: 150px;
+}
+
+@import 'shared/header/header.component.scss';
+@import 'shared/footer/footer.component.scss';

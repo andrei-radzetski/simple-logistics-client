@@ -1,0 +1,14 @@
+$screen-sm-min:                    768px !default;
+$screen-md-min:                    992px !default;
+$screen-lg-min:                    1200px !default;
+
+$main-color:                     #3F51B5 !default;
+$secondary-color:                #303F9F !default;
+$contrast-color:                 #ffffff !default;
+$body-shift:                       60px !default;
+
+/* HEADER VARIABLES */
+$header-underline-size:            3px !default;
+
+/* FOOTER VARIABLES */
+$footer-heigth:                    $body-shift !default;

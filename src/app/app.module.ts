@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { routing,
     appRoutingProviders } from './app.routing';
 
+import { HeaderComponent, FooterComponent } from './shared';
+
 import { AboutModule } from './about';
 import { HomeModule } from './home';
 
@@ -17,7 +19,9 @@ import { HomeModule } from './home';
         AboutModule
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent,
+        FooterComponent
     ],
     providers: [
         appRoutingProviders

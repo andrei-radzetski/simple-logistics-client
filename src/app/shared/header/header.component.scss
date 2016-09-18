@@ -1,0 +1,94 @@
+
+/* HEADER */
+.header {
+
+    &.navbar {
+        margin-bottom: 0;
+    }
+    
+    &.navbar-default {
+        background-color: $main-color;
+        border: none;
+
+        .navbar-brand {
+            color: $contrast-color;
+            background-color: transparent;
+            
+            &:hover, 
+            &:focus {
+                color: $contrast-color;
+                background-color: transparent;
+            }
+        }
+    }
+
+    .navbar-nav {
+        & > li > a {
+            color: $contrast-color;
+            background-color: transparent;
+            border-bottom: none;
+
+            &:hover,
+            &:focus {
+                color: $contrast-color;
+                background-color: $secondary-color;
+                border-bottom: none;
+            }
+        }
+
+        & > .active > a,
+        & > .active > a:hover,
+        & > .active > a:focus {
+            color: $contrast-color;
+            background-color: $secondary-color;
+            border-bottom: none;
+        }
+    }
+
+    .navbar-collapse {
+        border-top: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .navbar-toggle {
+        border: none;
+
+        &:hover,
+        &:focus {
+            background-color: $secondary-color;
+        }
+
+        .icon-bar {
+            background-color: $contrast-color;
+        }
+    }
+}
+
+@media (min-width: $screen-sm-min) {
+    .header {
+    
+        .navbar-nav {
+            & > li > a {
+                color: $contrast-color;
+                background-color: transparent;
+                border-bottom: $header-underline-size solid transparent;
+
+                &:hover,
+                &:focus {
+                    color: $contrast-color;
+                    background-color: transparent;
+                    border-bottom: $header-underline-size solid $contrast-color;
+                }
+            }
+
+            & > .active > a,
+            & > .active > a:hover,
+            & > .active > a:focus {
+                color: $contrast-color;
+                background-color: transparent;
+                border-bottom: $header-underline-size solid $contrast-color;
+            }
+        }
+    }
+}
