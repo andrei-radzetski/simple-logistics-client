@@ -4,11 +4,16 @@ $screen-lg-min:                    1200px !default;
 
 $main-color:                     #3F51B5 !default;
 $secondary-color:                #303F9F !default;
+$main-dark-color:                #1a237e !default;
 $contrast-color:                 #ffffff !default;
+$main-text-color:                #333333 !default;
 $body-shift:                       60px !default;
+
+$main-padding:                     15px !default;
 
 /* HEADER VARIABLES */
 $header-underline-size:            3px !default;
 
 /* FOOTER VARIABLES */
 $footer-heigth:                    $body-shift !default;
+

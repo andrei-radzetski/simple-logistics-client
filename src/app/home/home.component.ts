@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 
 @Component({
-    selector: 'bs-home',
+    selector: 'sl-home',
     templateUrl: 'app/home/home.component.html'
 })
 export class HomeComponent {  

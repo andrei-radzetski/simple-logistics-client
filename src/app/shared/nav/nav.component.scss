@@ -1,6 +1,6 @@
 
 /* HEADER */
-.header {
+.sl-nav {
 
     &.navbar {
         margin-bottom: 0;
@@ -53,10 +53,17 @@
 
     .navbar-toggle {
         border: none;
+        background-color: $main-color;
 
         &:hover,
-        &:focus {
+        &:focus,
+        &.collapsed:hover {
             background-color: $secondary-color;
+        }
+
+        &.collapsed,
+        &.collapsed:focus {
+            background-color: $main-color;
         }
 
         .icon-bar {
@@ -66,7 +73,7 @@
 }
 
 @media (min-width: $screen-sm-min) {
-    .header {
+    .sl-nav {
     
         .navbar-nav {
             & > li > a {
