@@ -1,8 +1,9 @@
 
 /* SEARCH */
 .sl-search {
-    color: $contrast-color;
-    &.extended {
-        color: $main-text-color;
+    color: $main-text-color;
+    
+    &.sl-contrast {
+        color: $contrast-color;
     }
 }

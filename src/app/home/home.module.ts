@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 
 import { HomeComponent } from './home.component'
-import { SearchComponent } from '../shared/search'
-
+import { HeaderComponent, SearchComponent } from '../shared';
 import { homeRouting } from './home.routing';
+
 
 @NgModule({
     imports: [
@@ -11,7 +11,9 @@ import { homeRouting } from './home.routing';
     ],
     declarations: [
         HomeComponent,
+        HeaderComponent,
         SearchComponent
     ]
+
 })
 export class HomeModule { }

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
 import { routing,
     appRoutingProviders } from './app.routing';
 
-import { HeaderComponent, FooterComponent } from './shared';
+import { AppComponent } from './app.component';
+import { NavComponent, FooterComponent } from './shared';
 
 import { AboutModule } from './about';
 import { HomeModule } from './home';
@@ -20,7 +20,7 @@ import { HomeModule } from './home';
     ],
     declarations: [
         AppComponent,
-        HeaderComponent,
+        NavComponent,
         FooterComponent
     ],
     providers: [

@@ -8,12 +8,6 @@ body {
   margin-bottom: $body-shift;
 }
 
-.subheader {
-  background-color: #3F51B5;
-  padding-top: $main-padding;
-  padding-bottom: $main-padding;
-}
-
 .form-control {
   border: 1px solid $secondary-color;
   box-shadow: none;
@@ -40,6 +34,9 @@ body {
 
 
 @import 'shared/nav/nav.component.scss';
+@import 'shared/header/header.component.scss';
 @import 'shared/footer/footer.component.scss';
 
 @import 'shared/search/search.component.scss';
+
+@import 'home/home.component.scss';

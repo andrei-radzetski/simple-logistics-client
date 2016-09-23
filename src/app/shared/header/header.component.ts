@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 
 
 @Component({
-    selector: 'sl-search',
-    templateUrl: 'app/shared/search/search.component.html'
+    selector: 'sl-header',
+    templateUrl: 'app/shared/header/header.component.html'
 })
-export class SearchComponent {
-
+export class HeaderComponent {
+    
     getContrastCssClass(): string {
         return 'sl-contrast'
     }
-    
+
 }

@@ -1,0 +1,16 @@
+
+/* HEADER */
+.sl-header {
+    color: $main-text-color;
+
+    h1 {
+        font-size: 80px;
+        margin-top: 0;
+        margin-bottom: 0; 
+    }
+    
+    &.sl-contrast {
+        color: $contrast-color;
+    }
+}
+

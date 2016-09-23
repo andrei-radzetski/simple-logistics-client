@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
     selector: 'sl-nav',
     templateUrl: 'app/shared/nav/nav.component.html'
 })
-export class HeaderComponent {
+export class NavComponent {
 
 }
