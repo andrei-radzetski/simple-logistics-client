@@ -13,15 +13,21 @@ var gulp = require('gulp'),
     config = require('./config.json');
 
 // Moves resources to dist folder
-gulp.task('resources', function () {
-    return gulp.src(config.resourcesPaths)
-        .pipe(gulp.dest(config.distFolderName));
+gulp.task('template', function () {
+    return gulp.src(config.path.track.template)
+        .pipe(gulp.dest(config.path.dist.root));
 });
 
-gulp.task("libs", function () {
-    return gulp.src(config.libsPaths,
-        { cwd: "node_modules/**" })
-        .pipe(gulp.dest(config.distLibsFolderName));
+// Images
+gulp.task('img', function () {
+    return gulp.src(config.path.track.img)
+        .pipe(gulp.dest(config.path.dist.img));
+});
+
+gulp.task("lib", function () {
+    return gulp.src(config.path.track.lib,
+        { cwd: config.path.track.node })
+        .pipe(gulp.dest(config.path.dist.lib));
 });
 
 //Compile typescript
@@ -37,33 +43,34 @@ gulp.task('compile', function () {
         .transform(babelify, config.babelify)
         .bundle()
         .on('error', gutil.log)
-        .pipe(source(config.bundleJSFileName))
+        .pipe(source(config.path.bundle.js))
 
         .pipe(gulpif(config.prod, buffer()))
         .pipe(gulpif(config.prod, sourcemaps.init({ loadMaps: true })))
         .pipe(gulpif(config.prod, uglify()))
         .pipe(gulpif(config.prod, sourcemaps.write('./')))
 
-        .pipe(gulp.dest(config.distJSFolderName));
+        .pipe(gulp.dest(config.path.dist.js));
 });
 
 // Compile SASS
 gulp.task('sass', function () {
-    return gulp.src(config.mainSCSSFilePath)
+    return gulp.src(config.path.src.scss)
         .pipe(gulpif(config.prod, sourcemaps.init({ loadMaps: true })))
         .pipe(sass(config.prod ? { outputStyle: 'compressed' } : undefined)
         .on('error', sass.logError))
-        .pipe(concat(config.bundleCSSFileName))
+        .pipe(concat(config.path.bundle.css))
         .pipe(gulpif(config.prod, sourcemaps.write('./')))
-        .pipe(gulp.dest(config.distCSSFolderName));
+        .pipe(gulp.dest(config.path.dist.css));
 });
 
 gulp.task('watch', function () {
-    gulp.watch(config.tsPaths, ['compile']);
-    gulp.watch(config.resourcesPaths, ['resources']);
-    gulp.watch(config.scssPaths, ['sass']);
+    gulp.watch(config.path.track.ts, ['compile']);
+    gulp.watch(config.path.track.template, ['template']);
+    gulp.watch(config.path.track.scss, ['sass']);
+    gulp.watch(config.path.track.img, ['img']);
 });
 
-gulp.task('build:app', ['compile', 'resources', 'sass']);
-gulp.task('build:all', ['libs', 'build:app']);
+gulp.task('build:app', ['compile', 'template', 'sass', 'img']);
+gulp.task('build:all', ['lib', 'build:app']);
 gulp.task('default', ['build:all']);

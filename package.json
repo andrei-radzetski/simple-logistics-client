@@ -5,8 +5,10 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "npm run build:all && concurrently --kill-others \"npm run watch\" \"npm run server\" ",
+    "start:app": "npm run build:app && concurrently --kill-others \"npm run watch\" \"npm run server\" ",
     "build:all": "gulp build:all",
     "build:app": "gulp build:app",
+    "build:lib": "gulp lib",
     "watch": "gulp watch",
     "server": "lite-server"
   },
