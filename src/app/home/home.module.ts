@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 
 import { HomeComponent } from './home.component'
-import { HeaderComponent, SearchComponent } from '../shared';
+import { SearchComponent, HeaderModule } from '../shared';
 import { homeRouting } from './home.routing';
 
 
 @NgModule({
     imports: [
-        homeRouting
+        homeRouting,
+        HeaderModule
     ],
     declarations: [
         HomeComponent,
-        HeaderComponent,
         SearchComponent
     ]
-
 })
 export class HomeModule { }

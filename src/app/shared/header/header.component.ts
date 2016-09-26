@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
@@ -7,8 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
     
+    @Input() public title: string;
+    @Input() public description: string;
+
+    constructor() {}
+
     getContrastCssClass(): string {
         return 'sl-contrast'
     }
-
 }

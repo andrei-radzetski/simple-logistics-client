@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 
 import { JoinComponent }   from './join.component';
 import { joinRouting } from './join.routing';
+import { HeaderModule } from '../shared/header';
 
 
 @NgModule({
     imports: [
-        joinRouting
+        joinRouting,
+        HeaderModule
     ],
     declarations: [
         JoinComponent

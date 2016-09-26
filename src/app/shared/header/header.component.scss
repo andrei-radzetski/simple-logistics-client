@@ -12,6 +12,8 @@
     h3 {
         font-weight: 300;
         font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     
     &.sl-contrast {
@@ -20,14 +22,16 @@
 }
 
 @media (min-width: $screen-sm-min) {
-    .sl-header {
-        h1 {
-            font-size: 80px;
-        }
+    .sl-main {
+        .sl-header {
+            h1 {
+                font-size: 80px;
+            }
 
-        h3 {
-            font-weight: 300;
-            font-size: 24px;
+            h3 {
+                font-weight: 300;
+                font-size: 24px;
+            }
         }
     }
 }

@@ -7,17 +7,16 @@
     }
     
     &.navbar-default {
-        background-color: $main-color;
+        background-color: $contrast-color;
         border: none;
-        padding-bottom: $main-padding;
 
         .navbar-brand {
-            color: $contrast-color;
+            color: $secondary-color;
             background-color: transparent;
             
             &:hover, 
             &:focus {
-                color: $contrast-color;
+                color: $secondary-color;
                 background-color: transparent;
             }
         }
@@ -25,14 +24,14 @@
 
     .navbar-nav {
         & > li > a {
-            color: $contrast-color;
+            color: $secondary-color;
             background-color: transparent;
             border-bottom: none;
 
             &:hover,
             &:focus {
-                color: $contrast-color;
-                background-color: $secondary-color;
+                color: $secondary-color;
+                background-color: $link-hover-color;
                 border-bottom: none;
             }
         }
@@ -40,8 +39,8 @@
         & > .active > a,
         & > .active > a:hover,
         & > .active > a:focus {
-            color: $contrast-color;
-            background-color: $secondary-color;
+            color: $secondary-color;
+            background-color: $link-hover-color;
             border-bottom: none;
         }
     }
@@ -54,49 +53,21 @@
 
     .navbar-toggle {
         border: none;
-        background-color: $main-color;
+        background-color: $contrast-color;
 
         &:hover,
         &:focus,
         &.collapsed:hover {
-            background-color: $secondary-color;
+            background-color: $link-hover-color;
         }
 
         &.collapsed,
         &.collapsed:focus {
-            background-color: $main-color;
+            background-color: $contrast-color;
         }
 
         .icon-bar {
-            background-color: $contrast-color;
-        }
-    }
-}
-
-@media (min-width: $screen-sm-min) {
-    .sl-nav {
-    
-        .navbar-nav {
-            & > li > a {
-                color: $contrast-color;
-                background-color: transparent;
-                border-bottom: $header-underline-size solid transparent;
-
-                &:hover,
-                &:focus {
-                    color: $contrast-color;
-                    background-color: transparent;
-                    border-bottom: $header-underline-size solid $contrast-color;
-                }
-            }
-
-            & > .active > a,
-            & > .active > a:hover,
-            & > .active > a:focus {
-                color: $contrast-color;
-                background-color: transparent;
-                border-bottom: $header-underline-size solid $contrast-color;
-            }
+            background-color: $secondary-color;
         }
     }
 }

@@ -8,6 +8,24 @@ body {
   margin-bottom: $body-shift;
 }
 
+.masthead {
+  background-color: $main-color;
+  padding-top: $masthead-padding;
+  padding-bottom: $masthead-padding;
+}
+
+@media (min-width: $screen-sm-min) {
+  .masthead {
+    padding-top: $masthead-padding;
+    padding-bottom: $masthead-padding;
+
+    &.sl-main {
+      padding-top: $masthead-padding-sm;
+      padding-bottom: $masthead-padding-sm;
+    }
+  }
+}
+
 .form-control {
   border: 1px solid $secondary-color;
   box-shadow: none;

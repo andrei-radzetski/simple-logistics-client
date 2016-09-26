@@ -1,18 +1,3 @@
 
 /* HOME */
-.sl-home {
-    .masthead {
-        background-color: $main-color;
-        padding-top: $masthead-padding;
-        padding-bottom: $masthead-padding;
-    }
-}
 
-@media (min-width: $screen-sm-min) {
-    .sl-home {
-        .masthead {
-            padding-top: $masthead-padding-sm;
-            padding-bottom: $masthead-padding-sm;
-        }
-    }
-}
