@@ -30,6 +30,11 @@ gulp.task("lib", function () {
         .pipe(gulp.dest(config.path.dist.lib));
 });
 
+gulp.task("i18n", function () {
+    return gulp.src(config.path.track.i18n)
+        .pipe(gulp.dest(config.path.dist.i18n));
+});
+
 //Compile typescript
 gulp.task('compile', function () {
     return browserify(config.browserify)
@@ -69,8 +74,9 @@ gulp.task('watch', function () {
     gulp.watch(config.path.track.template, ['template']);
     gulp.watch(config.path.track.scss, ['sass']);
     gulp.watch(config.path.track.img, ['img']);
+    gulp.watch(config.path.track.i18n, ['i18n']);
 });
 
-gulp.task('build:app', ['compile', 'template', 'sass', 'img']);
+gulp.task('build:app', ['compile', 'template', 'sass', 'img', 'i18n']);
 gulp.task('build:all', ['lib', 'build:app']);
 gulp.task('default', ['build:all']);

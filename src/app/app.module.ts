@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+import { TranslateModule } from 'ng2-translate/ng2-translate';
 
 import { routing,
     appRoutingProviders } from './app.routing';
@@ -16,6 +18,8 @@ import { JoinModule } from './join';
 @NgModule({
     imports: [
         BrowserModule,
+        HttpModule,
+        TranslateModule.forRoot(),
         routing,
         HomeModule,
         AboutModule,

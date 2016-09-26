@@ -6,7 +6,8 @@
             "lib": "dist/lib",
             "js": "dist/js",
             "css": "dist/css",
-            "img": "dist/img"
+            "img": "dist/img",
+            "i18n": "dist/i18n"
         },
         "src": {
             "scss": "./src/app/app.component.scss"
@@ -30,6 +31,7 @@
                 "./src/**/*.scss"
             ],
             "node": "node_modules/**",
+            "i18n": "./src/i18n/*.json",
             "lib": [
                 "core-js/client/shim.min.js",
                 "reflect-metadata/Reflect.js",
