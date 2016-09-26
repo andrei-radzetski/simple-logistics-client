@@ -4,13 +4,31 @@
     color: $main-text-color;
 
     h1 {
-        font-size: 80px;
+        font-size: 40px;
         margin-top: 0;
         margin-bottom: 0; 
+    }
+
+    h3 {
+        font-weight: 300;
+        font-size: 18px;
     }
     
     &.sl-contrast {
         color: $contrast-color;
+    }
+}
+
+@media (min-width: $screen-sm-min) {
+    .sl-header {
+        h1 {
+            font-size: 80px;
+        }
+
+        h3 {
+            font-weight: 300;
+            font-size: 24px;
+        }
     }
 }
 

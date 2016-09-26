@@ -9,6 +9,8 @@ import { NavComponent, FooterComponent } from './shared';
 
 import { AboutModule } from './about';
 import { HomeModule } from './home';
+import { LoginModule } from './login';
+import { JoinModule } from './join';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { HomeModule } from './home';
         BrowserModule,
         routing,
         HomeModule,
-        AboutModule
+        AboutModule,
+        LoginModule,
+        JoinModule
     ],
     declarations: [
         AppComponent,
