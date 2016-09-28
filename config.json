@@ -37,7 +37,6 @@
                 "reflect-metadata/Reflect.js",
                 "rxjs/**",
                 "zone.js/dist/**",
-                "@angular/**",
                 "bootstrap/dist/**",
                 "jquery/dist/**"
             ]

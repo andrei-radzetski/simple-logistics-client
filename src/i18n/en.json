@@ -1,7 +1,43 @@
 {
     "appname": "Simple Logistics",
-    "home": {
-        "title": "Simple Logistics",
-        "description": "Some text, which describes the project."
+    "lang": {
+        "ru": "Русский",
+        "en": "English"
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "signin": "Sign in",
+        "signup": "Sign up"
+    },
+    "search": {
+        "label": "Search:",
+        "search-btn": "Search",
+        "fields": {
+            "departure": "Departure",
+            "departure-date": "Departure date",
+            "destination": "Destination",
+            "destination-date": "Destination date"
+        }
+    },
+    "page": {
+        "home": {
+            "title": "Simple Logistics",
+            "description": "Some text, which describes the project."
+        },
+        "about": {
+            "title": "About",
+            "description": "Some text, which describes the section."
+        },
+        "login": {
+            "title": "Login",
+            "description": "Some text, which describes the section."
+        },
+        "join": {
+            "title": "Join",
+            "description": "Some text, which describes the section."
+        }
     }
+    
+    
 }

@@ -1,7 +1,41 @@
 {
     "appname": "Simple Logistics",
-    "home": {
-        "title": "Simple Logistics",
-        "description": "Какой-то текст, который описывает проект."
+    "lang": {
+        "ru": "Русский",
+        "en": "English"
+    },
+    "nav": {
+        "home": "Главная",
+        "about": "О системе",
+        "signin": "Вход",
+        "signup": "Регистрация"
+    },
+    "search": {
+        "label": "Поиск:",
+        "search-btn": "Поиск",
+        "fields": {
+            "departure": "Пункт отправления",
+            "departure-date": "Дата отправления",
+            "destination": "Пункт назначения",
+            "destination-date": "Дата назначения"
+        }
+    },
+    "page": {
+        "home": {
+            "title": "Simple Logistics",
+            "description": "Какой-то текст, который описывает проект."
+        },
+        "about": {
+            "title": "О системе",
+            "description": "Какой-то текст, который описывает раздел."
+        },
+        "login": {
+            "title": "Вход",
+            "description": "Какой-то текст, который описывает раздел."
+        },
+        "join": {
+            "title": "Регистрация",
+            "description": "Какой-то текст, который описывает раздел."
+        }
     }
 }

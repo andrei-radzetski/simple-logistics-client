@@ -2,23 +2,23 @@
     
     <div class="row">
         <div class="col-md-12">
-            <h3>Search:</h3>
+            <h3>{{ 'search.label' | translate }}</h3>
         </div>
     </div>
 
     <form>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Departure">
+            <input type="text" class="form-control" placeholder="{{ 'search.fields.departure' | translate }}">
         </div>
         <div class="form-group">
-            <input type="date" class="form-control" placeholder="Date">
+            <input type="date" class="form-control" placeholder="{{ 'search.fields.departure-date' | translate }}">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Destination">
+            <input type="text" class="form-control" placeholder="{{ 'search.fields.destination' | translate }}">
         </div>
         <div class="form-group">
-            <input type="date" class="form-control" placeholder="Date">
+            <input type="date" class="form-control" placeholder="{{ 'search.fields.destination-date' | translate }}">
         </div>
-        <button type="submit" class="btn sl-btn-contrast btn-block">Search</button>
+        <button type="submit" class="btn sl-btn-contrast btn-block">{{ 'search.search-btn' | translate }}</button>
     </form>
 </div>

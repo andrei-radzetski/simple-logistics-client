@@ -1,5 +1,9 @@
 <footer class="footer">
   <div class="container">
-    <p class="text-center">Русский · English (US)</p>
+    <div class="sl-langs text-center">
+      <a *ngFor="let lang of langs" (click)="setLang(lang)" [ngClass]="{ 'sl-lang-active': isLangActive(lang), '': !isLangActive(lang) }">
+        {{ lang.title | translate }}
+      </a>
+    </div>
   </div>
 </footer>

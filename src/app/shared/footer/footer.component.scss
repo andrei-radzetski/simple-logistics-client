@@ -6,10 +6,22 @@
     width: 100%;
     height: $footer-heigth;
     background-color: $main-color;
-    color: $contrast-color;
+    
 
     .container {
         padding-top: 20px;
+        color: $contrast-color;
+        
+        .sl-langs {
+            a {
+                color: $contrast-color;
+                text-decoration: none;
+                cursor: pointer;
+
+                &.sl-lang-active {
+                    font-weight: 700;
+                }
+            }
+        }
     }
-    
 }
