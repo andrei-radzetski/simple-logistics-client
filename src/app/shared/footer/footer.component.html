@@ -1,7 +1,7 @@
 <footer class="footer">
   <div class="container">
     <div class="sl-langs text-center">
-      <a *ngFor="let lang of langs" (click)="setLang(lang)" [ngClass]="{ 'sl-lang-active': isLangActive(lang), '': !isLangActive(lang) }">
+      <a *ngFor="let lang of langs" (click)="setLang(lang)" [ngClass]="{ 'sl-lang-active': isLangActive(lang) }">
         {{ lang.title | translate }}
       </a>
     </div>
