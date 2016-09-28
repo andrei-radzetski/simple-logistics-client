@@ -2,6 +2,8 @@
 Simple logistics web client application.
 
 ## Getting Started
+### Prerequisities
+### Installing
  1. Download or clone project:
   
   ```
@@ -22,3 +24,7 @@ Simple logistics web client application.
   ```
   localhost:3000
   ```
+  
+## Authors
+
+* **Andrei Radzetski** - [Github](https://github.com/andrei-radzetski), [Facebook](https://www.facebook.com/stels666)
