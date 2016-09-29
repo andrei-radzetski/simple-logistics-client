@@ -20,6 +20,21 @@
             "destination-date": "Destination date"
         }
     },
+    "footer": {
+        "disigned": "Designed and built by",
+        "using": "Using",
+        "and": "and",
+        "lang": "Interface language:",
+        "link": {
+            "git": "Github",
+            "fb": "Facebook",
+            "vk": "VK",
+            "about": "About",
+            "autor": "Andrei Radzetski",
+            "ng2": "AngularJS 2",
+            "bootstrap": "Bootstrap 3"
+        }
+    },
     "page": {
         "home": {
             "title": "Simple Logistics",

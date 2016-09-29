@@ -20,6 +20,21 @@
             "destination-date": "Дата назначения"
         }
     },
+    "footer": {
+        "disigned": "Спроектировал и разработал",
+        "using": "С использованием",
+        "and": "и",
+        "lang": "Язык интерфейса:",
+        "link": {
+            "git": "Github",
+            "fb": "Facebook",
+            "vk": "ВКонтакте",
+            "about": "О системе",
+            "autor": "Андрей Радецкий",
+            "ng2": "AngularJS 2",
+            "bootstrap": "Bootstrap 3"
+        }
+    },
     "page": {
         "home": {
             "title": "Simple Logistics",

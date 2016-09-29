@@ -7,20 +7,28 @@ $secondary-color:                #303F9F !default;
 $main-dark-color:                #1a237e !default;
 $contrast-color:                 #ffffff !default;
 $main-text-color:                #333333 !default;
-$body-shift:                       60px !default;
+$body-shift:                       140px !default;
 
 $main-padding:                     15px !default;
 
-/* NAV VARIABLES */
-$link-hover-color:               #f9f9f9 !default;
-
-/* HEADER VARIABLES */
-$header-underline-size:            3px !default;
-
-/* FOOTER VARIABLES */
-$footer-heigth:                    $body-shift !default;
-
-/* HOME */
 $masthead-padding-sm:              70px !default;
 $masthead-padding:                 $main-padding !default;
 
+/* NAV VARIABLES */
+$nav-bg-color:                   #ffffff !default;
+$nav-text-color:                 #303F9F !default;
+$nav-link-hover-color:           #f9f9f9 !default;
+
+/* HEADER VARIABLES */
+$header-bg-color:                #3F51B5 !default;
+$header-text-color:              #ffffff !default;
+
+/* FOOTER VARIABLES */
+$footer-heigth:                    $body-shift !default;
+$footer-bg-color:                #263238 !default;
+$footer-muted-color:             #bdbdbd !default;
+$footer-link-color:              #f5f5f5 !default;
+
+/* HOME */
+
+/* SEARCH */

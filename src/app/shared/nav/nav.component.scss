@@ -7,16 +7,16 @@
     }
     
     &.navbar-default {
-        background-color: $contrast-color;
+        background-color: $nav-bg-color;
         border: none;
 
         .navbar-brand {
-            color: $secondary-color;
+            color: $nav-text-color;
             background-color: transparent;
             
             &:hover, 
             &:focus {
-                color: $secondary-color;
+                color: $nav-text-color;
                 background-color: transparent;
             }
         }
@@ -24,14 +24,14 @@
 
     .navbar-nav {
         & > li > a {
-            color: $secondary-color;
+            color: $nav-text-color;
             background-color: transparent;
             border-bottom: none;
 
             &:hover,
             &:focus {
-                color: $secondary-color;
-                background-color: $link-hover-color;
+                color: $nav-text-color;
+                background-color: $nav-link-hover-color;
                 border-bottom: none;
             }
         }
@@ -39,8 +39,8 @@
         & > .active > a,
         & > .active > a:hover,
         & > .active > a:focus {
-            color: $secondary-color;
-            background-color: $link-hover-color;
+            color: $nav-text-color;
+            background-color: $nav-link-hover-color;
             border-bottom: none;
         }
     }
@@ -53,21 +53,21 @@
 
     .navbar-toggle {
         border: none;
-        background-color: $contrast-color;
+        background-color: $nav-bg-color;
 
         &:hover,
         &:focus,
         &.collapsed:hover {
-            background-color: $link-hover-color;
+            background-color: $nav-link-hover-color;
         }
 
         &.collapsed,
         &.collapsed:focus {
-            background-color: $contrast-color;
+            background-color: $nav-bg-color;
         }
 
         .icon-bar {
-            background-color: $secondary-color;
+            background-color: $nav-text-color;
         }
     }
 }
