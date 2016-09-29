@@ -60,7 +60,7 @@ export class LangService {
      * true if available, false if not.
      */
     public isLangAvailable(lang: string): boolean {
-        return lang ? !!lang.match(LANGS_KEYS_EXP) : false;
+        return lang && !!lang.match(LANGS_KEYS_EXP);
     }
 
     /**
