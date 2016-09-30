@@ -1,7 +1,9 @@
 import { Injectable, Inject } from '@angular/core';
 import { TranslateService } from 'ng2-translate/ng2-translate';
+
 import { Lang } from './lang'
 import { LANGS, LANGS_KEYS_EXP, LANGS_DEFAULT } from './lang.mock';
+
 
 @Injectable()
 export class LangService {

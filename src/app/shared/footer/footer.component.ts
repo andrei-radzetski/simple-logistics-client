@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LangService, Lang } from '../lang';
+
+import { Lang } from '../lang/lang';
+import { LangService } from '../lang/lang.service';
 
 
 @Component({

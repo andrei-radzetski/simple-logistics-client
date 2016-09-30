@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router, NavigationStart, Event } from '@angular/router';
-import { Nav } from './nav';
+
 import { LINKS } from './nav.mock';
+import { Nav } from './nav';
 
 @Injectable()
 export class NavService {

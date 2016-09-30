@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
     selector: 'sl-home',
     templateUrl: 'app/home/home.component.html'
 })
-export class HomeComponent {  
-    title: string = 'Home';
-}
+export class HomeComponent {}
