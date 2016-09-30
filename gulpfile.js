@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     uglify = require('gulp-uglify'),
     sourcemaps = require('gulp-sourcemaps'),
+    rename = require('gulp-rename'),
     buffer = require('vinyl-buffer'),
     gulpif = require('gulp-if'),
     sass = require('gulp-sass'),
@@ -21,6 +22,7 @@ gulp.task('template', function () {
 // Images
 gulp.task('img', function () {
     return gulp.src(config.path.track.img)
+        .pipe(rename({dirname: ''}))
         .pipe(gulp.dest(config.path.dist.img));
 });
 
