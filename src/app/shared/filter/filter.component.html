@@ -1,0 +1,24 @@
+<div class="sl-filter {{ getContrastCssClass() }}">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <h3>{{ 'filter.label' | translate }}</h3>
+        </div>
+    </div>
+
+    <form>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="{{ 'filter.fields.departure' | translate }}">
+        </div>
+        <div class="form-group">
+            <input type="date" class="form-control" placeholder="{{ 'filter.fields.departure-date' | translate }}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="{{ 'filter.fields.destination' | translate }}">
+        </div>
+        <div class="form-group">
+            <input type="date" class="form-control" placeholder="{{ 'filter.fields.destination-date' | translate }}">
+        </div>
+        <button type="submit" class="btn sl-btn-contrast btn-block">{{ 'filter.search-btn' | translate }}</button>
+    </form>
+</div>

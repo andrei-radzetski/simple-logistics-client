@@ -3,16 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { TranslateModule } from 'ng2-translate/ng2-translate';
 
-import { routing,
-    appRoutingProviders } from './app.routing';
+import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent } from './app.component';
-import { NavComponent, FooterComponent } from './shared';
+import { NavComponent } from './shared/nav/nav.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
-import { AboutModule } from './about';
-import { HomeModule } from './home';
-import { LoginModule } from './login';
-import { JoinModule } from './join';
+import { AboutModule } from './about/about.module';
+import { HomeModule } from './home/home.module';
+import { LoginModule } from './login/login.module';
+import { JoinModule } from './join/join.module';
+import { SearchModule } from './search/search.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { JoinModule } from './join';
         HomeModule,
         AboutModule,
         LoginModule,
-        JoinModule
+        JoinModule,
+        SearchModule
     ],
     declarations: [
         AppComponent,
@@ -34,6 +36,8 @@ import { JoinModule } from './join';
     providers: [
         appRoutingProviders
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [
+        AppComponent
+    ]
 })
-export class AppModule { }
+export class AppModule {}

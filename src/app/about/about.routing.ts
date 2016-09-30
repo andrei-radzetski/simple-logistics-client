@@ -4,7 +4,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { AboutComponent } from './about.component'
 
 
-export const aboutRoutes: Routes = [
+const aboutRoutes: Routes = [
     {
         path: 'about',
         component: AboutComponent

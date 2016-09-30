@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { HomeComponent } from './home.component'
-import { SearchComponent, HeaderModule } from '../shared';
+import { FilterComponent, HeaderModule } from '../shared';
 import { homeRouting } from './home.routing';
 
 
@@ -13,7 +13,7 @@ import { homeRouting } from './home.routing';
     ],
     declarations: [
         HomeComponent,
-        SearchComponent
+        FilterComponent
     ]
 })
 export class HomeModule { }

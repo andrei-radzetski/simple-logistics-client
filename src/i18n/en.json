@@ -7,10 +7,11 @@
     "nav": {
         "home": "Home",
         "about": "About",
+        "search": "Search",
         "signin": "Sign in",
         "signup": "Sign up"
     },
-    "search": {
+    "filter": {
         "label": "Search:",
         "search-btn": "Search",
         "fields": {
@@ -49,6 +50,10 @@
             "description": "Some text, which describes the section."
         },
         "join": {
+            "title": "Join",
+            "description": "Some text, which describes the section."
+        },
+        "search": {
             "title": "Join",
             "description": "Some text, which describes the section."
         }
