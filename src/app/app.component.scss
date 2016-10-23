@@ -50,6 +50,11 @@ body {
   }
 }
 
+.content.container {
+    padding-top: $main-padding;
+    padding-bottom: $main-padding;
+}
+
 
 @import 'shared/nav/nav.component.scss';
 @import 'shared/header/header.component.scss';
