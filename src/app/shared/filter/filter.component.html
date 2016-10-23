@@ -1,6 +1,6 @@
-<div class="sl-filter {{ getContrastCssClass() }}">
+<div [ngClass]="'sl-contrast'" class="sl-filter">
     
-    <div class="row">
+    <div class="row" *ngIf="!full">
         <div class="col-md-12">
             <h3>{{ 'filter.label' | translate }}</h3>
         </div>

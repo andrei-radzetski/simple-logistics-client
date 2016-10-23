@@ -11,8 +11,4 @@ export class HeaderComponent {
     @Input() public description: string;
 
     constructor() {}
-
-    getContrastCssClass(): string {
-        return 'sl-contrast'
-    }
 }

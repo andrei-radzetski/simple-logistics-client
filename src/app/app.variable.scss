@@ -2,17 +2,22 @@ $screen-sm-min:                    768px !default;
 $screen-md-min:                    992px !default;
 $screen-lg-min:                    1200px !default;
 
-$main-color:                     #3F51B5 !default;
+/* MAIN */
+$main-padding:                     15px !default;
+
+$main-masthead-bg-color:         #3F51B5 !default;
+$masthead-padding:                 $main-padding !default;
+$masthead-padding-sm:              70px !default;
+$main-btn-bg-color:              #3F51B5 !default; 
+
 $secondary-color:                #303F9F !default;
 $main-dark-color:                #1a237e !default;
 $contrast-color:                 #ffffff !default;
 $main-text-color:                #333333 !default;
 $body-shift:                       140px !default;
 
-$main-padding:                     15px !default;
 
-$masthead-padding-sm:              70px !default;
-$masthead-padding:                 $main-padding !default;
+
 
 /* NAV VARIABLES */
 $nav-bg-color:                   #ffffff !default;

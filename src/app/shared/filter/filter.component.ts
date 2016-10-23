@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 
 @Component({
@@ -7,8 +7,6 @@ import { Component } from '@angular/core';
 })
 export class FilterComponent {
 
-    getContrastCssClass(): string {
-        return 'sl-contrast'
-    }
+    @Input() public full: boolean = true;
     
 }

@@ -9,7 +9,7 @@ body {
 }
 
 .masthead {
-  background-color: $main-color;
+  background-color: $main-masthead-bg-color;
   padding-top: $masthead-padding;
   padding-bottom: $masthead-padding;
 }
@@ -40,7 +40,7 @@ body {
 }
 
 .sl-btn-contrast {
-  background-color: $main-color;
+  background-color: $main-btn-bg-color;
   color: $contrast-color;
   border: 1px solid $contrast-color;
 
@@ -60,3 +60,4 @@ body {
 @import 'home/home.component.scss';
 @import 'login/login.component.scss';
 @import 'join/join.component.scss';
+@import 'search/search.component.scss';
