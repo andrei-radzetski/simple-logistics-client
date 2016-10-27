@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { TranslateModule } from 'ng2-translate/ng2-translate';
+import { TranslateModule } from 'ng2-translate';
 
 import { aboutRouting } from './about.routing';
 import { AboutComponent } from './about.component'
