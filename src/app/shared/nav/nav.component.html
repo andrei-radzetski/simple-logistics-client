@@ -7,20 +7,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-            <a class="navbar-brand" routerLink="/">{{ 'appname' | translate }}</a>
+            <a class="navbar-brand" routerLink="/">{{ 'TODOTRappname' }}</a>
         </div>
         <nav id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <template ngFor let-link [ngForOf]="links">
                     <li [ngClass]="{ 'active': isLinkActive(link) }" *ngIf="link.left && link.visible">
-                        <a routerLink="{{ link.path }}">{{ link.title | translate }}</a>
+                        <a routerLink="{{ link.path }}">{{ link.title }}</a>
                     </li>
                 </template>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <template ngFor let-link [ngForOf]="links">
                     <li [ngClass]="{ 'active': isLinkActive(link) }" *ngIf="!link.left && link.visible">
-                        <a routerLink="{{ link.path }}">{{ link.title | translate }}</a>
+                        <a routerLink="{{ link.path }}">{{ link.title  }}</a>
                     </li>
                 </template>
             </ul>

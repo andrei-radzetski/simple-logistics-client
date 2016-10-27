@@ -1,25 +1,25 @@
 <footer [ngClass]="'sl-contrast'" class="footer">
   <div class="container">
     <div class="sl-links">
-      <a target="_blank" href="https://github.com/andrei-radzetski/simple-logistics-client.git">{{ 'footer.link.git' | translate }}</a>
-      <a target="_blank" href="https://www.facebook.com/stels666">{{ 'footer.link.fb' | translate }}</a>
-      <a target="_blank" href="https://vk.com/andrei.radzetski">{{ 'footer.link.vk' | translate }}</a>
-      <a routerLink="/about">{{ 'footer.link.about' | translate }}</a>
+      <a target="_blank" href="https://github.com/andrei-radzetski/simple-logistics-client.git">{{ 'TODOTRfooter.link.git' }}</a>
+      <a target="_blank" href="https://www.facebook.com/stels666">{{ 'TODOTRfooter.link.fb' }}</a>
+      <a target="_blank" href="https://vk.com/andrei.radzetski">{{ 'TODOTRfooter.link.vk' }}</a>
+      <a routerLink="/about">{{ 'TODOTRfooter.link.about' }}</a>
     </div>
 
     <div>
-      {{ 'footer.disigned' | translate }} 
-      <a target="_blank" href="https://www.facebook.com/stels666">{{ 'footer.link.autor' | translate }}</a>. 
-      {{ 'footer.using' | translate }} 
-      <a target="_blank" href="https://angular.io">{{ 'footer.link.ng2' | translate }}</a> 
-      {{ 'footer.and' | translate }} 
-      <a target="_blank" href="http://getbootstrap.com">{{ 'footer.link.bootstrap' | translate }}</a>.
+      {{ 'TODOTRfooter.disigned' }} 
+      <a target="_blank" href="https://www.facebook.com/stels666">{{ 'TODOTRfooter.link.autor' }}</a>. 
+      {{ 'TODOTRfooter.using' }} 
+      <a target="_blank" href="https://angular.io">{{ 'TODOTRfooter.link.ng2' }}</a> 
+      {{ 'TODOTRfooter.and' }} 
+      <a target="_blank" href="http://getbootstrap.com">{{ 'TODOTRfooter.link.bootstrap' }}</a>.
     </div>
 
     <div class="sl-langs">
-      <span>{{ 'footer.lang' | translate }}</span>
+      <span>{{ 'TODOTRfooter.lang' }}</span>
       <a *ngFor="let lang of langs" (click)="setLang(lang)" [ngClass]="{ 'sl-lang-active': isLangActive(lang) }">
-        {{ lang.title | translate }}
+        {{ lang.title }}
       </a>
     </div>
 

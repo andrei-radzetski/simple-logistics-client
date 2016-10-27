@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
-import { TranslateModule } from 'ng2-translate';
 
 import { routing, appRoutingProviders } from './app.routing';
 
@@ -19,8 +17,6 @@ import { SearchModule } from './search/search.module';
 @NgModule({
     imports: [
         BrowserModule,
-        HttpModule,
-        TranslateModule.forRoot(),
         HomeModule,
         AboutModule,
         LoginModule,
