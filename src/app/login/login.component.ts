@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 
 
 @Component({
+    moduleId: 'app/login/',
     selector: 'sl-login',
-    templateUrl: 'app/login/login.component.html'
+    templateUrl: './login.component.html'
 })
 export class LoginComponent {
 

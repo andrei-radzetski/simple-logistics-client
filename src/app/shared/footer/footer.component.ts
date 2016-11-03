@@ -5,8 +5,9 @@ import { LangService } from '../lang/lang.service';
 
 
 @Component({
+    moduleId: 'app/shared/footer/',
     selector: 'sl-footer',
-    templateUrl: 'app/shared/footer/footer.component.html',
+    templateUrl: './footer.component.html',
     providers: [
         LangService
     ]

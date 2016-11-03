@@ -1,5 +1,5 @@
 {
-    "prod": false,
+    "prod": true,
     "path": {
         "dist": {
             "root": "dist",

@@ -2,8 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 
 
 @Component({
+    moduleId: 'app/shared/filter/',
     selector: 'sl-filter',
-    templateUrl: 'app/shared/filter/filter.component.html'
+    templateUrl: './filter.component.html'
 })
 export class FilterComponent {
 

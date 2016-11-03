@@ -5,8 +5,9 @@ import { NavService } from './nav.service';
 
 
 @Component({
+    moduleId: 'app/shared/nav/',
     selector: 'sl-nav',
-    templateUrl: 'app/shared/nav/nav.component.html',
+    templateUrl: './nav.component.html',
     providers: [
         NavService
     ]

@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 
 
 @Component({
+    moduleId: 'app/search/',
     selector: 'sl-search',
-    templateUrl: 'app/search/search.component.html'
+    templateUrl: './search.component.html'
 })
 export class SearchComponent {
     

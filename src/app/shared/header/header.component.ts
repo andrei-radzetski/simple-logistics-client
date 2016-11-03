@@ -2,8 +2,9 @@ import { Component, Input } from '@angular/core';
 
 
 @Component({
+    moduleId: 'app/shared/header/',
     selector: 'sl-header',
-    templateUrl: 'app/shared/header/header.component.html'
+    templateUrl: './header.component.html'
 })
 export class HeaderComponent {
     
