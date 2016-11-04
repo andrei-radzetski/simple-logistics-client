@@ -12,6 +12,7 @@ import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
 import { JoinModule } from './join/join.module';
 import { SearchModule } from './search/search.module';
+import { TranslateModule } from './shared/translate/translate.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SearchModule } from './search/search.module';
         LoginModule,
         JoinModule,
         SearchModule,
-        routing
+        routing,
+        TranslateModule
     ],
     declarations: [
         AppComponent,

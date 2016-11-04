@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 
 import { Lang } from './lang'
 import { LANGS, LANGS_KEYS_EXP, LANGS_DEFAULT } from './lang.mock';
+import { TranslateService } from '../translate/translate.service';
 
 
 @Injectable()
@@ -10,13 +11,10 @@ export class LangService {
     private langs: Map<string, Lang> = new Map();
     private selected: Lang;
 
-    //private translateService: TranslateService;
-
     constructor( 
-        /*@Inject(TranslateService) translateService: TranslateService*/) {
-        //this.translateService = translateService;
-        //this.translateService.setDefaultLang(LANGS_DEFAULT);
-        //this.init();
+        private translateService: TranslateService) {
+        
+        this.init();
     }
 
     /**
@@ -31,9 +29,9 @@ export class LangService {
      * set default lang (see lang.mock.ts -> LANGS_DEFAULT).
      */
     public setSelected(lang: string) {
-        //lang = this.isLangAvailable(lang) ? lang : LANGS_DEFAULT;
-        //this.translateService.use(lang);
-        //this.selected = this.langs.get(lang);
+        lang = this.isLangAvailable(lang) ? lang : LANGS_DEFAULT;
+        this.translateService.use(lang);
+        this.selected = this.langs.get(lang);
     }
 
     /**
@@ -87,6 +85,7 @@ export class LangService {
      * browser lang and set as selected.
      */
     private initSelected() {
-        //this.setSelected(this.translateService.getBrowserLang());
+        //TODO: must be lang from browser.
+        this.setSelected(LANGS_DEFAULT);
     }
 }

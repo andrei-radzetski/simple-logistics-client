@@ -1,5 +1,5 @@
 {
-    "prod": true,
+    "prod": false,
     "path": {
         "dist": {
             "root": "dist",
@@ -31,7 +31,6 @@
                 "./src/**/*.scss"
             ],
             "node": "node_modules/**",
-            "i18n": "./src/i18n/*.json",
             "lib": [
                 "core-js/client/shim.min.js",
                 "reflect-metadata/Reflect.js",
