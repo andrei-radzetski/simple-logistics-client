@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { HeaderModule } from '../shared/header/header.module';
 import { LoginComponent } from './login.component';
@@ -10,7 +12,9 @@ import { TranslateModule } from '../shared/translate/translate.module';
     imports: [
         loginRouting,
         HeaderModule,
-        TranslateModule
+        TranslateModule,
+        FormsModule,
+        HttpModule
     ],
     declarations: [
         LoginComponent
