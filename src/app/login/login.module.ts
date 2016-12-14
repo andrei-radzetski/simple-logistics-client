@@ -7,15 +7,15 @@ import { TranslateModule } from '../shared/translate/translate.module';
 import { AuthModule } from '../shared/auth/auth.module';
 
 @NgModule({
-    imports: [
-        loginRouting,
-        HeaderModule,
-        TranslateModule,
-        FormsModule,
-        AuthModule
-    ],
-    declarations: [
-        LoginComponent
-    ]
+  imports: [
+    loginRouting,
+    HeaderModule,
+    TranslateModule,
+    FormsModule,
+    AuthModule
+  ],
+  declarations: [
+    LoginComponent
+  ]
 })
-export class LoginModule {}
+export class LoginModule { }

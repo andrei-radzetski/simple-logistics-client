@@ -1,37 +1,36 @@
-
 /* FOOTER */
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: $footer-heigth;
-    background-color: $footer-bg-color;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $footer-heigth;
+  background-color: $footer-bg-color;
 
-    .container {
-        padding-top: 40px;
-        color: $footer-muted-color;
+  .container {
+    padding-top: 40px;
+    color: $footer-muted-color;
 
-        a {
-            color: $footer-link-color;
-        }
-
-        .sl-links {
-            margin-bottom: 10px;
-            a {
-                margin-right: 10px;
-            }
-        }
-        
-        .sl-langs {
-            a {
-                color: $footer-link-color;
-                cursor: pointer;
-                margin-left: 5px;
-
-                &.sl-lang-active {
-                    text-decoration: underline;
-                }
-            }
-        }
+    a {
+      color: $footer-link-color;
     }
+
+    .sl-links {
+      margin-bottom: 10px;
+      a {
+        margin-right: 10px;
+      }
+    }
+
+    .sl-langs {
+      a {
+        color: $footer-link-color;
+        cursor: pointer;
+        margin-left: 5px;
+
+        &.sl-lang-active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }

@@ -9,38 +9,38 @@ import { RestResponse } from '../rest/rest.response';
 @Injectable()
 export class AuthService extends RestDataService<Auth> {
 
-    constructor(http: Http) {
-        super(http);
-    }
+  constructor(http: Http) {
+    super(http);
+  }
 
-    getCreator(): { new (): Auth; } {
-        return Auth;
-    }
+  getCreator(): { new (): Auth; } {
+    return Auth;
+  }
 
-    login(model: AuthRequest): Observable<RestResponse<Auth>> {
-        return this.postForm('/login', model);
-    }
+  login(model: AuthRequest): Observable<RestResponse<Auth>> {
+    return this.postForm('/login', model);
+  }
 
-    logout(): Observable<RestResponse<Auth>> {
-        return this.getProtected('/logout');
-    }
+  logout(): Observable<RestResponse<Auth>> {
+    return this.getProtected('/logout');
+  }
 
-    static setCredential(token: string, expires: number) {
-        localStorage.setItem('access_token', token);
-        localStorage.setItem('token_expires', expires.toString());
-    }
+  static setCredential(token: string, expires: number) {
+    localStorage.setItem('access_token', token);
+    localStorage.setItem('token_expires', expires.toString());
+  }
 
-    static destroyCredential() {
-        localStorage.removeItem('access_token');
-        localStorage.removeItem('token_expires');
-    }
+  static destroyCredential() {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('token_expires');
+  }
 
-    static getCurrentAccessToken(): string {
-        return localStorage.getItem('access_token');
-    }
+  static getCurrentAccessToken(): string {
+    return localStorage.getItem('access_token');
+  }
 
-    static isAuthorized(): boolean {
-        return !!AuthService.getCurrentAccessToken();
-    }
+  static isAuthorized(): boolean {
+    return !!AuthService.getCurrentAccessToken();
+  }
 
 }

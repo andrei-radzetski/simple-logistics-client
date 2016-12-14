@@ -3,11 +3,11 @@ import { HttpModule } from '@angular/http';
 import { UserService } from './user.service';
 
 @NgModule({
-    imports: [
-        HttpModule
-    ],
-    providers: [
-        UserService
-    ]
+  imports: [
+    HttpModule
+  ],
+  providers: [
+    UserService
+  ]
 })
 export class UserModule { }

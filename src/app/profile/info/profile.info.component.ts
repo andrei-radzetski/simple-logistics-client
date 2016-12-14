@@ -4,52 +4,52 @@ import { User } from '../../shared/user/user';
 import { RestResponse } from '../../shared/rest/rest.response';
 
 @Component({
-    moduleId: 'app/profile/info/',
-    selector: 'sl-profile-info',
-    templateUrl: './profile.info.component.html'
+  moduleId: 'app/profile/info/',
+  selector: 'sl-profile-info',
+  templateUrl: './profile.info.component.html'
 })
-export class ProfileInfoComponent implements OnInit  {
+export class ProfileInfoComponent implements OnInit {
 
-    // TODO: translations
+  // TODO: translations
 
-    private userService: UserService;
-    private user: User;
-    private error: boolean;
+  private userService: UserService;
+  private user: User;
+  private error: boolean;
 
-    constructor(userService: UserService) {
-        this.userService = userService;
-    }
+  constructor(userService: UserService) {
+    this.userService = userService;
+  }
 
-    getFullName(): string {
-        return this.user ? this.user.getFullName() : '';
-    }
+  getFullName(): string {
+    return this.user ? this.user.getFullName() : '';
+  }
 
-    getEmail(): string {
-        return this.user ? this.user.email : '';
-    }
+  getEmail(): string {
+    return this.user ? this.user.email : '';
+  }
 
-    getPhone(): string {
-        return this.user ? this.user.phone : '';
-    }
+  getPhone(): string {
+    return this.user ? this.user.phone : '';
+  }
 
-    private getProfileData() {
-        this.userService.getProfileData().subscribe(
-            (res: RestResponse<User>) => this.proccessSussess(res),
-            (err: RestResponse<User>) => this.proccessError(err));
-    }
+  private getProfileData() {
+    this.userService.getProfileData().subscribe(
+      (res: RestResponse<User>) => this.proccessSussess(res),
+      (err: RestResponse<User>) => this.proccessError(err));
+  }
 
-    private proccessSussess(res: RestResponse<User>) {
-        this.error = false;
-        this.user = res.data;
-    }
+  private proccessSussess(res: RestResponse<User>) {
+    this.error = false;
+    this.user = res.data;
+  }
 
-    private proccessError(err: RestResponse<User>) {
-        this.error = true;
-        this.user = undefined;
-    }
+  private proccessError(err: RestResponse<User>) {
+    this.error = true;
+    this.user = undefined;
+  }
 
-    ngOnInit() {
-        this.getProfileData();
-    }
+  ngOnInit() {
+    this.getProfileData();
+  }
 
 }

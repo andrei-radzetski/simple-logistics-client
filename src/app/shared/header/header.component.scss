@@ -1,34 +1,32 @@
-
 /* HEADER */
 .sl-header {
-    background-color: $header-bg-color;
-    color: $header-text-color;
+  background-color: $header-bg-color;
+  color: $header-text-color;
 
-    h1 {
-        font-size: 40px;
-        margin-top: 0;
-        margin-bottom: 0; 
-    }
+  h1 {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 0; 
+  }
 
-    h3 {
-        font-weight: 300;
-        font-size: 18px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
+  h3 {
+    font-weight: 300;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 @media (min-width: $screen-sm-min) {
-    .sl-main {
-        .sl-header {
-            h1 {
-                font-size: 80px;
-            }
+  .sl-main {
+    .sl-header {
+      h1 {
+        font-size: 80px;
+      }
 
-            h3 {
-                font-size: 24px;
-            }
-        }
+      h3 {
+        font-size: 24px;
+      }
     }
+  }
 }
-

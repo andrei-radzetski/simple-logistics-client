@@ -6,14 +6,14 @@ import { FilterModule } from '../shared/filter/filter.module';
 import { TranslateModule } from '../shared/translate/translate.module';
 
 @NgModule({
-    imports: [
-        homeRouting,
-        HeaderModule,
-        FilterModule,
-        TranslateModule
-    ],
-    declarations: [
-        HomeComponent
-    ]
+  imports: [
+    homeRouting,
+    HeaderModule,
+    FilterModule,
+    TranslateModule
+  ],
+  declarations: [
+    HomeComponent
+  ]
 })
-export class HomeModule {}
+export class HomeModule { }

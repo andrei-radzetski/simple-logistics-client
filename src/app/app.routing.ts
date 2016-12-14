@@ -3,10 +3,10 @@ import { ModuleWithProviders } from '@angular/core';
 
 
 const appRoutes: Routes = [
-    {
-        path: '**',
-        redirectTo: '/home'
-    }
+  {
+    path: '**',
+    redirectTo: '/home'
+  }
 ];
 
 export const appRoutingProviders: any[] = [];

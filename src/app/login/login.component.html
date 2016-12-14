@@ -1,26 +1,26 @@
 <div class="masthead">
-    <div class="container">
-        <sl-header [title]="'page.login.title' | translate" [description]="'page.login.description' | translate">
-        </sl-header>
-    </div>
+  <div class="container">
+    <sl-header [title]="'page.login.title' | translate" [description]="'page.login.description' | translate">
+    </sl-header>
+  </div>
 </div>
 
 <div class="sl-login">
-    <div class="container content">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <form>
-                    <div class="form-group">
-                        <label for="login">Login</label>
-                        <input type="text" [(ngModel)]="model.username" name="username" id="login" class="form-control" placeholder="Login">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" [(ngModel)]="model.password" name="password" id="password" class="form-control" placeholder="Password">
-                    </div>
-                    <button type="submit" [disabled]="submitted" class="btn sl-btn-contrast btn-block" (click)="onSubmit()">Login</button>
-                </form>
-            </div>
-        </div>
+  <div class="container content">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <form>
+          <div class="form-group">
+            <label for="login">Login</label>
+            <input type="text" [(ngModel)]="model.username" name="username" id="login" class="form-control" placeholder="Login">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" [(ngModel)]="model.password" name="password" id="password" class="form-control" placeholder="Password">
+          </div>
+          <button type="submit" [disabled]="submitted" class="btn sl-btn-contrast btn-block" (click)="onSubmit()">Login</button>
+        </form>
+      </div>
     </div>
+  </div>
 </div>

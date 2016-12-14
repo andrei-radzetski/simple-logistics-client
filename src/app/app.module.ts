@@ -17,27 +17,27 @@ import { TranslateModule } from './shared/translate/translate.module';
 
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        HomeModule,
-        AboutModule,
-        LoginModule,
-        JoinModule,
-        SearchModule,
-        ProfileModule,
-        routing,
-        TranslateModule
-    ],
-    declarations: [
-        AppComponent,
-        NavComponent,
-        FooterComponent
-    ],
-    providers: [
-        appRoutingProviders
-    ],
-    bootstrap: [
-        AppComponent
-    ]
+  imports: [
+    BrowserModule,
+    HomeModule,
+    AboutModule,
+    LoginModule,
+    JoinModule,
+    SearchModule,
+    ProfileModule,
+    routing,
+    TranslateModule
+  ],
+  declarations: [
+    AppComponent,
+    NavComponent,
+    FooterComponent
+  ],
+  providers: [
+    appRoutingProviders
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
-export class AppModule {}
+export class AppModule { }

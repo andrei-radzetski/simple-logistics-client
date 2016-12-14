@@ -8,16 +8,16 @@ import { RestResponse } from '../rest/rest.response';
 @Injectable()
 export class UserService extends RestDataService<User> {
 
-    constructor(http: Http) {
-        super(http);
-    }
+  constructor(http: Http) {
+    super(http);
+  }
 
-    getCreator(): { new (): User; } {
-        return User;
-    }
+  getCreator(): { new (): User; } {
+    return User;
+  }
 
-    getProfileData(): Observable<RestResponse<User>> {
-      return this.getProtected('/profile');
-    }
+  getProfileData(): Observable<RestResponse<User>> {
+    return this.getProtected('/profile');
+  }
 
 }

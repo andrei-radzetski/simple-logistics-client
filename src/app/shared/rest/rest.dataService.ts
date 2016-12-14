@@ -16,7 +16,7 @@ export abstract class RestDataService<T extends RestModelFill> {
 
   protected http: Http;
 
-  constructor(http: Http){
+  constructor(http: Http) {
     this.http = http;
   }
 
