@@ -11,6 +11,7 @@ export const LANG_EN_TRANS = {
     "nav.search": "Search",
     "nav.signin": "Sign in",
     "nav.signup": "Sign up",
+    "nav.profile": "Profile",
 
     "filter.label": "Search:",
     "filter.search-btn": "Search",
@@ -44,5 +45,11 @@ export const LANG_EN_TRANS = {
     "page.join.description": "Some text, which describes the section.",
     
     "page.search.title": "Search",
-    "page.search.description": "Some text, which describes the section."
+    "page.search.description": "Some text, which describes the section.",
+
+    "page.profile.title": "Profile",
+    "page.profile.description": "Some text, which describes the section.",
+    "page.profile.nav.info": "Info",
+    "page.profile.nav.requests": "Requests",
+    "page.profile.nav.settings": "Settings"
 }

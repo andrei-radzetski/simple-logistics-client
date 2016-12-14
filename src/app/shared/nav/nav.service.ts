@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, NavigationStart, Event } from '@angular/router';
 
-import { LINKS } from './nav.mock';
+import { LINKS } from './nav.values';
 import { Nav } from './nav';
 
 @Injectable()

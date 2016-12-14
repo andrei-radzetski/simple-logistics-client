@@ -1,33 +1,39 @@
 import { Component } from '@angular/core';
-import { AuthModel, AuthService } from '../shared/auth';
-import { Response } from '@angular/http';
-
+import { AuthRequest } from '../shared/auth/auth.request';
+import { AuthService } from '../shared/auth/auth.service';
+import { Auth } from '../shared/auth/auth';
+import { RestResponse } from '../shared/rest/rest.response';
 
 @Component({
     moduleId: 'app/login/',
     selector: 'sl-login',
-    templateUrl: './login.component.html',
-    providers: [
-        AuthService
-    ]
+    templateUrl: './login.component.html'
 })
 export class LoginComponent {
 
-    model = new AuthModel('', '');
-    submitted = false;
+    private authService: AuthService
+    private model: AuthRequest
+    private submitted: boolean;
 
-    constructor(
-        private auth: AuthService) {
-
+    constructor(authService: AuthService) {
+        this.authService = authService;
+        this.model = new AuthRequest();
+        this.submitted = false;
     }
 
-    onSubmit() { 
-        this.auth
-            .login(this.model)
-            .subscribe((res: Response) => {
-                console.log(res);
-            }, (err: Response) => {
-                console.log(err);
-            });
+    // TODO: remove credential
+
+    private onSubmit() {
+        this.authService.login(this.model).subscribe(
+            (res: RestResponse<Auth>) => this.proccessSussess(res),
+            (err: RestResponse<Auth>) => this.proccessError(err));
+    }
+
+    private proccessSussess(res: RestResponse<Auth>) {
+        AuthService.setCredential(res.data.accessToken, res.data.expires);
+    }
+
+    private proccessError(err: RestResponse<Auth>) {
+        AuthService.destroyCredential();
     }
 }

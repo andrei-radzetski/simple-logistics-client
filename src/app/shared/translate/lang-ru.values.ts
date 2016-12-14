@@ -11,6 +11,7 @@ export const LANG_RU_TRANS = {
     "nav.search": "Поиск",
     "nav.signin": "Вход",
     "nav.signup": "Регистрация",
+    "nav.profile": "Профиль",
     
     "filter.label": "Поиск:",
     "filter.search-btn": "Поиск",
@@ -45,4 +46,10 @@ export const LANG_RU_TRANS = {
     
     "page.search.title": "Поиск",
     "page.search.description": "Какой-то текст, который описывает раздел.",
+
+    "page.profile.title": "Профиль",
+    "page.profile.description": "Какой-то текст, который описывает раздел.",
+    "page.profile.nav.info": "Информация",
+    "page.profile.nav.requests": "Запросы",
+    "page.profile.nav.settings": "Настройки"
 }

@@ -12,6 +12,7 @@ import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
 import { JoinModule } from './join/join.module';
 import { SearchModule } from './search/search.module';
+import { ProfileModule } from './profile/profile.module';
 import { TranslateModule } from './shared/translate/translate.module';
 
 
@@ -23,6 +24,7 @@ import { TranslateModule } from './shared/translate/translate.module';
         LoginModule,
         JoinModule,
         SearchModule,
+        ProfileModule,
         routing,
         TranslateModule
     ],

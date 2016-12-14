@@ -1,39 +1,43 @@
-$screen-sm-min:                    768px !default;
-$screen-md-min:                    992px !default;
-$screen-lg-min:                    1200px !default;
+$screen-sm-min:                         768px !default;
+$screen-md-min:                         992px !default;
+$screen-lg-min:                         1200px !default;
 
 /* MAIN */
-$main-padding:                     15px !default;
+$main-padding:                          15px !default;
 
-$main-masthead-bg-color:         #3F51B5 !default;
-$masthead-padding:                 $main-padding !default;
-$masthead-padding-sm:              70px !default;
-$main-btn-bg-color:              #3F51B5 !default; 
+$main-masthead-bg-color:              #3F51B5 !default;
+$masthead-padding:                      $main-padding !default;
+$masthead-padding-sm:                   70px !default;
+$main-btn-bg-color:                   #3F51B5 !default; 
 
-$secondary-color:                #303F9F !default;
-$main-dark-color:                #1a237e !default;
-$contrast-color:                 #ffffff !default;
-$main-text-color:                #333333 !default;
-$body-shift:                       140px !default;
-
-
+$secondary-color:                     #303F9F !default;
+$main-dark-color:                     #1a237e !default;
+$contrast-color:                      #ffffff !default;
+$main-text-color:                     #333333 !default;
+$body-shift:                            140px !default;
 
 
 /* NAV VARIABLES */
-$nav-bg-color:                   #ffffff !default;
-$nav-text-color:                 #303F9F !default;
-$nav-link-hover-color:           #f9f9f9 !default;
+$nav-bg-color:                        #ffffff !default;
+$nav-text-color:                      $secondary-color !default;
+$nav-link-hover-color:                #f9f9f9 !default;
 
 /* HEADER VARIABLES */
-$header-bg-color:                #3F51B5 !default;
-$header-text-color:              #ffffff !default;
+$header-bg-color:                     #3F51B5 !default;
+$header-text-color:                   #ffffff !default;
 
 /* FOOTER VARIABLES */
-$footer-heigth:                    $body-shift !default;
-$footer-bg-color:                #263238 !default;
-$footer-muted-color:             #bdbdbd !default;
-$footer-link-color:              #f5f5f5 !default;
+$footer-heigth:                         $body-shift !default;
+$footer-bg-color:                       #263238 !default;
+$footer-muted-color:                    #bdbdbd !default;
+$footer-link-color:                     #f5f5f5 !default;
 
 /* HOME */
 
 /* SEARCH */
+
+/* PROFILE */
+$profile-nav-item-text-color:           #757575 !default;
+$profile-nav-item-active-text-color:    $secondary-color !default;
+$profile-nav-item-active-marker-color:  $secondary-color !default;
+$profile-info-item-bottom-margin:       10px !default;

@@ -1,0 +1,12 @@
+.sl-profile-info {
+  h1 {
+    font-size: 40px;
+    font-weight: 200;
+    margin-top: 0;
+    margin-bottom: $main-padding; 
+  }
+
+  .row.info-item {
+    margin-bottom: $profile-info-item-bottom-margin;
+  }
+}
