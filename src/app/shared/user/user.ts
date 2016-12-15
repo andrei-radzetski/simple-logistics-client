@@ -7,6 +7,11 @@ export class User implements RestModelFill {
   phone: string;
   firstName: string;
   secondName: string;
+  country: string;
+  city: string;
+  language: string;
+  additionalInfo: string;
+  confirmed: boolean;
   scope: string;
 
   fill(object: any): void {
@@ -15,6 +20,11 @@ export class User implements RestModelFill {
     this.phone = object.phone;
     this.firstName = object.firstName;
     this.secondName = object.secondName;
+    this.country = object.country;
+    this.city = object.city;
+    this.language = object.language;
+    this.additionalInfo = object.additionalInfo;
+    this.confirmed = object.confirmed;
     this.scope = object.scope;
   }
 

@@ -47,24 +47,20 @@ export class ProfileInfoComponent implements OnInit {
     return this.user ? this.user.phone : '';
   }
 
-  // TODO: remove hard code
   getCountry(): string {
-    return 'Беларусь';
+    return this.user ? this.user.country : '';
   }
 
-  // TODO: remove hard code
   getCity(): string {
-    return 'Гродно';
+    return this.user ? this.user.city : '';
   }
 
-  // TODO: remove hard code
   getLanguage() {
-    return 'Русский';
+    return this.user ? this.user.language : '';
   }
 
-  // TODO: remove hard code
   getAdditionalInfo() {
-    return 'Какае-то длинная дополнительная информация о текущем пользователе ресурса.';
+    return this.user ? this.user.additionalInfo : '';
   }
 
 }

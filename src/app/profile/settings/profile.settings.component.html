@@ -36,7 +36,7 @@
       <span>{{ 'page.profile.info.country' | translate }}</span>
     </div>
     <div class="col-md-6">
-      <input type="text" [(ngModel)]="user.firstName" class="form-control" placeholder="{{ 'page.profile.info.country' | translate }}">
+      <input type="text" [(ngModel)]="user.country" class="form-control" placeholder="{{ 'page.profile.info.country' | translate }}">
     </div>
   </div>
   <div class="row">
@@ -44,7 +44,7 @@
       <span>{{ 'page.profile.info.city' | translate }}</span>
     </div>
     <div class="col-md-6">
-      <input type="text" [(ngModel)]="user.firstName" class="form-control" placeholder="{{ 'page.profile.info.city' | translate }}">
+      <input type="text" [(ngModel)]="user.city" class="form-control" placeholder="{{ 'page.profile.info.city' | translate }}">
     </div>
   </div>
   <div class="row">
@@ -52,7 +52,7 @@
       <span>{{ 'page.profile.info.language' | translate }}</span>
     </div>
     <div class="col-md-6">
-      <input type="text" [(ngModel)]="user.firstName" class="form-control" placeholder="{{ 'page.profile.info.language' | translate }}">
+      <input type="text" [(ngModel)]="user.language" class="form-control" placeholder="{{ 'page.profile.info.language' | translate }}">
     </div>
   </div>
   <div class="row">
@@ -60,7 +60,7 @@
       <span>{{ 'page.profile.info.additional' | translate }}</span>
     </div>
     <div class="col-md-6">
-      <textarea type="text" [(ngModel)]="user.firstName" rows="3" class="form-control" placeholder="{{ 'page.profile.info.additional' | translate }}"></textarea>
+      <textarea type="text" [(ngModel)]="user.additionalInfo" rows="3" class="form-control" placeholder="{{ 'page.profile.info.additional' | translate }}"></textarea>
     </div>
   </div>
   <div class="row">
