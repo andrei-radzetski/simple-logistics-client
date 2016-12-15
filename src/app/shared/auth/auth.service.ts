@@ -1,41 +1,33 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { RestDataService } from '../rest/rest.dataService'
-import { AuthRequest } from './auth.request';
-import { Auth } from './auth';
-import { RestResponse } from '../rest/rest.response';
-import { RestCreator } from '../rest/rest.creator';
 import 'rxjs/add/operator/mergeMap'
 import 'rxjs/add/observable/of'
+import { RestService } from '../rest/rest.service';
+import { RestResponseObject } from '../rest/rest.responseObject';
+import { AuthRequest } from './auth.request';
+import { Auth } from './auth';
 
 @Injectable()
-export class AuthService extends RestDataService<Auth> {
+export class AuthService extends RestService<Auth> {
 
   constructor(http: Http) {
-    super(http);
+    super(http, { create: (): Auth => new Auth() });
   }
 
-  getCreator(): RestCreator<Auth> {
-    return { create: (): Auth => new Auth() };
-  }
-
-  getArrayCreator(): RestCreator<Array<Auth>> {
-    return { create: (): Array<Auth> => new Array<Auth>() };
-  }
-
-  login(model: AuthRequest): Observable<RestResponse<Auth>> {
+  login(model: AuthRequest): Observable<RestResponseObject<Auth>> {
     let ths = this;
-    return this.postForm('/login', model)
-      .flatMap((res: RestResponse<Auth>) => {
-        ths.setCredential(res.data.accessToken, res.data.expires);
+    return this.postOne('/login', model, true)
+      .flatMap((res: RestResponseObject<Auth>) => {
+        ths.setCredential(res.object.accessToken, res.object.expires);
         return Observable.of(res);
       });
   }
 
-  logout(): Observable<RestResponse<Auth>> {
+  logout(): Observable<RestResponseObject<Auth>> {
     let ths = this;
-    return this.getProtected('/logout').flatMap((res: RestResponse<Auth>) => {
+    return this.getOne('/logout')
+    .flatMap((res: RestResponseObject<Auth>) => {
       ths.destroyCredential();
       return Observable.of(res);
     });

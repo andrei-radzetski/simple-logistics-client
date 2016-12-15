@@ -6,7 +6,7 @@ export class AuthRequest implements RestRequest {
   password: string;
   remember: boolean;
 
-  constructor(username: string = '', password: string = '', remember: boolean = false) {
+  constructor(username?: string, password?: string, remember: boolean = false) {
     this.username = username;
     this.password = password;
     this.remember = remember;

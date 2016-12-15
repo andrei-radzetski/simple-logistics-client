@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { RestResponseError } from '../shared/rest/rest.responseError';
+import { RestResponseObject } from '../shared/rest/rest.responseObject';
 import { AuthService } from '../shared/auth/auth.service';
 import { Auth } from '../shared/auth/auth';
-import { RestResponse } from '../shared/rest/rest.response';
-import { Router } from '@angular/router';
 
 @Component({
   moduleId: 'app/profile/',
@@ -15,15 +16,15 @@ export class ProfileComponent {
 
   logout() {
     this.authService.logout().subscribe(
-      (res: RestResponse<Auth>) => this.proccessSussess(res),
-      (err: RestResponse<Auth>) => this.proccessError(err));
+      (res: RestResponseObject<Auth>) => this.proccessSuccess(res),
+      (err: RestResponseError) => this.proccessError(err));
   }
 
-  private proccessSussess(res: RestResponse<Auth>) {
+  private proccessSuccess(res: RestResponseObject<Auth>) {
     this.router.navigate(['/login']);
   }
 
-  private proccessError(err: RestResponse<Auth>) {
+  private proccessError(err: RestResponseError) {
     // TODO: proccess error
     console.log(err.message);
   }

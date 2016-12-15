@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { RestResponseError } from '../../shared/rest/rest.responseError';
+import { RestResponseObject } from '../../shared/rest/rest.responseObject';
 import { UserService } from '../../shared/user/user.service';
 import { User } from '../../shared/user/user';
-import { RestResponse } from '../../shared/rest/rest.response';
 
 @Component({
   moduleId: 'app/profile/info/',
@@ -19,16 +20,8 @@ export class ProfileInfoComponent implements OnInit {
 
   private getProfileData() {
     this.userService.getProfileData().subscribe(
-      (res: RestResponse<User>) => this.proccessSussess(res),
-      (err: RestResponse<User>) => this.proccessError(err));
-  }
-
-  private proccessSussess(res: RestResponse<User>) {
-    this.user = res.data;
-  }
-
-  private proccessError(err: RestResponse<User>) {
-    this.user = undefined;
+      (res: RestResponseObject<User>) => this.user = res.object,
+      (err: RestResponseError) => this.user = undefined);
   }
 
   ngOnInit() {

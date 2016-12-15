@@ -1,8 +1,7 @@
-import { RestModelFill } from '../rest/rest.modelFill'
+import { RestObject } from '../rest/rest.object';
 
-export class User implements RestModelFill {
+export class User extends RestObject {
 
-  id: string;
   email: string;
   phone: string;
   firstName: string;

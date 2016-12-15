@@ -1,28 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { RestDataService } from '../rest/rest.dataService'
+import { RestService } from '../rest/rest.service';
+import { RestResponseObject } from '../rest/rest.responseObject';
 import { User } from './user';
-import { RestResponse } from '../rest/rest.response';
-import { RestCreator } from '../rest/rest.creator';
 
 @Injectable()
-export class UserService extends RestDataService<User> {
+export class UserService extends RestService<User> {
 
   constructor(http: Http) {
-    super(http);
+    super(http, { create: (): User => new User() });
   }
 
-  getCreator(): RestCreator<User> {
-    return { create: (): User => new User() };
-  }
-
-  getArrayCreator(): RestCreator<Array<User>> {
-    return { create: (): Array<User> => new Array<User>() };
-  }
-
-  getProfileData(): Observable<RestResponse<User>> {
-    return this.getProtected('/profile');
+  getProfileData(): Observable<RestResponseObject<User>> {
+    return this.getOne('/profile');
   }
 
 }

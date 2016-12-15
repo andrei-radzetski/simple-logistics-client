@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RestResponseError } from '../shared/rest/rest.responseError';
+import { RestResponseObject } from '../shared/rest/rest.responseObject';
 import { AuthRequest } from '../shared/auth/auth.request';
 import { AuthService } from '../shared/auth/auth.service';
 import { Auth } from '../shared/auth/auth';
-import { RestResponse } from '../shared/rest/rest.response';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,30 +13,28 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  private authService: AuthService
-  private model: AuthRequest
-  private submitted: boolean;
-  private route: Router;
+  private model: AuthRequest;
 
-  constructor(authService: AuthService, route: Router) {
-    this.authService = authService;
-    this.model = new AuthRequest();
-    this.submitted = false;
-    this.route = route;
-  }
+  constructor(
+    private authService: AuthService, 
+    private route: Router) {
+
+      this.model = new AuthRequest();
+    }
 
   private onSubmit() {
     this.authService.login(this.model).subscribe(
-      (res: RestResponse<Auth>) => this.proccessSussess(res),
-      (err: RestResponse<Auth>) => this.proccessError(err));
+      (res: RestResponseObject<Auth>) => this.proccessSuccess(res),
+      (err: RestResponseError) => this.proccessError(err));
   }
 
-  private proccessSussess(res: RestResponse<Auth>) {
+  private proccessSuccess(res: RestResponseObject<Auth>) {
     this.route.navigate(['/profile']);
   }
 
-  private proccessError(err: RestResponse<Auth>) {
+  private proccessError(err: RestResponseError) {
     // TODO: proccess error
     console.log(err.message);
   }
+
 }

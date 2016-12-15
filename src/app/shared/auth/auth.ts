@@ -1,6 +1,6 @@
-import { RestModelFill } from '../rest/rest.modelFill'
+import { RestObject } from '../rest/rest.object';
 
-export class Auth implements RestModelFill {
+export class Auth extends RestObject {
 
   accessToken: string;
   expires: number;

@@ -1,33 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { RestDataService } from '../rest/rest.dataService'
+import { RestService } from '../rest/rest.service';
+import { RestResponseArray } from '../rest/rest.responseArray';
 import { Dictionary } from './dictionary';
-import { RestResponse } from '../rest/rest.response';
-import { RestArrayResponse } from '../rest/rest.arrayResponse';
-import { RestCreator } from '../rest/rest.creator';
 
 @Injectable()
-export class DictionaryService extends RestDataService<Dictionary> {
+export class DictionaryService extends RestService<Dictionary> {
 
   constructor(http: Http) {
-    super(http);
+    super(http, { create: (): Dictionary => new Dictionary() });
   }
 
-  getCreator(): RestCreator<Dictionary> {
-    return { create: (): Dictionary => new Dictionary() }
+  getLanguages(): Observable<RestResponseArray<Dictionary>> {
+    return this.getArray('/dictionaries/languages');
   }
 
-  getArrayCreator(): RestCreator<Array<Dictionary>> {
-    return { create: (): Array<Dictionary> => new Array<Dictionary>() };
-  }
-
-  getLanguages(): Observable<RestArrayResponse<Array<Dictionary>>> {
-    return this.getArray ('/dictionaries/languages', undefined);
-  }
-
-  getCountries() {
-    return this.get ('/dictionaries/countries', undefined);
+  getCountries(): Observable<RestResponseArray<Dictionary>> {
+    return this.getArray('/dictionaries/countries');
   }
 
 }

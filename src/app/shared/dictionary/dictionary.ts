@@ -1,8 +1,7 @@
-import { RestModelFill } from '../rest/rest.modelFill'
+import { RestObject } from '../rest/rest.object';
 
-export class Dictionary implements RestModelFill {
+export class Dictionary extends RestObject {
 
-  id: string;
   key: string;
   value: string;
   type: string;
@@ -13,4 +12,5 @@ export class Dictionary implements RestModelFill {
     this.value = object.value;
     this.type = object.type;
   }
+
 }
