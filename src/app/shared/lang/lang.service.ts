@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { Lang } from './lang'
-import { LANGS, LANGS_KEYS_EXP, LANGS_DEFAULT } from './lang.mock';
+import { LANGS, LANGS_KEYS_EXP, LANGS_DEFAULT } from './lang.values';
 import { TranslateService } from '../translate/translate.service';
 
 @Injectable()

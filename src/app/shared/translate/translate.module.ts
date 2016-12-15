@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
-import { TranslateService, TranslatePipe, TRANSLATION_PROVIDERS } from '../translate';
+import { TranslateService } from './translate.service';
+import { TranslatePipe } from './translate.pipe';
+import { TRANSLATION_PROVIDERS } from './translations';
 
 @NgModule({
   declarations: [
@@ -12,6 +14,4 @@ import { TranslateService, TranslatePipe, TRANSLATION_PROVIDERS } from '../trans
   ],
   exports: [TranslatePipe]
 })
-export class TranslateModule {
-
-}
+export class TranslateModule { }
