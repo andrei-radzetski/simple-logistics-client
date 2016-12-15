@@ -1,72 +1,61 @@
 /* HEADER */
+
 .sl-nav {
-
-    &.navbar {
-        margin-bottom: 0;
+  &.navbar {
+    margin-bottom: 0;
+  }
+  &.navbar-default {
+    background-color: $nav-bg-color;
+    border: none;
+    .navbar-brand {
+      color: $nav-text-color;
+      background-color: transparent;
+      &:hover,
+      &:focus {
+        color: $nav-text-color;
+        background-color: transparent;
+      }
     }
-    
-    &.navbar-default {
-        background-color: $nav-bg-color;
-        border: none;
-
-        .navbar-brand {
-            color: $nav-text-color;
-            background-color: transparent;
-            
-            &:hover, 
-            &:focus {
-                color: $nav-text-color;
-                background-color: transparent;
-            }
-        }
+  }
+  .navbar-nav {
+    &>li>a {
+      color: $nav-text-color;
+      background-color: transparent;
+      border-bottom: none;
+      &:hover,
+      &:focus {
+        color: $nav-text-color;
+        background-color: $nav-link-hover-color;
+        border-bottom: none;
+      }
     }
-
-    .navbar-nav {
-        & > li > a {
-            color: $nav-text-color;
-            background-color: transparent;
-            border-bottom: none;
-
-            &:hover,
-            &:focus {
-                color: $nav-text-color;
-                background-color: $nav-link-hover-color;
-                border-bottom: none;
-            }
-        }
-
-        & > .active > a,
-        & > .active > a:hover,
-        & > .active > a:focus {
-            color: $nav-text-color;
-            background-color: $nav-link-hover-color;
-            border-bottom: none;
-        }
+    &>.active>a,
+    &>.active>a:hover,
+    &>.active>a:focus {
+      color: $nav-text-color;
+      background-color: $nav-link-hover-color;
+      border-bottom: none;
     }
-
-    .navbar-collapse {
-        border-top: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
+  }
+  .navbar-collapse {
+    border-top: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .navbar-toggle {
+    border: none;
+    background-color: $nav-bg-color;
+    &:hover,
+    &:focus,
+    &.collapsed:hover {
+      background-color: $nav-link-hover-color;
     }
-
-    .navbar-toggle {
-        border: none;
-        background-color: $nav-bg-color;
-
-        &:hover,
-        &:focus,
-        &.collapsed:hover {
-            background-color: $nav-link-hover-color;
-        }
-
-        &.collapsed,
-        &.collapsed:focus {
-            background-color: $nav-bg-color;
-        }
-
-        .icon-bar {
-            background-color: $nav-text-color;
-        }
+    &.collapsed,
+    &.collapsed:focus {
+      background-color: $nav-bg-color;
     }
+    .icon-bar {
+      background-color: $nav-text-color;
+    }
+  }
 }

@@ -1,14 +1,13 @@
 /* HEADER */
+
 .sl-header {
   background-color: $header-bg-color;
   color: $header-text-color;
-
   h1 {
     font-size: 40px;
     margin-top: 0;
-    margin-bottom: 0; 
+    margin-bottom: 0;
   }
-
   h3 {
     font-weight: 300;
     font-size: 18px;
@@ -23,7 +22,6 @@
       h1 {
         font-size: 80px;
       }
-
       h3 {
         font-size: 24px;
       }

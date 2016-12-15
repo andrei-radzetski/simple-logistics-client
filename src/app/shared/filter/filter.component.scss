@@ -1,11 +1,11 @@
 /* FILTER */
-.sl-filter {
-    color: $main-text-color;
-    h3 {
-        font-weight: 300;
-    }
 
-    &.sl-contrast {
-        color: $contrast-color;
-    }
+.sl-filter {
+  color: $main-text-color;
+  h3 {
+    font-weight: 300;
+  }
+  &.sl-contrast {
+    color: $contrast-color;
+  }
 }
