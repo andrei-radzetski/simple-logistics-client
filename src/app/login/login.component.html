@@ -10,14 +10,19 @@
       <div class="col-md-4 col-md-offset-4">
         <form>
           <div class="form-group">
-            <label for="login">Login</label>
-            <input type="text" [(ngModel)]="model.username" name="username" id="login" class="form-control" placeholder="Login">
+            <label for="login">{{ 'page.login.login' | translate }}</label>
+            <input type="text" [(ngModel)]="model.username" name="username" id="login" class="form-control" placeholder="{{ 'page.login.login' | translate }}">
           </div>
           <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" [(ngModel)]="model.password" name="password" id="password" class="form-control" placeholder="Password">
+            <label for="password">{{ 'page.login.password' | translate }}</label>
+            <input type="password" [(ngModel)]="model.password" name="password" id="password" class="form-control" placeholder="{{ 'page.login.password' | translate }}">
           </div>
-          <button type="submit" [disabled]="submitted" class="btn sl-btn-contrast btn-block" (click)="onSubmit()">Login</button>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="remember" [(ngModel)]="model.remember"> {{ 'page.login.remember' | translate }}
+            </label>
+          </div>
+          <button type="submit" [disabled]="submitted" class="btn sl-btn-contrast btn-block" (click)="onSubmit()">{{ 'button.login' | translate }}</button>
         </form>
       </div>
     </div>

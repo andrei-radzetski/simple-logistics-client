@@ -43,6 +43,9 @@ export const LANG_EN_TRANS = {
 
   "page.login.title": "Login",
   "page.login.description": "Some text, which describes the section.",
+  "page.login.login": "Login",
+  "page.login.password": "Password",
+  "page.login.remember": "Remember me",
 
   "page.join.title": "Join",
   "page.join.description": "Some text, which describes the section.",

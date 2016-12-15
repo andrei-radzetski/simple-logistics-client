@@ -43,6 +43,9 @@ export const LANG_RU_TRANS = {
 
   "page.login.title": "Вход",
   "page.login.description": "Какой-то текст, который описывает раздел.",
+  "page.login.login": "Логин",
+  "page.login.password": "Пароль",
+  "page.login.remember": "Запомнить меня",
 
   "page.join.title": "Регистрация",
   "page.join.description": "Какой-то текст, который описывает раздел.",
