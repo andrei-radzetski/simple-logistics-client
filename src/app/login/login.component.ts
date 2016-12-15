@@ -3,6 +3,7 @@ import { AuthRequest } from '../shared/auth/auth.request';
 import { AuthService } from '../shared/auth/auth.service';
 import { Auth } from '../shared/auth/auth';
 import { RestResponse } from '../shared/rest/rest.response';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: 'app/login/',
@@ -14,14 +15,14 @@ export class LoginComponent {
   private authService: AuthService
   private model: AuthRequest
   private submitted: boolean;
+  private route: Router;
 
-  constructor(authService: AuthService) {
+  constructor(authService: AuthService, route: Router) {
     this.authService = authService;
     this.model = new AuthRequest();
     this.submitted = false;
+    this.route = route;
   }
-
-  // TODO: remove credential
 
   private onSubmit() {
     this.authService.login(this.model).subscribe(
@@ -30,10 +31,11 @@ export class LoginComponent {
   }
 
   private proccessSussess(res: RestResponse<Auth>) {
-    AuthService.setCredential(res.data.accessToken, res.data.expires);
+    this.route.navigate(['/profile']);
   }
 
   private proccessError(err: RestResponse<Auth>) {
-    AuthService.destroyCredential();
+    // TODO: proccess error
+    console.log(err.message);
   }
 }

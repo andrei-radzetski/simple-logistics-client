@@ -7,6 +7,7 @@ export class User implements RestModelFill {
   phone: string;
   firstName: string;
   secondName: string;
+  scope: string;
 
   fill(object: any): void {
     this.id = object.id;
@@ -14,6 +15,7 @@ export class User implements RestModelFill {
     this.phone = object.phone;
     this.firstName = object.firstName;
     this.secondName = object.secondName;
+    this.scope = object.scope;
   }
 
   getFullName(): string {

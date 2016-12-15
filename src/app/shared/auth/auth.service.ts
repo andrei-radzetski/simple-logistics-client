@@ -5,6 +5,8 @@ import { RestDataService } from '../rest/rest.dataService'
 import { AuthRequest } from './auth.request';
 import { Auth } from './auth';
 import { RestResponse } from '../rest/rest.response';
+import 'rxjs/add/operator/mergeMap'
+import 'rxjs/add/observable/of'
 
 @Injectable()
 export class AuthService extends RestDataService<Auth> {
@@ -18,19 +20,28 @@ export class AuthService extends RestDataService<Auth> {
   }
 
   login(model: AuthRequest): Observable<RestResponse<Auth>> {
-    return this.postForm('/login', model);
+    let ths = this;
+    return this.postForm('/login', model)
+      .flatMap((res: RestResponse<Auth>) => {
+        ths.setCredential(res.data.accessToken, res.data.expires);
+        return Observable.of(res);
+      });
   }
 
   logout(): Observable<RestResponse<Auth>> {
-    return this.getProtected('/logout');
+    let ths = this;
+    return this.getProtected('/logout').flatMap((res: RestResponse<Auth>) => {
+        ths.destroyCredential();
+        return Observable.of(res);
+      });
   }
 
-  static setCredential(token: string, expires: number) {
+  private setCredential(token: string, expires: number) {
     localStorage.setItem('access_token', token);
     localStorage.setItem('token_expires', expires.toString());
   }
 
-  static destroyCredential() {
+  private destroyCredential() {
     localStorage.removeItem('access_token');
     localStorage.removeItem('token_expires');
   }
