@@ -16,7 +16,8 @@ const profileRoutes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'info'
+        redirectTo: 'info',
+        pathMatch: 'full'
       },
       {
         path: 'info',
