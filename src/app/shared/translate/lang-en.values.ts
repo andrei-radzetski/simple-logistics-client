@@ -3,6 +3,9 @@ export const LANG_EN_NAME = 'en';
 export const LANG_EN_TRANS = {
   "appname": "Simple Logistics",
 
+  "button.save": "Save",
+  "button.login": "Login",
+
   "lang.ru": "Русский",
   "lang.en": "English",
 
@@ -51,11 +54,14 @@ export const LANG_EN_TRANS = {
   "page.profile.description": "Some text, which describes the section.",
   "page.profile.nav.info": "Info",
   "page.profile.nav.requests": "Requests",
+  "page.profile.nav.messages": "Messages",
   "page.profile.nav.settings": "Settings",
   "page.profile.info.email": "Email",
   "page.profile.info.phone": "Phone",
   "page.profile.info.country": "Country",
   "page.profile.info.city": "City",
   "page.profile.info.language": "Language",
-  "page.profile.info.additional": "Additional information"
+  "page.profile.info.additional": "Additional information",
+  "page.profile.settings.firstName": "First name",
+  "page.profile.settings.secondName": "Second name"
 }

@@ -3,6 +3,9 @@ export const LANG_RU_NAME = 'ru';
 export const LANG_RU_TRANS = {
   "appname": "Simple Logistics",
 
+  "button.save": "Сохранить",
+  "button.login": "Войти",
+
   "lang.ru": "Русский",
   "lang.en": "English",
 
@@ -51,12 +54,15 @@ export const LANG_RU_TRANS = {
   "page.profile.description": "Какой-то текст, который описывает раздел.",
   "page.profile.nav.info": "Информация",
   "page.profile.nav.requests": "Запросы",
+  "page.profile.nav.messages": "Сообщения",
   "page.profile.nav.settings": "Настройки",
   "page.profile.info.email": "Почта",
   "page.profile.info.phone": "Телефон",
   "page.profile.info.country": "Страна",
   "page.profile.info.city": "Город",
   "page.profile.info.language": "Язык",
-  "page.profile.info.additional": "Дополнительная информация"
+  "page.profile.info.additional": "Дополнительная информация",
+  "page.profile.settings.firstName": "Имя",
+  "page.profile.settings.secondName": "Фамилия"
   
 }

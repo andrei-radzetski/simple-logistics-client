@@ -21,6 +21,7 @@
     }
     &.active {
       border-right: 4px solid $profile-nav-item-active-marker-color;
+      color: $profile-nav-item-active-text-color;
     }
   }
 }

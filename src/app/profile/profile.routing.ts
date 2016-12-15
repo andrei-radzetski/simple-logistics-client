@@ -4,6 +4,7 @@ import { ProfileComponent } from './profile.component';
 import { ProfileInfoComponent } from './info/profile.info.component';
 import { ProfileSettingsComponent } from './settings/profile.settings.component';
 import { ProfileRequestsComponent } from './requests/profile.requests.component';
+import { ProfileMessagesComponent } from './messages/profile.messages.component';
 
 const profileRoutes: Routes = [
   {
@@ -19,12 +20,16 @@ const profileRoutes: Routes = [
         component: ProfileInfoComponent
       },
       {
-        path: 'settings',
-        component: ProfileSettingsComponent
-      },
-      {
         path: 'requests',
         component: ProfileRequestsComponent
+      },
+      {
+        path: 'messages',
+        component: ProfileMessagesComponent
+      },
+      {
+        path: 'settings',
+        component: ProfileSettingsComponent
       }
     ]
   }
