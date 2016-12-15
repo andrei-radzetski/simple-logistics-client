@@ -45,6 +45,15 @@ body {
     background-color: $secondary-color;
     color: $contrast-color;
   }
+  &:focus,
+  &.focus {
+    background-color: $main-btn-bg-color;
+    color: $contrast-color;
+  }
+  &:active {
+    background-color: $secondary-color;
+    color: $contrast-color;
+  }
 }
 
 .content.container {

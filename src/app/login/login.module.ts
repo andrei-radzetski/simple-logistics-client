@@ -5,6 +5,7 @@ import { LoginComponent } from './login.component';
 import { loginRouting } from './login.routing';
 import { TranslateModule } from '../shared/translate/translate.module';
 import { AuthModule } from '../shared/auth/auth.module';
+import { RouteCanActiveUnauthorized } from '../shared/route/route.canActiveUnauthorized';
 
 @NgModule({
   imports: [
@@ -16,6 +17,9 @@ import { AuthModule } from '../shared/auth/auth.module';
   ],
   declarations: [
     LoginComponent
+  ],
+  providers: [
+    RouteCanActiveUnauthorized
   ]
 })
 export class LoginModule { }

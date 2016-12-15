@@ -9,6 +9,7 @@ import { ProfileInfoComponent } from './info/profile.info.component';
 import { ProfileSettingsComponent } from './settings/profile.settings.component';
 import { ProfileRequestsComponent } from './requests/profile.requests.component';
 import { ProfileMessagesComponent } from './messages/profile.messages.component';
+import { RouteCanActiveAuthorized } from '../shared/route/route.canActiveAuthorized';
 
 @NgModule({
   imports: [
@@ -24,6 +25,9 @@ import { ProfileMessagesComponent } from './messages/profile.messages.component'
     ProfileSettingsComponent,
     ProfileRequestsComponent,
     ProfileMessagesComponent
+  ], 
+  providers: [
+    RouteCanActiveAuthorized
   ]
 })
 export class ProfileModule { }
