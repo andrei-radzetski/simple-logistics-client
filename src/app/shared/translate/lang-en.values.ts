@@ -51,5 +51,11 @@ export const LANG_EN_TRANS = {
   "page.profile.description": "Some text, which describes the section.",
   "page.profile.nav.info": "Info",
   "page.profile.nav.requests": "Requests",
-  "page.profile.nav.settings": "Settings"
+  "page.profile.nav.settings": "Settings",
+  "page.profile.info.email": "Email",
+  "page.profile.info.phone": "Phone",
+  "page.profile.info.country": "Country",
+  "page.profile.info.city": "City",
+  "page.profile.info.language": "Language",
+  "page.profile.info.additional": "Additional information"
 }

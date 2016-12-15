@@ -51,5 +51,12 @@ export const LANG_RU_TRANS = {
   "page.profile.description": "Какой-то текст, который описывает раздел.",
   "page.profile.nav.info": "Информация",
   "page.profile.nav.requests": "Запросы",
-  "page.profile.nav.settings": "Настройки"
+  "page.profile.nav.settings": "Настройки",
+  "page.profile.info.email": "Почта",
+  "page.profile.info.phone": "Телефон",
+  "page.profile.info.country": "Страна",
+  "page.profile.info.city": "Город",
+  "page.profile.info.language": "Язык",
+  "page.profile.info.additional": "Дополнительная информация"
+  
 }

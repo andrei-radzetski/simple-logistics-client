@@ -10,14 +10,29 @@ import { RestResponse } from '../../shared/rest/rest.response';
 })
 export class ProfileInfoComponent implements OnInit {
 
-  // TODO: translations
-
   private userService: UserService;
   private user: User;
-  private error: boolean;
 
   constructor(userService: UserService) {
     this.userService = userService;
+  }
+
+  private getProfileData() {
+    this.userService.getProfileData().subscribe(
+      (res: RestResponse<User>) => this.proccessSussess(res),
+      (err: RestResponse<User>) => this.proccessError(err));
+  }
+
+  private proccessSussess(res: RestResponse<User>) {
+    this.user = res.data;
+  }
+
+  private proccessError(err: RestResponse<User>) {
+    this.user = undefined;
+  }
+
+  ngOnInit() {
+    this.getProfileData();
   }
 
   getFullName(): string {
@@ -32,24 +47,24 @@ export class ProfileInfoComponent implements OnInit {
     return this.user ? this.user.phone : '';
   }
 
-  private getProfileData() {
-    this.userService.getProfileData().subscribe(
-      (res: RestResponse<User>) => this.proccessSussess(res),
-      (err: RestResponse<User>) => this.proccessError(err));
+  // TODO: remove hard code
+  getCountry(): string {
+    return 'Беларусь';
   }
 
-  private proccessSussess(res: RestResponse<User>) {
-    this.error = false;
-    this.user = res.data;
+  // TODO: remove hard code
+  getCity(): string {
+    return 'Гродно';
   }
 
-  private proccessError(err: RestResponse<User>) {
-    this.error = true;
-    this.user = undefined;
+  // TODO: remove hard code
+  getLanguage() {
+    return 'Русский';
   }
 
-  ngOnInit() {
-    this.getProfileData();
+  // TODO: remove hard code
+  getAdditionalInfo() {
+    return 'Какае-то длинная дополнительная информация о текущем пользователе ресурса.';
   }
 
 }
