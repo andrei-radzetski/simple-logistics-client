@@ -5,6 +5,7 @@ import { RestDataService } from '../rest/rest.dataService'
 import { AuthRequest } from './auth.request';
 import { Auth } from './auth';
 import { RestResponse } from '../rest/rest.response';
+import { RestCreator } from '../rest/rest.creator';
 import 'rxjs/add/operator/mergeMap'
 import 'rxjs/add/observable/of'
 
@@ -15,8 +16,12 @@ export class AuthService extends RestDataService<Auth> {
     super(http);
   }
 
-  getCreator(): { new (): Auth; } {
-    return Auth;
+  getCreator(): RestCreator<Auth> {
+    return { create: (): Auth => new Auth() };
+  }
+
+  getArrayCreator(): RestCreator<Array<Auth>> {
+    return { create: (): Array<Auth> => new Array<Auth>() };
   }
 
   login(model: AuthRequest): Observable<RestResponse<Auth>> {
@@ -31,9 +36,9 @@ export class AuthService extends RestDataService<Auth> {
   logout(): Observable<RestResponse<Auth>> {
     let ths = this;
     return this.getProtected('/logout').flatMap((res: RestResponse<Auth>) => {
-        ths.destroyCredential();
-        return Observable.of(res);
-      });
+      ths.destroyCredential();
+      return Observable.of(res);
+    });
   }
 
   private setCredential(token: string, expires: number) {

@@ -5,6 +5,7 @@ import { profileRouting } from './profile.routing';
 import { TranslateModule } from '../shared/translate/translate.module';
 import { UserModule } from '../shared/user/user.module';
 import { AuthModule } from '../shared/auth/auth.module';
+import { DictionaryModule } from '../shared/dictionary/dictionary.module';
 import { ProfileComponent } from './profile.component';
 import { ProfileInfoComponent } from './info/profile.info.component';
 import { ProfileSettingsComponent } from './settings/profile.settings.component';
@@ -19,7 +20,8 @@ import { RouteCanActiveAuthorized } from '../shared/route/route.canActiveAuthori
     HeaderModule,
     TranslateModule,
     UserModule,
-    AuthModule
+    AuthModule,
+    DictionaryModule
   ],
   declarations: [
     ProfileComponent,

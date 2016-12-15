@@ -1,45 +1,64 @@
 import { Response } from '@angular/http';
 import { RestModelFill } from './rest.modelFill';
+import { RestCreator } from './rest.creator';
 
 export class RestResponse<T extends RestModelFill> {
 
-  original: Response;
-  error: boolean;
-  data: T;
-  message: string;
-  code: number;
-  internalCode: number;
+  public original: Response;
+  public error: boolean;
+  public data: T;
+  public message: string;
+  public code: number;
+  public internalCode: number;
 
-  constructor(original: Response, creator: { new (): T; }) {
+  protected creator: RestCreator<T>;
+
+  constructor(original: Response, creator: RestCreator<T>) {
     this.original = original;
     this.error = false;
-    this.proccess(creator);
+    this.creator = creator;
+    this.proccess();
   }
 
   /**
    * Proccess original response. 
    */
-  private proccess(creator: { new (): T; }): void {
+  private proccess(): void {
     let jsonData = this.original.json();
     this.code = this.original.status;
 
     if (!this.original.ok && jsonData == null) {
-      this.message = this.original.statusText;
-      this.error = true;
-      return;
+      return this.fillGlobalError(this.original);
     }
 
     if (!this.original.ok && jsonData.error) {
-      this.error = true;
-      this.internalCode = jsonData.internalCode;
-      this.message = jsonData.message;
+      this.fillError(jsonData);
     } else if (jsonData.response) {
-      this.data = new creator();
-      this.data.fill(jsonData.response);
-      this.error = false;
-    } else {
-      this.error = false;
-    }
+      this.createNewObject();
+      this.fillData(jsonData.response)
+    } 
+      
+    this.error = false;
+  }
+
+  protected fillData(rawData: any): void {
+    this.data.fill(rawData);
+    this.error = false;
+  }
+
+  protected fillError(rawData: any): void {
+    this.error = rawData.error;
+    this.internalCode = rawData.internalCode;
+    this.message = rawData.message;
+  }
+
+  protected fillGlobalError(res: Response): void {
+    this.message = res.statusText;
+    this.error = !res.ok;
+  }
+
+  protected createNewObject(): void {
+    this.data = this.creator.create()
   }
 
 }
