@@ -34,7 +34,7 @@ export class RestHttp extends Http {
   /**
    * Catch http error.
    * If it is the status 401 - destroy credential. 
-   * If InternalCode isn't 20001 or 20002, redirect to login page.
+   * If InternalCode isn't 40001 or 40002, redirect to login page.
    */
   private catchError(self: RestHttp) {
     return (err: Response): Observable<Response> => {
@@ -49,7 +49,7 @@ export class RestHttp extends Http {
   }
 
   /**
-   * Check internalCode 20001 or 20002.
+   * Check internalCode 40001 or 40002.
    * 20001 - user not found (only with authorization).
    * 20002 - password is wrong (only with authorization).
    */
@@ -59,7 +59,7 @@ export class RestHttp extends Http {
     }
 
     let body = err.json();
-    return body != null && (body.internalCode === 20001 || body.internalCode === 20002);
+    return body != null && (body.internalCode === 40001 || body.internalCode === 40002);
   }
 
 }
