@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
 import { DictionaryService } from './dictionary.service';
+import { RestModule } from '../rest/rest.module';
 
 @NgModule({
   imports: [
-    HttpModule
+    RestModule
   ],
   providers: [
     DictionaryService

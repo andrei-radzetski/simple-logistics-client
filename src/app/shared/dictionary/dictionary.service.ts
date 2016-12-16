@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { RestHttp } from '../rest/rest.http';
 import { Observable } from 'rxjs/Observable';
 import { RestService } from '../rest/rest.service';
 import { RestResponseArray } from '../rest/rest.responseArray';
@@ -8,7 +8,7 @@ import { Dictionary } from './dictionary';
 @Injectable()
 export class DictionaryService extends RestService<Dictionary> {
 
-  constructor(http: Http) {
+  constructor(http: RestHttp) {
     super(http, { create: (): Dictionary => new Dictionary() });
   }
 

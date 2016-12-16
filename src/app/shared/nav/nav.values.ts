@@ -1,17 +1,17 @@
 import { Nav } from './nav';
 import { NavElementState } from './nav.elemetnState';
-import { AuthService } from '../auth/auth.service';
+import { RestCredential } from '../rest/rest.credential';
 
 
 let visibleAuthorized = {
   visible: (): boolean => {
-    return AuthService.isAuthorized();
+    return RestCredential.isAuthorized();
   }
 }
 
 let visibleUnauthorized = {
   visible: (): boolean => {
-    return !AuthService.isAuthorized();
+    return !RestCredential.isAuthorized();
   }
 }
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { RestHttp } from '../rest/rest.http';
 import { Observable } from 'rxjs/Observable';
 import { RestService } from '../rest/rest.service';
 import { RestResponseObject } from '../rest/rest.responseObject';
@@ -8,7 +8,7 @@ import { User } from './user';
 @Injectable()
 export class UserService extends RestService<User> {
 
-  constructor(http: Http) {
+  constructor(http: RestHttp) {
     super(http, { create: (): User => new User() });
   }
 

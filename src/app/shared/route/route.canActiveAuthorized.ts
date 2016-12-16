@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from '../auth/auth.service';
+import { RestCredential } from '../rest/rest.credential';
 
 @Injectable()
 export class RouteCanActiveAuthorized implements CanActivate, CanActivateChild {
@@ -13,7 +13,7 @@ export class RouteCanActiveAuthorized implements CanActivate, CanActivateChild {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if(AuthService.isAuthorized()) {
+    if(RestCredential.isAuthorized()) {
       return true;
     } else {
       this.router.navigate(['/login']);
@@ -22,7 +22,7 @@ export class RouteCanActiveAuthorized implements CanActivate, CanActivateChild {
   }
 
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if(AuthService.isAuthorized()) {
+    if(RestCredential.isAuthorized()) {
       return true;
     } else {
       this.router.navigate(['/login']);
