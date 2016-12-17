@@ -50,6 +50,9 @@ export const LANG_EN_TRANS = {
   "page.users.title": "Users",
   "page.users.description": "Some text, which describes the section.",
 
+  "page.apply.title": "Add request",
+  "page.apply.description": "Some text, which describes the section.",
+
   "page.login.title": "Login",
   "page.login.description": "Some text, which describes the section.",
   "page.login.login": "Login",

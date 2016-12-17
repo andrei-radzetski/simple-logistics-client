@@ -50,6 +50,9 @@ export const LANG_RU_TRANS = {
   "page.users.title": "Пользователи",
   "page.users.description": "Какой-то текст, который описывает раздел.",
 
+  "page.apply.title": "Добавить заявку",
+  "page.apply.description": "Какой-то текст, который описывает раздел.",
+
   "page.login.title": "Вход",
   "page.login.description": "Какой-то текст, который описывает раздел.",
   "page.login.login": "Логин",
