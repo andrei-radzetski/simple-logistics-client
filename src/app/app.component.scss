@@ -1,4 +1,5 @@
 @import 'app.variable.scss';
+@import 'app.mixins.scss';
 html {
   position: relative;
   min-height: 100%;
@@ -9,7 +10,7 @@ body {
 }
 
 .masthead {
-  background-color: $main-masthead-bg-color;
+  background-color: $masthead-bg-color;
   padding-top: $masthead-padding;
   padding-bottom: $masthead-padding;
 }
@@ -25,40 +26,118 @@ body {
   }
 }
 
-.form-control {
-  border: 1px solid $secondary-color;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  &:focus {
-    border-color: #7986cb;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(121, 134, 203, .7);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(121, 134, 203, .7);
+.sl-label {
+  color: $text-color;
+  &.sl-error {
+    color: $error-color;
   }
 }
 
-.sl-btn-contrast {
-  background-color: $main-btn-bg-color;
-  color: $contrast-color;
-  border: 1px solid $contrast-color;
-  &:hover {
-    background-color: $secondary-color;
-    color: $contrast-color;
+.form-control {
+  border: 1px solid $input-border-color;
+  outline: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  &:focus {
+    border-color: $input-active-border-color;
+    outline: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
   }
-  &:focus,
-  &.focus {
-    background-color: $main-btn-bg-color;
-    color: $contrast-color;
-  }
-  &:active {
-    background-color: $secondary-color;
-    color: $contrast-color;
+  &.sl-error {
+    border: 1px solid $error-color;
+    color: $error-color;
+    &:focus {
+      border-color: $error-color;
+      color: $error-color;
+    }
   }
 }
+
+//---------------------------------------------
+//-----------------BUTTON----------------------
+//---------------------------------------------
+.btn {
+  &:hover,
+  &:focus,
+  &:active,
+  &.hover,
+  &.focus,
+  &.active {
+    outline: 0;
+    outline-offset: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+      outline-offset: 0;
+      -webkit-box-shadow: 0 0 10px $focus-shadow-color;
+      -moz-box-shadow: 0 0 10px $focus-shadow-color;
+      -ms-box-shadow: 0 0 10px $focus-shadow-color;
+      -o-box-shadow: 0 0 10px $focus-shadow-color;
+      box-shadow: 0 0 10px $focus-shadow-color;
+    }
+  }
+}
+
+@include sl-button('primary', $primary-color, $on-primary-color, $primary-deep-color);
+@include sl-button('green', $green-color, $on-green-color, $green-deep-color);
+@include sl-button('error', $error-color, $on-error-color, $error-deep-color);
+//---------------------------------------------
+//---------------BUTTON-END--------------------
+//---------------------------------------------
+
+//---------------------------------------------
+//-----------------TAG-PANEL-------------------
+//---------------------------------------------
+a.sl-tag {
+  text-decoration: none;
+}
+
+.sl-tag-panel {
+  border-radius: 0px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: $main-padding;
+  .panel-body {
+    padding: $main-padding $main-padding 0px $main-padding;
+    font-weight: bold;
+    text-align: center;
+    font-size: 100px;
+  }
+  .panel-footer {
+    padding: 0px 5px $main-padding 5px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}
+
+@include sl-tag-panel('purple', $purple-color, $on-purple-color, $purple-deep-color);
+@include sl-tag-panel('teal', $teal-color, $on-teal-color, $teal-deep-color);
+@include sl-tag-panel('brown', $brown-color, $on-brown-color, $brown-deep-color);
+@include sl-tag-panel('light-blue', $light-blue-color, $on-light-blue-color, $light-blue-deep-color);
+@include sl-tag-panel('cyan', $cyan-color, $on-cyan-color, $cyan-deep-color);
+//---------------------------------------------
+//---------------TAG-PANEL-END-----------------
+//---------------------------------------------
 
 .content.container {
   padding-top: $main-padding;
   padding-bottom: $main-padding;
+  &.no-bottom {
+    padding-bottom: 0;
+  }
+}
+
+.row.no-bottom {
+  margin-bottom: 0px;
 }
 
 @import 'shared/nav/nav.component.scss';

@@ -1,6 +1,7 @@
 import { RestObject } from '../rest/rest.object';
+import { RestRequest } from '../rest/rest.request';
 
-export class User extends RestObject {
+export class User extends RestObject implements RestRequest {
 
   email: string;
   phone: string;
@@ -29,6 +30,10 @@ export class User extends RestObject {
 
   getFullName(): string {
     return this.firstName + ' ' + this.secondName;
+  }
+
+  toRequest(): string {
+    return JSON.stringify(this);
   }
 
 }

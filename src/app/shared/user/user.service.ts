@@ -16,4 +16,8 @@ export class UserService extends RestService<User> {
     return this.getOne('/profile');
   }
 
+  updateProfileDate(model: User): Observable<RestResponseObject<User>> {
+    return this.putOne('/profile', model);
+  }
+
 }

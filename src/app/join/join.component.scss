@@ -1,1 +1,35 @@
 /* JOIN */
+
+.sl-join {
+  .row {
+    &.no-bottom {
+      margin-bottom: 0px;
+    }
+    margin-bottom: $main-padding;
+    div:first-child:not(.row) {
+      margin-bottom: 7px;
+      margin-top: 7px;
+    }
+    &.no-bottom div:first-child:not(.row) {
+      margin-bottom: 0px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.el-more-970-visible {
+  display: none;
+}
+
+.el-more-970-invisible {
+  display: inherit;
+}
+
+@media (min-width: 970px) {
+  .el-more-970-visible {
+    display: inherit;
+  }
+  .el-more-970-invisible {
+    display: none;
+  }
+}

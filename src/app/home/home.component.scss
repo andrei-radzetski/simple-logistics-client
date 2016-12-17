@@ -1,1 +1,29 @@
 /* HOME */
+
+.sl-home {
+  .container.content {
+    padding-top: 0px;
+  }
+  .sl-tag-panel.panel {
+    margin-bottom: 0px;
+  }
+  .sl-tag-col {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .sl-home {
+    .container.content {
+      padding-top: $main-padding;
+    }
+    .sl-tag-panel.panel {
+      margin-bottom: $main-padding;
+    }
+    .sl-tag-col {
+      padding-right: $main-padding;
+      padding-left: $main-padding;
+    }
+  }
+}

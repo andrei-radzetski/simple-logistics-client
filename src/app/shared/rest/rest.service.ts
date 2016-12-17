@@ -52,6 +52,18 @@ export abstract class RestService<T extends RestObject> {
   }
 
   /**
+   * Create request options for put method.
+   * Add json header.
+   * 
+   * @returns {RequestOptions}
+   */
+  private getPutRequestOptions(): RequestOptions {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return new RequestOptions({ headers: headers });
+  }
+
+  /**
    * Call GET method. Expects only single object as response.
    * 
    * @param {string} url - service url.
@@ -98,5 +110,22 @@ export abstract class RestService<T extends RestObject> {
       .map((res: Response) => new RestResponseObject(res, this.creator))
       .catch((err: Response) => Observable.throw(new RestResponseError(err)));
   }
+
+  /**
+   * Call PUT method. Expects only single object as response.
+   * 
+   * @param {string} url - service url.
+   * @param {RestRequest} model - body.
+   * @returns {Observable<RestResponseObject<T>>}
+   */
+  putOne(url: string, model: RestRequest): Observable<RestResponseObject<T>> {
+    let options = this.getPutRequestOptions();
+    url = RestService.API + url;
+
+    return this.http.put(url, model.toRequest(), options)
+      .map((res: Response) => new RestResponseObject(res, this.creator))
+      .catch((err: Response) => Observable.throw(new RestResponseError(err)));
+  }
+
 
 }

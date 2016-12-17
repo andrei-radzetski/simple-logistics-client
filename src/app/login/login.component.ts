@@ -37,4 +37,8 @@ export class LoginComponent {
     console.log(err.message);
   }
 
+  private gotoSignup(){
+    this.route.navigate(['/join']);
+  }
+
 }

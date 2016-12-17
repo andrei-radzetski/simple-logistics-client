@@ -4,27 +4,58 @@ $screen-lg-min:                         1200px !default;
 
 /* MAIN */
 $main-padding:                          15px !default;
-
-$main-masthead-bg-color:              #3F51B5 !default;
-$masthead-padding:                      $main-padding !default;
-$masthead-padding-sm:                   70px !default;
-$main-btn-bg-color:                   #3F51B5 !default; 
-
-$secondary-color:                     #303F9F !default;
-$main-dark-color:                     #1a237e !default;
-$contrast-color:                      #ffffff !default;
-$main-text-color:                     #333333 !default;
 $body-shift:                            140px !default;
 
+$text-color:                          #333333 !default;
+$focus-shadow-color:                  #3B99FC !default;
+
+$primary-color:                       #3F51B5 !default;
+$primary-deep-color:                  #303F9F !default;
+$on-primary-color:                    #fff !default;
+
+$green-color:                         #43A047 !default;
+$green-deep-color:                    #2E7D32 !default;
+$on-green-color:                      #fff !default;
+
+$purple-color:                        #673AB7 !default;
+$purple-deep-color:                   #512DA8 !default;
+$on-purple-color:                     #fff !default;
+
+$teal-color:                          #009688 !default;
+$teal-deep-color:                     #00796B !default;
+$on-teal-color:                       #fff !default;
+
+$brown-color:                         #795548 !default;
+$brown-deep-color:                    #5D4037 !default;
+$on-brown-color:                      #fff !default;
+
+$light-blue-color:                    #039BE5 !default;
+$light-blue-deep-color:               #0277BD !default;
+$on-light-blue-color:                 #fff !default;
+
+$cyan-color:                          #00ACC1 !default;
+$cyan-deep-color:                     #00838F !default;
+$on-cyan-color:                       #fff !default;
+
+$error-color:                         #F44336 !default;
+$error-deep-color:                    #D32F2F !default;
+$on-error-color:                      #fff !default;
+
+$masthead-bg-color:                     $primary-color !default;
+$masthead-padding:                      $main-padding !default;
+$masthead-padding-sm:                   40px !default;
+
+$input-border-color:                  #CCC !default;
+$input-active-border-color:           #C5CAE9 !default;
 
 /* NAV VARIABLES */
 $nav-bg-color:                        #ffffff !default;
-$nav-text-color:                      $secondary-color !default;
+$nav-text-color:                        $primary-deep-color !default;
 $nav-link-hover-color:                #f9f9f9 !default;
 
 /* HEADER VARIABLES */
-$header-bg-color:                     #3F51B5 !default;
-$header-text-color:                   #ffffff !default;
+$header-bg-color:                       $primary-color !default;
+$header-text-color:                     $on-primary-color !default;
 
 /* FOOTER VARIABLES */
 $footer-heigth:                         $body-shift !default;
@@ -38,6 +69,6 @@ $footer-link-color:                     #f5f5f5 !default;
 
 /* PROFILE */
 $profile-nav-item-text-color:           #757575 !default;
-$profile-nav-item-active-text-color:    $secondary-color !default;
-$profile-nav-item-active-marker-color:  $secondary-color !default;
+$profile-nav-item-active-text-color:    $primary-deep-color !default;
+$profile-nav-item-active-marker-color:  $primary-deep-color !default;
 $profile-info-item-bottom-margin:       10px !default;

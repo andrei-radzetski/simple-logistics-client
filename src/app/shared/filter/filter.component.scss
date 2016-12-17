@@ -1,11 +1,8 @@
 /* FILTER */
 
 .sl-filter {
-  color: $main-text-color;
-  h3 {
+  h3.sl-on-primiry {
+    color: $on-primary-color;
     font-weight: 300;
-  }
-  &.sl-contrast {
-    color: $contrast-color;
   }
 }

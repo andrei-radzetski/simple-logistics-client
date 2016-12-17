@@ -5,6 +5,7 @@ export const LANG_RU_TRANS = {
 
   "button.save": "Сохранить",
   "button.login": "Войти",
+  "button.signup": "Зарегистрироваться",
 
   "lang.ru": "Русский",
   "lang.en": "English",
@@ -37,6 +38,10 @@ export const LANG_RU_TRANS = {
 
   "page.home.title": "Simple Logistics",
   "page.home.description": "Какой-то текст, который описывает проект.",
+  "page.home.tag.addRequest": "Добавить заявку",
+  "page.home.tag.findRequest": "Найти заявку",
+  "page.home.tag.findUser": "Найти пользователя",
+  "page.home.tag.about": "О системе",
 
   "page.about.title": "О системе",
   "page.about.description": "Какой-то текст, который описывает раздел.",
@@ -49,6 +54,13 @@ export const LANG_RU_TRANS = {
 
   "page.join.title": "Регистрация",
   "page.join.description": "Какой-то текст, который описывает раздел.",
+  "page.join.info": "Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел.",
+  "page.join.firstName": "Имя",
+  "page.join.secondName": "Фамилия",
+  "page.join.email": "Почта",
+  "page.join.phone": "Телефон",
+  "page.join.password": "Пароль",
+  "page.join.passwordRepeat": "Повторите пароль",
 
   "page.search.title": "Поиск",
   "page.search.description": "Какой-то текст, который описывает раздел.",

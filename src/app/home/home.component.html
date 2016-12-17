@@ -12,7 +12,48 @@
       </div>
     </div>
   </div>
-  <div class="container">
-    Home
+  <div class="container content no-bottom">
+    <div class="row">
+      <div class="col-sm-3 sl-tag-col">
+        <a class="sl-tag" routerLink="/search">
+          <div class="panel panel-default sl-tag-panel sl-tag-panel-purple">
+            <div class="panel-body">
+              <span class="glyphicon glyphicon-pencil" aria-hidden="false"></span>
+            </div>
+            <div class="panel-footer">{{ 'page.home.tag.addRequest' | translate }}</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-3 sl-tag-col">
+        <a class="sl-tag" routerLink="/about">
+          <div class="panel panel-default sl-tag-panel sl-tag-panel-teal">
+            <div class="panel-body">
+              <span class="glyphicon glyphicon-map-marker" aria-hidden="false"></span>
+            </div>
+            <div class="panel-footer">{{ 'page.home.tag.findRequest' | translate }}</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-3 sl-tag-col">
+        <a class="sl-tag" routerLink="/about">
+          <div class="panel panel-default sl-tag-panel sl-tag-panel-light-blue">
+            <div class="panel-body">
+              <span class="glyphicon glyphicon-user" aria-hidden="false"></span>
+            </div>
+            <div class="panel-footer">{{ 'page.home.tag.findUser' | translate }}</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-3 sl-tag-col">
+        <a class="sl-tag" routerLink="/about">
+          <div class="panel panel-default sl-tag-panel sl-tag-panel-cyan">
+            <div class="panel-body">
+              <span class="glyphicon glyphicon-info-sign" aria-hidden="false"></span>
+            </div>
+            <div class="panel-footer">{{ 'page.home.tag.about' | translate }}</div>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 </div>

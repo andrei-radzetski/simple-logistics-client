@@ -51,7 +51,9 @@ export class ProfileSettingsComponent implements OnInit {
   }
 
   save() {
-    console.log(this.user);
+    this.userService.updateProfileDate(this.user).subscribe(
+      (res: RestResponseObject<User>) => this.user = res.object,
+      (err: RestResponseError) => console.error(err.message));
   }
 
 }

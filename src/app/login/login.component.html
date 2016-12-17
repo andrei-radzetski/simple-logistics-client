@@ -22,8 +22,11 @@
               <input type="checkbox" name="remember" [(ngModel)]="model.remember"> {{ 'page.login.remember' | translate }}
             </label>
           </div>
-          <button type="submit" [disabled]="submitted" class="btn sl-btn-contrast btn-block" (click)="onSubmit()">{{ 'button.login' | translate }}</button>
+          <button type="submit" [disabled]="submitted" class="btn sl-btn-primary btn-block" (click)="onSubmit()">{{ 'button.login' | translate }}</button>
         </form>
+        <div class="signup-cotainer">
+          <button class="btn sl-btn-green btn-block" (click)="gotoSignup()">{{ 'button.signup' | translate }}</button>
+        </div>
       </div>
     </div>
   </div>

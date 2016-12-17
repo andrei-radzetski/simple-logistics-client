@@ -5,6 +5,7 @@ export const LANG_EN_TRANS = {
 
   "button.save": "Save",
   "button.login": "Login",
+  "button.signup": "Sign up",
 
   "lang.ru": "Русский",
   "lang.en": "English",
@@ -37,6 +38,10 @@ export const LANG_EN_TRANS = {
 
   "page.home.title": "Simple Logistics",
   "page.home.description": "Some text, which describes the project.",
+  "page.home.tag.addRequest": "Add request",
+  "page.home.tag.findRequest": "Find request",
+  "page.home.tag.findUser": "Find user",
+  "page.home.tag.about": "About system",
 
   "page.about.title": "About",
   "page.about.description": "Some text, which describes the section.",
@@ -49,6 +54,13 @@ export const LANG_EN_TRANS = {
 
   "page.join.title": "Join",
   "page.join.description": "Some text, which describes the section.",
+  "page.join.info": "Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.",
+  "page.join.firstName": "First name",
+  "page.join.secondName": "Second name",
+  "page.join.email": "Email",
+  "page.join.phone": "Phone",
+  "page.join.password": "Password",
+  "page.join.passwordRepeat": "Repeat password",
 
   "page.search.title": "Search",
   "page.search.description": "Some text, which describes the section.",
