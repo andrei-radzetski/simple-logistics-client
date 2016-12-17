@@ -13,6 +13,7 @@ export const LANG_RU_TRANS = {
   "nav.home": "Главная",
   "nav.about": "О системе",
   "nav.requests": "Запросы",
+  "nav.users": "Пользователи",
   "nav.signin": "Вход",
   "nav.signup": "Регистрация",
   "nav.profile": "Профиль",
@@ -45,6 +46,9 @@ export const LANG_RU_TRANS = {
 
   "page.about.title": "О системе",
   "page.about.description": "Какой-то текст, который описывает раздел.",
+
+  "page.users.title": "Пользователи",
+  "page.users.description": "Какой-то текст, который описывает раздел.",
 
   "page.login.title": "Вход",
   "page.login.description": "Какой-то текст, который описывает раздел.",

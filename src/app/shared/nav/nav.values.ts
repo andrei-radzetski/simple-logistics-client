@@ -24,6 +24,7 @@ let visibleAny = {
 export const LINKS: Nav[] = [
   new Nav(1, 'home', 'nav.home', true, /^\/$|\/home/, visibleAny),
   new Nav(2, 'requests', 'nav.requests', true, /^\/requests/, visibleAny),
+  new Nav(2, 'users', 'nav.users', true, /^\/users/, visibleAny),
   new Nav(3, 'about', 'nav.about', true, /^\/about/, visibleAny),
   new Nav(4, 'login', 'nav.signin', false, /^\/login/, visibleUnauthorized),
   new Nav(5, 'join', 'nav.signup', false, /^\/join/, visibleUnauthorized),

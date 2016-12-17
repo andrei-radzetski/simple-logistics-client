@@ -13,6 +13,7 @@ export const LANG_EN_TRANS = {
   "nav.home": "Home",
   "nav.about": "About",
   "nav.requests": "Requests",
+  "nav.users": "Users",
   "nav.signin": "Sign in",
   "nav.signup": "Sign up",
   "nav.profile": "Profile",
@@ -45,6 +46,9 @@ export const LANG_EN_TRANS = {
 
   "page.about.title": "About",
   "page.about.description": "Some text, which describes the section.",
+
+  "page.users.title": "Users",
+  "page.users.description": "Some text, which describes the section.",
 
   "page.login.title": "Login",
   "page.login.description": "Some text, which describes the section.",

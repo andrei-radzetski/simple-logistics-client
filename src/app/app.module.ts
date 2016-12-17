@@ -9,6 +9,7 @@ import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
 import { JoinModule } from './join/join.module';
 import { RequestsModule } from './requests/requests.module';
+import { UsersModule } from './users/users.module';
 import { ProfileModule } from './profile/profile.module';
 import { TranslateModule } from './shared/translate/translate.module';
 
@@ -20,6 +21,7 @@ import { TranslateModule } from './shared/translate/translate.module';
     LoginModule,
     JoinModule,
     RequestsModule,
+    UsersModule,
     ProfileModule,
     routing,
     TranslateModule
