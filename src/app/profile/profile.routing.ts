@@ -11,8 +11,8 @@ const profileRoutes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [ RouteCanActiveAuthorized ],
-    canActivateChild: [ RouteCanActiveAuthorized ],
+    canActivate: [RouteCanActiveAuthorized],
+    canActivateChild: [RouteCanActiveAuthorized],
     children: [
       {
         path: '',

@@ -53,6 +53,11 @@ export const LANG_RU_TRANS = {
 
   "page.apply.title": "Добавить заявку",
   "page.apply.description": "Какой-то текст, который описывает раздел.",
+  "page.apply.btn.attributes": "Атрибуты",
+  "page.apply.btn.extra": "Дополнительно",
+  "page.apply.btn.points": "Точки",
+  "page.apply.btn.security": "Безопасность",
+  "page.apply.btn.type": "Тип",
 
   "page.login.title": "Вход",
   "page.login.description": "Какой-то текст, который описывает раздел.",

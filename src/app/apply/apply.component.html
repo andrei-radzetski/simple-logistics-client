@@ -1,10 +1,40 @@
-<div class="sl-requests">
+<div class="sl-apply">
   <div class="masthead">
     <div class="container">
       <sl-header [title]="'page.apply.title' | translate" [description]="'page.apply.description' | translate">
       </sl-header>
     </div>
   </div>
-  <div class="container content">
+  <div class="text-center sl-pagination-container">
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li>
+          <a routerLink="type" routerLinkActive="active" title="{{ 'page.apply.btn.type' | translate }}">
+            <div class="sl-inner"></div>
+          </a>
+        </li>
+        <li>
+          <a routerLink="attributes" routerLinkActive="active" title="{{ 'page.apply.btn.attributes' | translate }}">
+            <div class="sl-inner"></div>
+          </a>
+        </li>
+        <li>
+          <a routerLink="points" routerLinkActive="active" title="{{ 'page.apply.btn.points' | translate }}">
+            <div class="sl-inner"></div>
+          </a>
+        </li>
+        <li>
+          <a routerLink="security" routerLinkActive="active" title="{{ 'page.apply.btn.security' | translate }}">
+            <div class="sl-inner"></div>
+          </a>
+        </li>
+        <li>
+          <a routerLink="extra" routerLinkActive="active" title="{{ 'page.apply.btn.extra' | translate }}">
+            <div class="sl-inner"></div>
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
+  <router-outlet></router-outlet>
 </div>

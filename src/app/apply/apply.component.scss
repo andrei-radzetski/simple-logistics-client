@@ -1,3 +1,50 @@
 /* APPLY*/
 
-.sl-apply {}
+.sl-apply {
+  .sl-pagination-container {
+    background-color: $primary-color;
+  }
+
+  .pagination {
+    margin: 0 0 $main-padding 0;
+
+    .sl-inner {
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      background-color: $on-primary-color;
+      &:hover {
+        background-color: $opposite-primary-color;
+      }
+    }
+    .active {
+      .sl-inner {
+        background-color: $opposite-primary-color;
+        &:hover {
+          background-color: $opposite-primary-color;
+        }
+      }
+    }
+    &>li>a,
+    &>li>span {
+      padding: 0;
+      border: none;
+      margin-left: 5px;
+      margin-right: 5px;
+      background-color: transparent;
+    }
+    &>li>a:hover,
+    &>li>span:hover,
+    &>li>a:focus,
+    &>li>span:focus {
+      color: transparent;
+      background-color: transparent;
+    }
+  }
+}
+
+@import 'type/apply.type.component.scss';
+@import 'attributes/apply.attributes.component.scss';
+@import 'points/apply.points.component.scss';
+@import 'security/apply.security.component.scss';
+@import 'extra/apply.extra.component.scss';

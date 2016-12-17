@@ -53,6 +53,11 @@ export const LANG_EN_TRANS = {
 
   "page.apply.title": "Add request",
   "page.apply.description": "Some text, which describes the section.",
+  "page.apply.btn.attributes": "Attributes",
+  "page.apply.btn.extra": "Extra",
+  "page.apply.btn.points": "Points",
+  "page.apply.btn.security": "Security",
+  "page.apply.btn.type": "Type",
 
   "page.login.title": "Login",
   "page.login.description": "Some text, which describes the section.",
