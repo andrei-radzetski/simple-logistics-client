@@ -34,9 +34,9 @@ export const LANG_EN_TRANS = {
 
   "page.home.title": "Simple Logistics",
   "page.home.description": "Some text, which describes the project.",
-  "page.home.tag.addRequest": "Add request",
-  "page.home.tag.findRequest": "Find request",
-  "page.home.tag.findUser": "Find user",
+  "page.home.tag.add-request": "Add request",
+  "page.home.tag.find-request": "Find request",
+  "page.home.tag.find-user": "Find user",
   "page.home.tag.about": "About system",
   "page.home.search": "Search:",
   "page.home.departure": "Departure",
@@ -62,12 +62,12 @@ export const LANG_EN_TRANS = {
   "page.join.title": "Join",
   "page.join.description": "Some text, which describes the section.",
   "page.join.info": "Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.",
-  "page.join.firstName": "First name",
-  "page.join.secondName": "Second name",
+  "page.join.first-name": "First name",
+  "page.join.second-name": "Second name",
   "page.join.email": "Email",
   "page.join.phone": "Phone",
   "page.join.password": "Password",
-  "page.join.passwordRepeat": "Repeat password",
+  "page.join.password-repeat": "Repeat password",
 
   "page.requests.title": "Requests",
   "page.requests.description": "Some text, which describes the section.",
@@ -84,6 +84,6 @@ export const LANG_EN_TRANS = {
   "page.profile.info.city": "City",
   "page.profile.info.language": "Language",
   "page.profile.info.additional": "Additional information",
-  "page.profile.settings.firstName": "First name",
-  "page.profile.settings.secondName": "Second name"
+  "page.profile.settings.first-name": "First name",
+  "page.profile.settings.second-name": "Second name"
 }

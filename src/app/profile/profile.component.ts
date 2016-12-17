@@ -29,4 +29,8 @@ export class ProfileComponent {
     console.log(err.message);
   }
 
+  gotoApply() {
+    this.router.navigate(['/apply']);
+  }
+
 }

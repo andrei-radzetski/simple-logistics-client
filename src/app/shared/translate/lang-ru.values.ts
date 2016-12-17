@@ -34,9 +34,9 @@ export const LANG_RU_TRANS = {
 
   "page.home.title": "Simple Logistics",
   "page.home.description": "Какой-то текст, который описывает проект.",
-  "page.home.tag.addRequest": "Добавить заявку",
-  "page.home.tag.findRequest": "Найти заявку",
-  "page.home.tag.findUser": "Найти пользователя",
+  "page.home.tag.add-request": "Добавить заявку",
+  "page.home.tag.find-request": "Найти заявку",
+  "page.home.tag.find-user": "Найти пользователя",
   "page.home.tag.about": "О системе",
   "page.home.search": "Поиск:",
   "page.home.departure": "Пункт отправления",
@@ -62,12 +62,12 @@ export const LANG_RU_TRANS = {
   "page.join.title": "Регистрация",
   "page.join.description": "Какой-то текст, который описывает раздел.",
   "page.join.info": "Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел.",
-  "page.join.firstName": "Имя",
-  "page.join.secondName": "Фамилия",
+  "page.join.first-name": "Имя",
+  "page.join.second-name": "Фамилия",
   "page.join.email": "Почта",
   "page.join.phone": "Телефон",
   "page.join.password": "Пароль",
-  "page.join.passwordRepeat": "Повторите пароль",
+  "page.join.password-repeat": "Повторите пароль",
 
   "page.requests.title": "Запросы",
   "page.requests.description": "Какой-то текст, который описывает раздел.",
@@ -84,7 +84,7 @@ export const LANG_RU_TRANS = {
   "page.profile.info.city": "Город",
   "page.profile.info.language": "Язык",
   "page.profile.info.additional": "Дополнительная информация",
-  "page.profile.settings.firstName": "Имя",
-  "page.profile.settings.secondName": "Фамилия"
+  "page.profile.settings.first-name": "Имя",
+  "page.profile.settings.second-name": "Фамилия"
   
 }
