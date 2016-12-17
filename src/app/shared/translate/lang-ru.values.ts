@@ -6,6 +6,7 @@ export const LANG_RU_TRANS = {
   "button.save": "Сохранить",
   "button.login": "Войти",
   "button.signup": "Зарегистрироваться",
+  "button.apply": "Добавить заявку",
 
   "lang.ru": "Русский",
   "lang.en": "English",
