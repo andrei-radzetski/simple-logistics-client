@@ -6,8 +6,37 @@
           <sl-header [title]="'page.home.title' | translate" [description]="'page.home.description' | translate">
           </sl-header>
         </div>
-        <div class="col-md-4">
-          <sl-filter [full]="false"></sl-filter>
+        <div class="col-md-4 sl-fast-search">
+          <div class="row no-bottom">
+            <div class="col-md-12">
+              <h3 class="sl-on-primiry">{{ 'page.home.search' | translate }}</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="text" class="form-control" placeholder="{{ 'page.home.departure' | translate }}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="date" class="form-control" placeholder="{{ 'page.home.departure-date' | translate }}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="text" class="form-control" placeholder="{{ 'page.home.destination' | translate }}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="date" class="form-control" placeholder="{{ 'page.home.destination-date' | translate }}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn sl-btn-primary sl-on-primary btn-block">{{ 'button.search' | translate }}</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

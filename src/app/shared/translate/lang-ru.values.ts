@@ -7,6 +7,7 @@ export const LANG_RU_TRANS = {
   "button.login": "Войти",
   "button.signup": "Зарегистрироваться",
   "button.apply": "Добавить заявку",
+  "button.search": "Поиск",
 
   "lang.ru": "Русский",
   "lang.en": "English",
@@ -18,14 +19,7 @@ export const LANG_RU_TRANS = {
   "nav.signin": "Вход",
   "nav.signup": "Регистрация",
   "nav.profile": "Профиль",
-
-  "filter.label": "Поиск:",
-  "filter.search-btn": "Поиск",
-  "filter.fields.departure": "Пункт отправления",
-  "filter.fields.departure-date": "Дата отправления",
-  "filter.fields.destination": "Пункт назначения",
-  "filter.fields.destination-date": "Дата назначения",
-
+  
   "footer.disigned": "Спроектировал и разработал",
   "footer.using": "С использованием",
   "footer.and": "и",
@@ -44,6 +38,11 @@ export const LANG_RU_TRANS = {
   "page.home.tag.findRequest": "Найти заявку",
   "page.home.tag.findUser": "Найти пользователя",
   "page.home.tag.about": "О системе",
+  "page.home.search": "Поиск:",
+  "page.home.departure": "Пункт отправления",
+  "page.home.departure-date": "Дата отправления",
+  "page.home.destination": "Пункт назначения",
+  "page.home.destination-date": "Дата назначения",
 
   "page.about.title": "О системе",
   "page.about.description": "Какой-то текст, который описывает раздел.",

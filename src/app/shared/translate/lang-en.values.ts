@@ -7,6 +7,7 @@ export const LANG_EN_TRANS = {
   "button.login": "Login",
   "button.signup": "Sign up",
   "button.apply": "Add request",
+  "button.search": "Search",
 
   "lang.ru": "Русский",
   "lang.en": "English",
@@ -18,13 +19,6 @@ export const LANG_EN_TRANS = {
   "nav.signin": "Sign in",
   "nav.signup": "Sign up",
   "nav.profile": "Profile",
-
-  "filter.label": "Search:",
-  "filter.search-btn": "Search",
-  "filter.fields.departure": "Departure",
-  "filter.fields.departure-date": "Departure date",
-  "filter.fields.destination": "Destination",
-  "filter.fields.destination-date": "Destination date",
 
   "footer.disigned": "Designed and built by",
   "footer.using": "Using",
@@ -44,6 +38,11 @@ export const LANG_EN_TRANS = {
   "page.home.tag.findRequest": "Find request",
   "page.home.tag.findUser": "Find user",
   "page.home.tag.about": "About system",
+  "page.home.search": "Search:",
+  "page.home.departure": "Departure",
+  "page.home.departure-date": "Departure date",
+  "page.home.destination": "Destination",
+  "page.home.destination-date": "Destination date",
 
   "page.about.title": "About",
   "page.about.description": "Some text, which describes the section.",

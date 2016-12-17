@@ -11,6 +11,19 @@
     padding-right: 0px;
     padding-left: 0px;
   }
+  h3.sl-on-primiry {
+    color: $on-primary-color;
+    font-weight: 300;
+  }
+
+  .sl-fast-search {
+    .row {
+      margin-bottom: $main-padding;
+      &.no-bottom {
+        margin-bottom: 0px;
+      }
+    }
+  } 
 }
 
 @media (min-width: $screen-sm-min) {
