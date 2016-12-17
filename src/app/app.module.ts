@@ -8,7 +8,7 @@ import { AboutModule } from './about/about.module';
 import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
 import { JoinModule } from './join/join.module';
-import { SearchModule } from './search/search.module';
+import { RequestsModule } from './requests/requests.module';
 import { ProfileModule } from './profile/profile.module';
 import { TranslateModule } from './shared/translate/translate.module';
 
@@ -19,7 +19,7 @@ import { TranslateModule } from './shared/translate/translate.module';
     AboutModule,
     LoginModule,
     JoinModule,
-    SearchModule,
+    RequestsModule,
     ProfileModule,
     routing,
     TranslateModule

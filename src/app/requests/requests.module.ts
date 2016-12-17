@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { HeaderModule } from '../shared/header/header.module';
 import { FilterModule } from '../shared/filter/filter.module';
-import { SearchComponent } from './search.component';
-import { searchRouting } from './search.routing';
+import { RequestsComponent } from './requests.component';
+import { requestsRouting } from './requests.routing';
 import { TranslateModule } from '../shared/translate/translate.module';
 
 @NgModule({
   imports: [
-    searchRouting,
+    requestsRouting,
     HeaderModule,
     FilterModule,
     TranslateModule
   ],
   declarations: [
-    SearchComponent
+    RequestsComponent
   ]
 })
-export class SearchModule {
+export class RequestsModule {
 
 }

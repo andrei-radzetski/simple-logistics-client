@@ -12,7 +12,7 @@ export const LANG_EN_TRANS = {
 
   "nav.home": "Home",
   "nav.about": "About",
-  "nav.search": "Search",
+  "nav.requests": "Requests",
   "nav.signin": "Sign in",
   "nav.signup": "Sign up",
   "nav.profile": "Profile",
@@ -62,8 +62,8 @@ export const LANG_EN_TRANS = {
   "page.join.password": "Password",
   "page.join.passwordRepeat": "Repeat password",
 
-  "page.search.title": "Search",
-  "page.search.description": "Some text, which describes the section.",
+  "page.requests.title": "Requests",
+  "page.requests.description": "Some text, which describes the section.",
 
   "page.profile.title": "Profile",
   "page.profile.description": "Some text, which describes the section.",

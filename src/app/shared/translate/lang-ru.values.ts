@@ -12,7 +12,7 @@ export const LANG_RU_TRANS = {
 
   "nav.home": "Главная",
   "nav.about": "О системе",
-  "nav.search": "Поиск",
+  "nav.requests": "Запросы",
   "nav.signin": "Вход",
   "nav.signup": "Регистрация",
   "nav.profile": "Профиль",
@@ -62,8 +62,8 @@ export const LANG_RU_TRANS = {
   "page.join.password": "Пароль",
   "page.join.passwordRepeat": "Повторите пароль",
 
-  "page.search.title": "Поиск",
-  "page.search.description": "Какой-то текст, который описывает раздел.",
+  "page.requests.title": "Запросы",
+  "page.requests.description": "Какой-то текст, который описывает раздел.",
 
   "page.profile.title": "Профиль",
   "page.profile.description": "Какой-то текст, который описывает раздел.",
