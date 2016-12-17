@@ -31,6 +31,7 @@ export const LANG_EN_TRANS = {
   "footer.link.autor": "Andrei Radzetski",
   "footer.link.ng2": "AngularJS 2",
   "footer.link.bootstrap": "Bootstrap 3",
+  "footer.link.google-maps": "Google Maps",
 
   "page.home.title": "Simple Logistics",
   "page.home.description": "Some text, which describes the project.",

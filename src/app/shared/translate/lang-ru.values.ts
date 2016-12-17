@@ -31,6 +31,7 @@ export const LANG_RU_TRANS = {
   "footer.link.autor": "Андрей Радецкий",
   "footer.link.ng2": "AngularJS 2",
   "footer.link.bootstrap": "Bootstrap 3",
+  "footer.link.google-maps": "Google Maps",
 
   "page.home.title": "Simple Logistics",
   "page.home.description": "Какой-то текст, который описывает проект.",
