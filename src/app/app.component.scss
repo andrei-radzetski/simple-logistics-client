@@ -124,6 +124,7 @@ a.sl-tag {
 @include sl-tag-panel('brown', $brown-color, $on-brown-color, $brown-deep-color);
 @include sl-tag-panel('light-blue', $light-blue-color, $on-light-blue-color, $light-blue-deep-color);
 @include sl-tag-panel('cyan', $cyan-color, $on-cyan-color, $cyan-deep-color);
+@include sl-tag-panel('green', $green-color, $on-green-color, $green-deep-color);
 //---------------------------------------------
 //---------------TAG-PANEL-END-----------------
 //---------------------------------------------
