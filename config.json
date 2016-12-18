@@ -40,7 +40,9 @@
                 "zone.js/dist/zone.js",
                 "zone.js/dist/zone.min.js",
                 "bootstrap/dist/css/**",
-                "bootstrap/dist/fonts/**"
+                "bootstrap/dist/fonts/**",
+                "dragula/dist/dragula.css",
+                "dragula/dist/dragula.min.css"
             ]
         }
     },

@@ -1,7 +1,31 @@
-<div class="container content">
-  <div class="row">
-    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-2 col-xs-offset-6 col-sm-offset-9 col-md-offset-9 col-lg-offset-10">
-      <button class="btn sl-btn-primary btn-block" (click)="gotoNext()">{{ 'page.apply.btn.attributes' | translate }} <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
+<div class="sl-apply-type">
+  <h1 class="sl-h">{{ 'page.apply.type.label' | translate }}</h1>
+  <div class="row sl-row">
+    <div class="col-md-3">
+      <span class="sl-label">{{ 'page.apply.type.kind' | translate }}</span>
+    </div>
+    <div class="col-md-6">
+      <select class="form-control">
+        <option>Спрос</option>
+        <option>Предложение</option>
+      </select>
+    </div>
+  </div>
+  <div class="row sl-row">
+    <div class="col-md-3">
+      <span class="sl-label">{{ 'page.apply.type.service' | translate }}</span>
+    </div>
+    <div class="col-md-6">
+      <select class="form-control">
+        <option>Пассажирская перевозка</option>
+        <option>Грузоперевозка</option>
+        <option>Попутчик</option>
+      </select>
+    </div>
+  </div>
+  <div class="row sl-row">
+    <div class="col-md-6 col-md-offset-3 no-margin">
+      <button class="btn sl-btn-primary btn-block" (click)="next()">{{ 'button.next' | translate }}</button>
     </div>
   </div>
 </div>

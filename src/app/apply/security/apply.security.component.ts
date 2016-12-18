@@ -10,11 +10,7 @@ export class ApplySecurityComponent {
 
   constructor(private router: Router) {}
 
-  gotoPrevious() {
-    this.router.navigate(['/apply/points']);
-  }
-
-  gotoNext() {
+  next() {
     this.router.navigate(['/apply/extra']);
   }
 

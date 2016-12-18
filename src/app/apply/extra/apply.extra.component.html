@@ -1,10 +1,11 @@
-<div class="container content">
-  <div class="row">
-    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
-      <button class="btn sl-btn-primary btn-block" (click)="gotoPrevious()"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>{{ 'page.apply.btn.security' | translate }}</button>
+<div class="sl-apply-extra">
+  <h1 class="sl-h">{{ 'page.apply.extra.label' | translate }}</h1>
+  <div class="row sl-row">
+    <div class="col-md-3">
+      <span>{{ 'page.apply.extra.comment' | translate }}</span>
     </div>
-    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-2 col-sm-offset-6 col-md-offset-6 col-lg-offset-8">
-      <button class="btn sl-btn-green btn-block"(click)="save()">{{ 'button.save' | translate }}</button>
+    <div class="col-md-6">
+      <textarea rows="3" placeholder="{{ 'page.apply.extra.comment' | translate }}" class="form-control"></textarea>
     </div>
   </div>
 </div>

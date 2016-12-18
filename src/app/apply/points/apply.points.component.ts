@@ -8,13 +8,15 @@ import { Router } from '@angular/router';
 })
 export class ApplyPointsComponent {
 
+  items: number[] = [1,2,3,4,5,6,7];
+
   constructor(private router: Router) {}
 
-  gotoPrevious() {
-    this.router.navigate(['/apply/attributes']);
+  addPoint() {
+    console.log('add point');
   }
 
-  gotoNext() {
+  next() {
     this.router.navigate(['/apply/security']);
   }
 

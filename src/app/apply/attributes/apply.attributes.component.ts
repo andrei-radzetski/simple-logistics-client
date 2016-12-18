@@ -10,11 +10,7 @@ export class ApplyAttributesComponent {
 
   constructor(private router: Router) {}
 
-  gotoPrevious() {
-    this.router.navigate(['/apply/type']);
-  }
-
-  gotoNext() {
+  next() {
     this.router.navigate(['/apply/points']);
   }
 

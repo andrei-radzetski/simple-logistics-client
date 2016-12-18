@@ -8,6 +8,8 @@ export const LANG_EN_TRANS = {
   "button.signup": "Sign up",
   "button.apply": "Add request",
   "button.search": "Search",
+  "button.next": "Next",
+  "button.add": "Add",
 
   "lang.ru": "Русский",
   "lang.en": "English",
@@ -53,11 +55,34 @@ export const LANG_EN_TRANS = {
 
   "page.apply.title": "Add request",
   "page.apply.description": "Some text, which describes the section.",
-  "page.apply.btn.attributes": "Attributes",
-  "page.apply.btn.extra": "Extra",
-  "page.apply.btn.points": "Points",
-  "page.apply.btn.security": "Security",
-  "page.apply.btn.type": "Type",
+
+  "page.apply.type.label": "Type",
+  "page.apply.type.kind": "Kind",
+  "page.apply.type.service": "Service",
+
+  "page.apply.attributes.label": "Attributes",
+  "page.apply.attributes.places": "Количество",
+  "page.apply.attributes.transport": "Вид транспорта",
+  "page.apply.attributes.cargo.name": "Наименование",
+  "page.apply.attributes.cargo.width": "Ширина (см)",
+  "page.apply.attributes.cargo.height": "Высота (см)",
+  "page.apply.attributes.cargo.length": "Длина (см)",
+  "page.apply.attributes.cargo.weight": "Вес (кг)",
+
+  "page.apply.points.label": "Points",
+  "page.apply.points.name": "Name",
+  "page.apply.points.radius": "Radius",
+  "page.apply.points.arrival-datetime": "Date and time arrival",
+  "page.apply.points.departure-datetime": "Date and time departure",
+  "page.apply.points.start-point": "Start point",
+  "page.apply.points.finish-point": "Finish poin",
+  
+  "page.apply.security.label": "Security",
+  "page.apply.security.display-email": "Показывать на заявке email адрес",
+  "page.apply.security.display-phone": "Показывать на заявке телефон",
+  
+  "page.apply.extra.label": "Extra",
+  "page.apply.extra.comment": "Сomment",
 
   "page.login.title": "Login",
   "page.login.description": "Some text, which describes the section.",

@@ -8,6 +8,8 @@ export const LANG_RU_TRANS = {
   "button.signup": "Зарегистрироваться",
   "button.apply": "Добавить заявку",
   "button.search": "Поиск",
+  "button.next": "Далее",
+  "button.add": "Добавить",
 
   "lang.ru": "Русский",
   "lang.en": "English",
@@ -53,11 +55,34 @@ export const LANG_RU_TRANS = {
 
   "page.apply.title": "Добавить заявку",
   "page.apply.description": "Какой-то текст, который описывает раздел.",
-  "page.apply.btn.attributes": "Атрибуты",
-  "page.apply.btn.extra": "Дополнительно",
-  "page.apply.btn.points": "Точки",
-  "page.apply.btn.security": "Безопасность",
-  "page.apply.btn.type": "Тип",
+
+  "page.apply.type.label": "Тип",
+  "page.apply.type.kind": "Вид",
+  "page.apply.type.service": "Услуга",
+
+  "page.apply.attributes.label": "Атрибуты",
+  "page.apply.attributes.places": "Количество",
+  "page.apply.attributes.transport": "Вид транспорта",
+  "page.apply.attributes.cargo.name": "Наименование",
+  "page.apply.attributes.cargo.width": "Ширина (см)",
+  "page.apply.attributes.cargo.height": "Высота (см)",
+  "page.apply.attributes.cargo.length": "Длина (см)",
+  "page.apply.attributes.cargo.weight": "Вес (кг)",
+
+  "page.apply.points.label": "Точки",
+  "page.apply.points.name": "Название",
+  "page.apply.points.radius": "Радиус",
+  "page.apply.points.arrival-datetime": "Дата и время прибытия",
+  "page.apply.points.departure-datetime": "Дата и время отбытия",
+  "page.apply.points.start-point": "Начальная точка",
+  "page.apply.points.finish-point": "Конечная точка",
+
+  "page.apply.security.label": "Безопасность",
+  "page.apply.security.display-email": "Показывать на заявке email адрес",
+  "page.apply.security.display-phone": "Показывать на заявке телефон",
+
+  "page.apply.extra.label": "Дополнительно",
+  "page.apply.extra.comment": "Комментарий",
 
   "page.login.title": "Вход",
   "page.login.description": "Какой-то текст, который описывает раздел.",

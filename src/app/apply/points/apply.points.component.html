@@ -1,10 +1,76 @@
-<div class="container content">
-  <div class="row">
-    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
-      <button class="btn sl-btn-primary btn-block" (click)="gotoPrevious()"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>{{ 'page.apply.btn.attributes' | translate }}</button>
+<div class="sl-apply-points">
+  <h1 class="sl-h">{{ 'page.apply.points.label' | translate }}</h1>
+  <div class="row sl-row">
+    <div class="col-md-3">
+      <span>{{ 'page.apply.points.name' | translate }}</span>
     </div>
-    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-2 col-sm-offset-6 col-md-offset-6 col-lg-offset-8">
-      <button class="btn sl-btn-primary btn-block" (click)="gotoNext()">{{ 'page.apply.btn.security' | translate }} <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="{{ 'page.apply.points.name' | translate }}">
+    </div>
+  </div>
+  <div class="row sl-row">
+    <div class="col-md-3">
+      <span>{{ 'page.apply.points.radius' | translate }}</span>
+    </div>
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="{{ 'page.apply.points.radius' | translate }}">
+    </div>
+  </div>
+  <div class="row sl-row">
+    <div class="col-md-3">
+      <span>{{ 'page.apply.points.arrival-datetime' | translate }}</span>
+    </div>
+    <div class="col-md-6">
+      <input type="datetime" class="form-control" placeholder="{{ 'page.apply.points.arrival-datetime' | translate }}">
+    </div>
+  </div>
+  <div class="row sl-row">
+    <div class="col-md-3">
+      <span>{{ 'page.apply.points.departure-datetime' | translate }}</span>
+    </div>
+    <div class="col-md-6">
+      <input type="datetime" class="form-control" placeholder="{{ 'page.apply.points.departure-datetime' | translate }}">
+    </div>
+  </div>
+  <div class="row sl-row">
+    <div class="col-md-6 col-md-offset-3 no-margin">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox">
+          {{ 'page.apply.points.start-point' | translate }}
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row sl-row no-margin">
+    <div class="col-md-6 col-md-offset-3 no-margin">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox">
+          {{ 'page.apply.points.finish-point' | translate }}
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row sl-row">
+    <div class="col-md-6 col-md-offset-3 no-margin">
+      <button class="btn sl-btn-primary btn-block" (click)="addPoint()">{{ 'button.add' | translate }}</button>
+    </div>
+  </div>
+  <div class="points-list" [dragula]="'bag-one'" [dragulaModel]="items">
+    <div *ngFor="let item of items" class="row sl-row">
+      <div class="col-md-9 no-margin">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            {{item}} Basic panel example
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row sl-row">
+    <div class="col-md-6 col-md-offset-3 no-margin">
+      <button class="btn sl-btn-primary btn-block" (click)="next()">{{ 'button.next' | translate }}</button>
     </div>
   </div>
 </div>

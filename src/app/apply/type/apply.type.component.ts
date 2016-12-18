@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,11 +6,15 @@ import { Router } from '@angular/router';
   selector: 'sl-apply-type',
   templateUrl: './apply.type.component.html'
 })
-export class ApplyTypeComponent {
+export class ApplyTypeComponent implements OnInit {
 
   constructor(private router: Router) {}
+  
+  ngOnInit() {
 
-  gotoNext() {
+  }
+
+  next() {
     this.router.navigate(['/apply/attributes']);
   }
 
