@@ -1,0 +1,51 @@
+<div class="text-center sl-pagination-container">
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li><a routerLink="type" routerLinkActive="active" title="{{ 'page.apply.btn.type' | translate }}"><div class="sl-inner"></div></a></li>
+        <li><a routerLink="attributes" routerLinkActive="active" title="{{ 'page.apply.btn.attributes' | translate }}"><div class="sl-inner"></div></a></li>
+        <li><a routerLink="points" routerLinkActive="active" title="{{ 'page.apply.btn.points' | translate }}"><div class="sl-inner"></div></a></li>
+        <li><a routerLink="security" routerLinkActive="active" title="{{ 'page.apply.btn.security' | translate }}"><div class="sl-inner"></div></a></li>
+        <li><a routerLink="extra" routerLinkActive="active" title="{{ 'page.apply.btn.extra' | translate }}"><div class="sl-inner"></div></a></li>
+      </ul>
+    </nav>
+  </div>
+
+.sl-pagination-container {
+    background-color: $primary-color;
+  }
+  .pagination {
+    margin: 0 0 $main-padding 0;
+    .sl-inner {
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      background-color: $on-primary-color;
+      &:hover {
+        background-color: $opposite-primary-color;
+      }
+    }
+    .active {
+      .sl-inner {
+        background-color: $opposite-primary-color;
+        &:hover {
+          background-color: $opposite-primary-color;
+        }
+      }
+    }
+    &>li>a,
+    &>li>span {
+      padding: 0;
+      border: none;
+      margin-left: 5px;
+      margin-right: 5px;
+      background-color: transparent;
+    }
+    &>li>a:hover,
+    &>li>span:hover,
+    &>li>a:focus,
+    &>li>span:focus {
+      color: transparent;
+      background-color: transparent;
+    }
+  }
+

@@ -32,12 +32,15 @@
             ],
             "node": "node_modules/**",
             "lib": [
+                "core-js/client/shim.js",
                 "core-js/client/shim.min.js",
+                "core-js/client/shim.min.js.map",
                 "reflect-metadata/Reflect.js",
-                "rxjs/**",
-                "zone.js/dist/**",
-                "bootstrap/dist/**",
-                "jquery/dist/**"
+                "reflect-metadata/Reflect.js.map",
+                "zone.js/dist/zone.js",
+                "zone.js/dist/zone.min.js",
+                "bootstrap/dist/css/**",
+                "bootstrap/dist/fonts/**"
             ]
         }
     },
