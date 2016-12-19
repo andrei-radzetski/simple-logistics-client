@@ -109,6 +109,7 @@ export const LANG_EN_TRANS = {
   "page.profile.nav.requests": "Requests",
   "page.profile.nav.messages": "Messages",
   "page.profile.nav.settings": "Settings",
+  "page.profile.nav.exit": "Exit",
   "page.profile.info.email": "Email",
   "page.profile.info.phone": "Phone",
   "page.profile.info.country": "Country",

@@ -109,6 +109,7 @@ export const LANG_RU_TRANS = {
   "page.profile.nav.requests": "Запросы",
   "page.profile.nav.messages": "Сообщения",
   "page.profile.nav.settings": "Настройки",
+  "page.profile.nav.exit": "Выход",
   "page.profile.info.email": "Почта",
   "page.profile.info.phone": "Телефон",
   "page.profile.info.country": "Страна",
