@@ -7,29 +7,29 @@
 <div class="sl-profile">
   <div class="container content">
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-md-3">
         <div class="apply-cotainer">
           <button class="btn sl-btn-green btn-block" (click)="gotoApply()">{{ 'button.apply' | translate }}</button>
         </div>
-        <ul class="nav nav-pills nav-stacked sl-side-nav">
-          <li role="presentation">
-            <a routerLink="info" routerLinkActive="active">{{ 'page.profile.nav.info' | translate }}</a>
+        <ul class="nav sl-side-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="info" routerLinkActive="active">{{ 'page.profile.nav.info' | translate }}</a>
           </li>
-          <li role="presentation">
-            <a routerLink="requests" routerLinkActive="active">{{ 'page.profile.nav.requests' | translate }}</a>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="requests" routerLinkActive="active">{{ 'page.profile.nav.requests' | translate }}</a>
           </li>
-          <li role="presentation">
-            <a routerLink="messages" routerLinkActive="active">{{ 'page.profile.nav.messages' | translate }}</a>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="messages" routerLinkActive="active">{{ 'page.profile.nav.messages' | translate }}</a>
           </li>
-          <li role="presentation">
-            <a routerLink="settings" routerLinkActive="active">{{ 'page.profile.nav.settings' | translate }}</a>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="settings" routerLinkActive="active">{{ 'page.profile.nav.settings' | translate }}</a>
           </li>
-          <li role="presentation">
-            <a (click)="logout()">Выход</a>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">Выход</a>
           </li>
         </ul>
       </div>
-      <div class="col-sm-9">
+      <div class="col-md-9">
         <router-outlet></router-outlet>
       </div>
     </div>

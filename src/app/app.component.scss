@@ -138,36 +138,41 @@ a.sl-tag {
 //---------------SL-SIDE-NAV-------------------
 //---------------------------------------------
 .sl-side-nav {
-  &.nav.nav-pills.nav-stacked>li>a {
-    color: $nav-text-color;
-    padding: 5px 30px 5px 0px;
-    border: none;
-    border-radius: 0;
-    border-right: none;
+  &.nav>.nav-item {
     text-align: center;
-    cursor: pointer;
-    &:hover {
-      background: none;
-      color: $nav-link-hover-color;
-    }
-    &:focus {
-      background: none;
-      color: $nav-link-hover-color;
-    }
-    &.active {
+    &>.nav-link {
+      color: $nav-text-color;
+      padding: 5px 30px 5px 0px;
+      border: none;
+      border-radius: 0;
       border-right: none;
-      color: $nav-link-hover-color;
+      cursor: pointer;
+      &:hover {
+        background: none;
+        color: $nav-link-hover-color;
+      }
+      &:focus {
+        background: none;
+        color: $nav-link-hover-color;
+      }
+      &.active {
+        border-right: none;
+        color: $nav-link-hover-color;
+      }
     }
   }
 }
 
-@media (min-width: $screen-sm-min) {
+@media (min-width: $grid-breakpoint-md) {
   .sl-side-nav {
-    &.nav.nav-pills.nav-stacked>li>a {
-      border-right: 2px solid $nav-bg-color;
+    &.nav>.nav-item {
       text-align: right;
-      &.active {
-        border-right: 2px solid $nav-link-hover-color;
+      &>.nav-link {
+        border-right: 2px solid $nav-bg-color;
+        text-align: right;
+        &.active {
+          border-right: 2px solid $nav-link-hover-color;
+        }
       }
     }
   }

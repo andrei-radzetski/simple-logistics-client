@@ -4,7 +4,7 @@
       <a class="navbar-brand" routerLink="/">{{ 'appname' | translate }}</a>
       <ul class="nav navbar-nav">
         <template ngFor let-link [ngForOf]="links">
-          <li class="nav-item" [ngClass]="{ 'float-md-right': !link.left, 'active': isLinkActive(link) }" *ngIf="link.visible && link.state.visible()">
+          <li class="nav-item" [ngClass]="{ 'float-md-right': !link.left }" *ngIf="link.visible && link.state.visible()">
             <a class="nav-link" routerLink="{{ link.path }}" routerLinkActive="active">{{ link.title | translate}}</a>
           </li>
         </template>
