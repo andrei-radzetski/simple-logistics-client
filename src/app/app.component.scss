@@ -1,12 +1,14 @@
 @import 'app.variable.scss';
 @import 'app.mixins.scss';
 html {
+  font-family: "FontAwesome", sans-serif !important;
   position: relative;
   min-height: 100%;
 }
 
 body {
   margin-bottom: $body-shift;
+  font-family: "FontAwesome", sans-serif !important;
 }
 
 .masthead {
@@ -91,7 +93,7 @@ body {
 //---------------BUTTON-END--------------------
 //---------------------------------------------
 //---------------------------------------------
-//-----------------TAG-PANEL-------------------
+//-----------------TAG-CARD-------------------
 //---------------------------------------------
 a.sl-tag {
   text-decoration: none;
@@ -116,18 +118,21 @@ a.sl-tag {
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
     color: $card-text-color;
-    background-color: $nav-bg-color; 
+    background-color: $nav-bg-color;
   }
-
   &:hover {
+    color: $card-hover-color;
+    .card-block {
       color: $card-hover-color;
-      .card-footer {
-        color: $card-hover-color;
-      }
     }
+    .card-footer {
+      color: $card-hover-color;
+    }
+  }
 }
+
 //---------------------------------------------
-//---------------TAG-PANEL-END-----------------
+//---------------TAG-CARD-END-----------------
 //---------------------------------------------
 //---------------------------------------------
 //---------------SL-SIDE-NAV-------------------

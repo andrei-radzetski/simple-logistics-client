@@ -45,6 +45,11 @@
                 "bootstrap/dist/css/bootstrap.min.css.map",
                 "dragula/dist/dragula.css",
                 "dragula/dist/dragula.min.css"
+            ],
+            "local": "lib/**",
+            "localLib": [
+                "font-awesome-4.7.0/css/**",
+                "font-awesome-4.7.0/fonts/**"
             ]
         }
     },
