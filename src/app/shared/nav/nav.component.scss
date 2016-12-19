@@ -1,61 +1,28 @@
 /* HEADER */
 
 .sl-nav {
-  &.navbar {
-    margin-bottom: 0;
-  }
-  &.navbar-default {
+  &.navbar-light {
     background-color: $nav-bg-color;
-    border: none;
     .navbar-brand {
-      color: $nav-text-color;
-      background-color: transparent;
+      color: $nav-link-hover-color;
       &:hover,
       &:focus {
-        color: $nav-text-color;
-        background-color: transparent;
+        color: $nav-link-hover-color;
       }
     }
   }
   .navbar-nav {
-    &>li>a {
+    &>.nav-item>.nav-link {
       color: $nav-text-color;
-      background-color: transparent;
-      border-bottom: none;
       &:hover,
       &:focus {
-        color: $nav-text-color;
-        background-color: $nav-link-hover-color;
-        border-bottom: none;
+        color: $nav-link-hover-color;
       }
     }
-    &>.active>a,
-    &>.active>a:hover,
-    &>.active>a:focus {
-      color: $nav-text-color;
-      background-color: $nav-link-hover-color;
-      border-bottom: none;
-    }
-  }
-  .navbar-collapse {
-    border-top: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-  .navbar-toggle {
-    border: none;
-    background-color: $nav-bg-color;
-    &:hover,
-    &:focus,
-    &.collapsed:hover {
-      background-color: $nav-link-hover-color;
-    }
-    &.collapsed,
-    &.collapsed:focus {
-      background-color: $nav-bg-color;
-    }
-    .icon-bar {
-      background-color: $nav-text-color;
+    &>.active>.nav-link,
+    &>.active>.nav-link:hover,
+    &>.active>.nav-link:focus {
+      color: $nav-link-hover-color;
     }
   }
 }

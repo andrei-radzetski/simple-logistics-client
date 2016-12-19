@@ -132,10 +132,8 @@ a.sl-tag {
 //---------------------------------------------
 .sl-side-nav {
   &.nav.nav-pills.nav-stacked>li>a {
-    color: $profile-nav-item-text-color;
-    font-weight: bold;
+    color: $nav-text-color;
     padding: 5px 30px 5px 0px;
-    font-size: 18px;
     border: none;
     border-radius: 0;
     border-right: none;
@@ -143,15 +141,15 @@ a.sl-tag {
     cursor: pointer;
     &:hover {
       background: none;
-      color: $profile-nav-item-active-text-color;
+      color: $nav-link-hover-color;
     }
     &:focus {
       background: none;
-      color: $profile-nav-item-active-text-color;
+      color: $nav-link-hover-color;
     }
     &.active {
       border-right: none;
-      color: $profile-nav-item-active-text-color;
+      color: $nav-link-hover-color;
     }
   }
 }
@@ -159,10 +157,10 @@ a.sl-tag {
 @media (min-width: $screen-sm-min) {
   .sl-side-nav {
     &.nav.nav-pills.nav-stacked>li>a {
-      border-right: 4px solid white;
+      border-right: 2px solid $nav-bg-color;
       text-align: right;
       &.active {
-        border-right: 4px solid $profile-nav-item-active-marker-color;
+        border-right: 2px solid $nav-link-hover-color;
       }
     }
   }

@@ -1,26 +1,11 @@
-<header class="sl-nav navbar navbar-default navbar-static-top">
+<header class="sl-nav navbar navbar-light navbar-static-top bd-navbar">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-        aria-controls="navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <nav>
       <a class="navbar-brand" routerLink="/">{{ 'appname' | translate }}</a>
-    </div>
-    <nav id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <template ngFor let-link [ngForOf]="links">
-          <li [ngClass]="{ 'active': isLinkActive(link) }" *ngIf="link.left && link.visible && link.state.visible()">
-            <a routerLink="{{ link.path }}">{{ link.title | translate}}</a>
-          </li>
-        </template>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <template ngFor let-link [ngForOf]="links">
-          <li [ngClass]="{ 'active': isLinkActive(link) }" *ngIf="!link.left && link.visible &&  link.state.visible()">
-            <a routerLink="{{ link.path }}">{{ link.title | translate  }}</a>
+          <li class="nav-item" [ngClass]="{ 'float-md-right': !link.left }" *ngIf="link.visible && link.state.visible()">
+            <a class="nav-link" routerLink="{{ link.path }}" routerLinkActive="active">{{ link.title | translate}}</a>
           </li>
         </template>
       </ul>
