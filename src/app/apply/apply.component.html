@@ -7,29 +7,29 @@
   </div>
   <div class="container content">
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-md-3">
         <div class="save-cotainer">
           <button class="btn sl-btn-green btn-block" (click)="gotoSave()">{{ 'button.save' | translate }}</button>
         </div>
-        <ul class="nav nav-pills nav-stacked sl-side-nav">
-          <li role="presentation">
-            <a routerLink="type" routerLinkActive="active">{{ 'page.apply.type.label' | translate }}</a>
+        <ul class="nav sl-side-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="type" routerLinkActive="active">{{ 'page.apply.type.label' | translate }}</a>
           </li>
-          <li role="presentation">
-            <a routerLink="attributes" routerLinkActive="active">{{ 'page.apply.attributes.label' | translate }}</a>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="attributes" routerLinkActive="active">{{ 'page.apply.attributes.label' | translate }}</a>
           </li>
-          <li role="presentation">
-            <a routerLink="points" routerLinkActive="active">{{ 'page.apply.points.label' | translate }}</a>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="points" routerLinkActive="active">{{ 'page.apply.points.label' | translate }}</a>
           </li>
-          <li role="presentation">
-            <a routerLink="security" routerLinkActive="active">{{ 'page.apply.security.label' | translate }}</a>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="security" routerLinkActive="active">{{ 'page.apply.security.label' | translate }}</a>
           </li>
-          <li role="presentation">
-            <a routerLink="extra" routerLinkActive="active">{{ 'page.apply.extra.label' | translate }}</a>
+          <li  class="nav-item">
+            <a class="nav-link" routerLink="extra" routerLinkActive="active">{{ 'page.apply.extra.label' | translate }}</a>
           </li>
         </ul>
       </div>
-      <div class="col-sm-9">
+      <div class="col-md-9">
         <router-outlet></router-outlet>
       </div>
     </div>

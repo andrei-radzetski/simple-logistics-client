@@ -4,7 +4,7 @@
     <div class="col-md-3">
       <span>{{ 'page.apply.points.name' | translate }}</span>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
       <input type="text" class="form-control" placeholder="{{ 'page.apply.points.name' | translate }}">
     </div>
   </div>
@@ -12,7 +12,7 @@
     <div class="col-md-3">
       <span>{{ 'page.apply.points.radius' | translate }}</span>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
       <input type="text" class="form-control" placeholder="{{ 'page.apply.points.radius' | translate }}">
     </div>
   </div>
@@ -20,7 +20,7 @@
     <div class="col-md-3">
       <span>{{ 'page.apply.points.arrival-datetime' | translate }}</span>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
       <input type="datetime" class="form-control" placeholder="{{ 'page.apply.points.arrival-datetime' | translate }}">
     </div>
   </div>
@@ -28,13 +28,13 @@
     <div class="col-md-3">
       <span>{{ 'page.apply.points.departure-datetime' | translate }}</span>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
       <input type="datetime" class="form-control" placeholder="{{ 'page.apply.points.departure-datetime' | translate }}">
     </div>
   </div>
   <div class="row sl-row">
-    <div class="col-md-6 col-md-offset-3 no-margin">
-      <div class="checkbox">
+    <div class="col-md-7 offset-md-3 no-margin">
+      <div class="checkbox no-margin">
         <label>
           <input type="checkbox">
           {{ 'page.apply.points.start-point' | translate }}
@@ -43,8 +43,8 @@
     </div>
   </div>
   <div class="row sl-row no-margin">
-    <div class="col-md-6 col-md-offset-3 no-margin">
-      <div class="checkbox">
+    <div class="col-md-7 offset-md-3 no-margin">
+      <div class="checkbox no-margin">
         <label>
           <input type="checkbox">
           {{ 'page.apply.points.finish-point' | translate }}
@@ -53,13 +53,13 @@
     </div>
   </div>
   <div class="row sl-row">
-    <div class="col-md-6 col-md-offset-3 no-margin">
+    <div class="col-md-7 offset-md-3 no-margin">
       <button class="btn sl-btn-primary btn-block" (click)="addPoint()">{{ 'button.add' | translate }}</button>
     </div>
   </div>
   <div class="points-list" [dragula]="'bag-one'" [dragulaModel]="items">
     <div *ngFor="let item of items" class="row sl-row">
-      <div class="col-md-9 no-margin">
+      <div class="col-md-10 no-margin">
         <div class="panel panel-default">
           <div class="panel-body">
             {{item}} Basic panel example
@@ -69,7 +69,7 @@
     </div>
   </div>
   <div class="row sl-row">
-    <div class="col-md-6 col-md-offset-3 no-margin">
+    <div class="col-md-7 offset-md-3 no-margin">
       <button class="btn sl-btn-primary btn-block" (click)="next()">{{ 'button.next' | translate }}</button>
     </div>
   </div>
