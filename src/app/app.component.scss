@@ -97,33 +97,35 @@ a.sl-tag {
   text-decoration: none;
 }
 
-.sl-tag-panel {
+.sl-tag-card {
   border-radius: 0px;
-  border: none;
   cursor: pointer;
   margin-bottom: $main-padding;
-  .panel-body {
+  background-color: $nav-bg-color;
+  .card-block {
     padding: $main-padding $main-padding 0px $main-padding;
     font-weight: bold;
     text-align: center;
     font-size: 100px;
+    color: $card-text-color;
   }
-  .panel-footer {
+  .card-footer {
     padding: 0px 5px $main-padding 5px;
-    font-weight: bold;
     text-align: center;
     border: none;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
+    color: $card-text-color;
+    background-color: $nav-bg-color; 
   }
-}
 
-@include sl-tag-panel('purple', $purple-color, $on-purple-color, $purple-deep-color);
-@include sl-tag-panel('teal', $teal-color, $on-teal-color, $teal-deep-color);
-@include sl-tag-panel('brown', $brown-color, $on-brown-color, $brown-deep-color);
-@include sl-tag-panel('light-blue', $light-blue-color, $on-light-blue-color, $light-blue-deep-color);
-@include sl-tag-panel('cyan', $cyan-color, $on-cyan-color, $cyan-deep-color);
-@include sl-tag-panel('green', $green-color, $on-green-color, $green-deep-color);
+  &:hover {
+      color: $card-hover-color;
+      .card-footer {
+        color: $card-hover-color;
+      }
+    }
+}
 //---------------------------------------------
 //---------------TAG-PANEL-END-----------------
 //---------------------------------------------

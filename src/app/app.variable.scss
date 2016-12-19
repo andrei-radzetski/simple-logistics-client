@@ -54,6 +54,11 @@ $nav-bg-color:                        #ffffff !default;
 $nav-text-color:                      #757575 !default;
 $nav-link-hover-color:                #263238 !default;
 
+/* CARD VARIABLES */
+$card-bg-color:                         $nav-bg-color !default;
+$card-text-color:                       $nav-text-color !default;
+$card-hover-color:                      $nav-link-hover-color !default;
+
 /* HEADER VARIABLES */
 $header-bg-color:                       $primary-color !default;
 $header-text-color:                     $on-primary-color !default;

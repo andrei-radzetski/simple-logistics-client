@@ -41,30 +41,3 @@
     }
   }
 }
-
-/*
-<div class="panel panel-default sl-tag-panel-light-blue">
-  <div class="panel-body">67s</div>
-  <div class="panel-footer">Panel footer</div>
-</div>
-*/
-
-@mixin sl-tag-panel($key, $main-color, $on-color, $hover-color) {
-  .sl-tag-panel-#{$key} {
-    background-color: $main-color;
-    .panel-body {
-      color: $on-color;
-    }
-    .panel-footer {
-      color: $on-primary-color;
-      background-color: $main-color;
-    }
-
-    &:hover {
-      background-color: $hover-color;
-      .panel-footer {
-        background-color: $hover-color;
-      }
-    }
-  }
-}
