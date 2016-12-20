@@ -3,6 +3,7 @@ import { DictionaryService } from '../../shared/dictionary/dictionary.service';
 import { Dictionary } from '../../shared/dictionary/dictionary';
 import { RestResponseError } from '../../shared/rest/rest.responseError';
 import { RestResponseArray } from '../../shared/rest/rest.responseArray';
+import { RestResponseObject } from '../../shared/rest/rest.responseObject';
 import { RestResponseSimpleArray } from '../../shared/rest/rest.responseSimpleArray';
 
 @Component({
@@ -41,6 +42,13 @@ export class ProfileDictionariesComponent implements OnInit {
         (err: RestResponseError) => console.log(err.message))
   }
 
+  create() {
+    this.dictionaryService.create(this.model)
+      .subscribe(
+        (res: RestResponseObject<Dictionary>) => this.onDictionaryCreated(),
+        (err: RestResponseError) => console.log(err.message))
+  }
+
   onDictionariesReceived(dictionaries: Dictionary[]) {
     this.dictionaries = dictionaries;
   }
@@ -56,8 +64,14 @@ export class ProfileDictionariesComponent implements OnInit {
     this.getDictionaries()
   }
 
+  onDictionaryCreated() {
+    this.getDictionaries()
+  }
+
   save() {
-    console.log(this.model);
+    if(this.model) {
+      this.create();
+    }
   }
 
 }

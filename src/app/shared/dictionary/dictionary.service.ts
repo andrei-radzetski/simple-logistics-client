@@ -3,6 +3,7 @@ import { RestHttp } from '../rest/rest.http';
 import { Observable } from 'rxjs/Observable';
 import { RestService } from '../rest/rest.service';
 import { RestResponseArray } from '../rest/rest.responseArray';
+import { RestResponseObject } from '../rest/rest.responseObject';
 import { RestResponseSimpleArray } from '../rest/rest.responseSimpleArray';
 import { Dictionary } from './dictionary';
 import { URLSearchParams } from '@angular/http';
@@ -42,6 +43,10 @@ export class DictionaryService extends RestService<Dictionary> {
     let params = new URLSearchParams();
     params.set( 'type', type ? type.toString() : '' )
     return this.getArray('/dictionaries/filter', params);
+  }
+
+  create(model: Dictionary): Observable<RestResponseObject<Dictionary>> {
+    return this.postOne('/dictionaries', model);
   }
 
 }
