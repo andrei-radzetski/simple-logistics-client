@@ -3,7 +3,7 @@ import { RestRequest } from '../rest/rest.request';
 
 export class Dictionary extends RestObject implements RestRequest {
 
-  constructor(private type?: String, private key?: String, private value?: String) {
+  constructor(public type?: String, public key?: String, public value?: String) {
     super()
   }
 

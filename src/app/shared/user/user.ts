@@ -7,9 +7,9 @@ export class User extends RestObject implements RestRequest {
   phone: string;
   firstName: string;
   secondName: string;
-  country: string;
+  country: String;
   city: string;
-  language: string;
+  language: String;
   additionalInfo: string;
   confirmed: boolean;
   scope: string;

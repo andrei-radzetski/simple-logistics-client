@@ -1,3 +1,4 @@
+<sl-busy></sl-busy>
 <div class="sl-profile-settings">
   <div class="row">
     <div class="col-md-4 col-lg-3">
@@ -23,7 +24,7 @@
       <input type="email" [(ngModel)]="user.email" class="form-control" placeholder="{{ 'page.profile.info.email' | translate }}">
     </div>
   </div>
-  <div class="row">
+  <div class="row sl-row">
     <div class="col-md-4 col-lg-3">
       <span>{{ 'page.profile.info.phone' | translate }}</span>
     </div>
@@ -31,15 +32,17 @@
       <input type="tel" [(ngModel)]="user.phone" class="form-control" placeholder="{{ 'page.profile.info.phone' | translate }}">
     </div>
   </div>
-  <div class="row">
+  <div class="row sl-row">
     <div class="col-md-4 col-lg-3">
       <span>{{ 'page.profile.info.country' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <input type="text" [(ngModel)]="user.country" class="form-control" placeholder="{{ 'page.profile.info.country' | translate }}">
+      <select class="form-control" [ngModel]="country" (ngModelChange)="onCountryChanged($event)">
+        <option [ngValue]="country" *ngFor="let country of countries">{{ 'country.' + country.key | translate }}</option>
+      </select>
     </div>
   </div>
-  <div class="row">
+  <div class="row sl-row">
     <div class="col-md-4 col-lg-3">
       <span>{{ 'page.profile.info.city' | translate }}</span>
     </div>
@@ -52,7 +55,9 @@
       <span>{{ 'page.profile.info.language' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <input type="text" [(ngModel)]="user.language" class="form-control" placeholder="{{ 'page.profile.info.language' | translate }}">
+      <select class="form-control" [ngModel]="language" (ngModelChange)="onLanguageChanged($event)">
+        <option [ngValue]="language" *ngFor="let language of languages">{{ 'lang.' + language.key | translate }}</option>
+      </select>
     </div>
   </div>
   <div class="row">

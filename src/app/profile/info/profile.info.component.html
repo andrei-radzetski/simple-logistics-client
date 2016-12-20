@@ -1,11 +1,12 @@
+<sl-busy></sl-busy>
 <div class="sl-profile-info">
-  <h1>{{ getFullName() }}</h1>
+  <h1>{{ user.getFullName() }}</h1>
   <div class="row sl-row">
     <div class="col-md-4 col-lg-3 no-margin">
       <span>{{ 'page.profile.info.email' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <span>{{ getEmail() }}</span>
+      <span>{{ user.email }}</span>
     </div>
   </div>
   <div class="row sl-row">
@@ -13,7 +14,7 @@
       <span>{{ 'page.profile.info.phone' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <span>{{ getPhone() }}</span>
+      <span>{{ user.phone }}</span>
     </div>
   </div>
   <div class="row sl-row">
@@ -21,7 +22,7 @@
       <span>{{ 'page.profile.info.country' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <span>{{ getCountry() }}</span>
+      <span>{{ 'country.' + user.country | translate }}</span>
     </div>
   </div>
   <div class="row sl-row">
@@ -29,7 +30,7 @@
       <span>{{ 'page.profile.info.city' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <span>{{ getCity() }}</span>
+      <span>{{ user.city }}</span>
     </div>
   </div>
   <div class="row sl-row">
@@ -37,7 +38,7 @@
       <span>{{ 'page.profile.info.language' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <span>{{ getLanguage() }}</span>
+      <span>{{ 'lang.' + user.language | translate }}</span>
     </div>
   </div>
   <div class="row sl-row">
@@ -45,7 +46,7 @@
       <span>{{ 'page.profile.info.additional' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <span>{{ getAdditionalInfo() }}</span>
+      <span>{{ user.additionalInfo }}</span>
     </div>
   </div>
 </div>

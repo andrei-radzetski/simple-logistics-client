@@ -14,6 +14,9 @@ export const LANG_EN_TRANS = {
   "lang.ru": "Русский",
   "lang.en": "English",
 
+  "country.by": "Belarus",
+  "country.ru": "Russia",
+
   "list.label": "List",
   "list.emtpy": "Empty list",
 
