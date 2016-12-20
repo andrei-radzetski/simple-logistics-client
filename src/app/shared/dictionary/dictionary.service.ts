@@ -49,4 +49,8 @@ export class DictionaryService extends RestService<Dictionary> {
     return this.postOne('/dictionaries', model);
   }
 
+  remove(id: String): Observable<RestResponseObject<Dictionary>> {
+    return this.deleteOne('/dictionaries', id);
+  }
+
 }

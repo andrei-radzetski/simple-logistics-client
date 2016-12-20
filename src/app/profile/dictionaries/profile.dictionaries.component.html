@@ -38,6 +38,7 @@
         <li class="list-group-item">
           <div class="card sl-card" *ngFor="let dictionary of dictionaries">
             <div class="card-block">
+              <i (click)="remove(dictionary)" class="fa fa-times sl-rm-icon float-xs-right" aria-hidden="true"></i>
               <p>{{ dictionary.value }} ({{ dictionary.key }})</p>
             </div>
           </div>

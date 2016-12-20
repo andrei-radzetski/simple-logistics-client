@@ -102,6 +102,9 @@ a.sl-tag {
 .sl-card {
   border-radius: 0px;
   cursor: pointer;
+  i.sl-rm-icon:hover {
+    color: $error-color;
+  }
   p {
     margin-bottom: 0px;
   }
@@ -119,7 +122,7 @@ a.sl-tag {
     font-size: 100px;
     color: $card-text-color;
     i {
-        color: $nav-icon-color;
+      color: $nav-icon-color;
     }
   }
   .card-footer {
@@ -137,7 +140,7 @@ a.sl-tag {
       color: $card-hover-color;
       i {
         color: $card-hover-color;
-    }
+      }
     }
     .card-footer {
       color: $card-hover-color;

@@ -42,6 +42,13 @@ export class ProfileDictionariesComponent implements OnInit {
         (err: RestResponseError) => console.log(err.message))
   }
 
+  remove(dictionary: Dictionary) {
+    this.dictionaryService.remove(dictionary.id)
+      .subscribe(
+        (res: RestResponseObject<Dictionary>) => this.onDictionaryRemoved(),
+        (err: RestResponseError) => console.log(err.message))
+  }
+
   create() {
     this.dictionaryService.create(this.model)
       .subscribe(
@@ -66,6 +73,10 @@ export class ProfileDictionariesComponent implements OnInit {
 
   onDictionaryCreated() {
     this.onTypeChange(this.selectedType);
+  }
+
+  onDictionaryRemoved() {
+    this.getDictionaries();
   }
 
   save() {

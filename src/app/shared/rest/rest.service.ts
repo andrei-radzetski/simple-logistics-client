@@ -101,7 +101,7 @@ export abstract class RestService<T extends RestObject> {
    * @param {URLSearchParams} params - url params.
    * @returns {Observable<RestResponseSimpleArray<U>>}
    */
-   getSimpleArray<U>(url: string, params?: URLSearchParams): Observable<RestResponseSimpleArray<U>> {
+  getSimpleArray<U>(url: string, params?: URLSearchParams): Observable<RestResponseSimpleArray<U>> {
     url = RestService.API + url;
 
     return this.http.get(url)
@@ -139,6 +139,21 @@ export abstract class RestService<T extends RestObject> {
     url = RestService.API + url;
 
     return this.http.put(url, model.toRequest(), options)
+      .map((res: Response) => new RestResponseObject(res, this.creator))
+      .catch((err: Response) => Observable.throw(new RestResponseError(err)));
+  }
+
+  /**
+   * Call DELETE method. Expects only single object as response.
+   * 
+   * @param {string} url - service url.
+   * @param {String} id - id.
+   * @returns {Observable<RestResponseObject<T>>}
+   */
+  deleteOne(url: string, id: String): Observable<RestResponseObject<T>> {
+    url = RestService.API + url + '/' + id;
+
+    return this.http.delete(url)
       .map((res: Response) => new RestResponseObject(res, this.creator))
       .catch((err: Response) => Observable.throw(new RestResponseError(err)));
   }
