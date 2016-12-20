@@ -54,18 +54,18 @@ export class ProfileDictionariesComponent implements OnInit {
   }
 
   onTypesReceived(types: String[]) {
-    this.onTypeChange(types[0])
+    this.onTypeChange(types[0]);
     this.types = types;
   }
 
   onTypeChange(value: String) {
     this.selectedType = value;
     this.model = new Dictionary(this.selectedType);
-    this.getDictionaries()
+    this.getDictionaries();
   }
 
   onDictionaryCreated() {
-    this.getDictionaries()
+    this.onTypeChange(this.selectedType);
   }
 
   save() {
