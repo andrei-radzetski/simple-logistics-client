@@ -5,6 +5,109 @@
       </sl-header>
     </div>
   </div>
-  <div class="container content">
+  <div class="container content no-bottom">
+    <div class="row">
+      <div class="col-lg-4 col-xl-3">
+        <div class="row sl-row">
+          <div class="col-xs-12 no-margin">
+            <button (click)="gotoApply()" class="btn sl-btn-green btn-block">{{ 'button.apply' | translate }}</button>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-xs-12 no-top">
+            <span class="sl-label">{{ 'page.requests.find.kind' | translate }}</span>
+          </div>
+          <div class="col-xs-12 no-margin">
+            <select class="form-control">
+              <option>Спрос</option>
+              <option>Предложение</option>
+            </select>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-xs-12">
+            <span class="sl-label">{{ 'page.requests.find.service' | translate }}</span>
+          </div>
+          <div class="col-xs-12 no-margin">
+            <select class="form-control">
+            <option>Пассажирская перевозка</option>
+            <option>Грузоперевозка</option>
+            <option>Попутчик</option>
+          </select>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-xs-12 no-top">
+            <span class="sl-label">{{ 'page.requests.find.departure' | translate }}</span>
+          </div>
+          <div class="col-xs-12 no-margin">
+            <input type="text" class="form-control" placeholder="{{ 'page.requests.find.departure' | translate }}">
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-xs-12 no-top">
+            <span class="sl-label">{{ 'page.requests.find.destination' | translate }}</span>
+          </div>
+          <div class="col-xs-12 no-margin">
+            <input type="text" class="form-control" placeholder="{{ 'page.requests.find.destination' | translate }}">
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-xs-12 no-top">
+            <span class="sl-label">{{ 'page.requests.find.departure-date' | translate }}</span>
+          </div>
+          <div class="col-xs-12 no-margin">
+            <input type="date" class="form-control" placeholder="{{ 'page.requests.find.departure-date' | translate }}">
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-xs-12 no-top">
+            <span class="sl-label">{{ 'page.requests.find.destination-date' | translate }}</span>
+          </div>
+          <div class="col-xs-12 no-margin">
+            <input type="date" class="form-control" placeholder="{{ 'page.requests.find.destination-date' | translate }}">
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-xs-12 no-top">
+            <span class="sl-label">{{ 'page.requests.find.places' | translate }}</span>
+          </div>
+          <div class="col-xs-12 no-margin">
+            <input type="text" class="form-control" placeholder="{{ 'page.requests.find.places' | translate }}">
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-xs-12 no-top">
+            <span class="sl-label">{{ 'page.requests.find.transport' | translate }}</span>
+          </div>
+          <div class="col-xs-12 no-margin">
+            <select class="form-control">
+            <option>Пассажирская перевозка</option>
+            <option>Грузоперевозка</option>
+            <option>Попутчик</option>
+          </select>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-xs-12 no-margin">
+            <button (click)="find()" class="btn sl-btn-primary btn-block">{{ 'button.search' | translate }}</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-xl-9">
+        <ul class="list-group sl-list">
+          <li class="list-group-item" *ngFor="let item of items">
+            <div class="card sl-card">
+              <div class="card-block">
+                <p>Гродно &rarr; Минск &rarr; Смоленск &rarr; Москва</p>
+                <p>Дата отправления: 19.05.2017</p>
+                <p>Дата приезда: 20.05.2017</p>
+                <p>sf jhsgf jsdhfg dsjhfg sjdhfg sjdfgjsfg jsgfjhds fgjhs gdfjhsgdj fgsdjfgdsjhfg jdsgfjhsgdfkj sdgf jshgdfhjsdg fjhfsjd fgshjfg sdj</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

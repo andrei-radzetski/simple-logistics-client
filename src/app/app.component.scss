@@ -102,6 +102,9 @@ a.sl-tag {
 .sl-card {
   border-radius: 0px;
   cursor: pointer;
+  p {
+    margin-bottom: 0px;
+  }
 }
 
 .sl-tag-card {
@@ -115,6 +118,9 @@ a.sl-tag {
     text-align: center;
     font-size: 100px;
     color: $card-text-color;
+    i {
+        color: $nav-icon-color;
+    }
   }
   .card-footer {
     padding: 0px 5px $main-padding 5px;
@@ -129,6 +135,9 @@ a.sl-tag {
     color: $card-hover-color;
     .card-block {
       color: $card-hover-color;
+      i {
+        color: $card-hover-color;
+    }
     }
     .card-footer {
       color: $card-hover-color;
@@ -195,6 +204,10 @@ a.sl-tag {
     margin-bottom: 7px;
     margin-top: 7px;
   }
+  div.no-top:first-child:not(.no-margin) {
+    margin-bottom: 7px;
+    margin-top: 0px;
+  }
   &.no-bottom {
     margin-bottom: 0px;
   }
@@ -204,7 +217,7 @@ a.sl-tag {
 //------------------SL-ROW-END-----------------
 //---------------------------------------------
 //---------------------------------------------
-//------------------SL-h-----------------------
+//------------------SL-H-----------------------
 //---------------------------------------------
 h1.sl-h {
   font-size: 40px;
@@ -215,6 +228,19 @@ h1.sl-h {
 
 //---------------------------------------------
 //------------------SL-H-END-------------------
+//---------------------------------------------
+//---------------------------------------------
+//---------------SL-LIST-----------------------
+//---------------------------------------------
+.sl-list {
+  .list-group-item {
+    padding: 0px;
+    border: none;
+  }
+}
+
+//---------------------------------------------
+//---------------SL-LIST-END-------------------
 //---------------------------------------------
 .content.container {
   padding-top: $main-padding;

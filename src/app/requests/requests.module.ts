@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HeaderModule } from '../shared/header/header.module';
+import { CommonModule } from '@angular/common';
 import { RequestsComponent } from './requests.component';
 import { requestsRouting } from './requests.routing';
 import { TranslateModule } from '../shared/translate/translate.module';
@@ -8,7 +9,8 @@ import { TranslateModule } from '../shared/translate/translate.module';
   imports: [
     requestsRouting,
     HeaderModule,
-    TranslateModule
+    TranslateModule,
+    CommonModule
   ],
   declarations: [
     RequestsComponent

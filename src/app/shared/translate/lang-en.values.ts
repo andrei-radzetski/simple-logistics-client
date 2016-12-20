@@ -102,6 +102,14 @@ export const LANG_EN_TRANS = {
 
   "page.requests.title": "Requests",
   "page.requests.description": "Some text, which describes the section.",
+  "page.requests.find.kind": "Kind",
+  "page.requests.find.service": "Service",
+  "page.requests.find.departure": "Departure",
+  "page.requests.find.destination": "Destination",
+  "page.requests.find.departure-date": "Departure date",
+  "page.requests.find.destination-date": "Destination date",
+  "page.requests.find.places": "Number of seats",
+  "page.requests.find.transport": "Transport",
 
   "page.profile.title": "Profile",
   "page.profile.description": "Some text, which describes the section.",
