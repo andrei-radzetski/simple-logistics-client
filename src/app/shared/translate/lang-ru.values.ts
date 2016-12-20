@@ -14,6 +14,9 @@ export const LANG_RU_TRANS = {
   "lang.ru": "Русский",
   "lang.en": "English",
 
+  "list.label": "Список",
+  "list.emtpy": "Список пуст",
+
   "nav.home": "Главная",
   "nav.about": "О системе",
   "nav.requests": "Заявки",

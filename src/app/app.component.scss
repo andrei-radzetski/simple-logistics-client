@@ -30,6 +30,10 @@ body {
 
 .sl-label {
   color: $text-color;
+  &.sl-muted {
+    color: $muted-text-color;
+    font-style: italic;
+  }
   &.sl-error {
     color: $error-color;
   }

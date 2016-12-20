@@ -85,4 +85,8 @@ export class ProfileDictionariesComponent implements OnInit {
     }
   }
 
+  isEmpty() {
+    return this.dictionaries.length === 0;
+  }
+
 }

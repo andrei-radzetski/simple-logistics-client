@@ -1,39 +1,40 @@
 <div class="sl-profile-dictionaries">
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="row sl-row">
-        <div class="col-xs-12 no-top">
-          <span class="sl-label">{{ 'page.profile.dictionaries.type' | translate }}</span>
-        </div>
-        <div class="col-xs-12 no-margin">
-          <select class="form-control" [ngModel]="selectedType" (ngModelChange)="onTypeChange($event)">
-            <option [ngValue]="type" *ngFor="let type of types">{{ type }}</option>
-          </select>
-        </div>
-      </div>
-      <div class="row sl-row">
-        <div class="col-xs-12 no-top">
-          <span class="sl-label">{{ 'page.profile.dictionaries.key' | translate }}</span>
-        </div>
-        <div class="col-xs-12 no-margin">
-          <input [(ngModel)]="model.key" type="text" class="form-control" placeholder="{{ 'page.profile.dictionaries.key' | translate }}">
-        </div>
-      </div>
-      <div class="row sl-row">
-        <div class="col-xs-12 no-top">
-          <span class="sl-label">{{ 'page.profile.dictionaries.value' | translate }}</span>
-        </div>
-        <div class="col-xs-12 no-margin">
-          <input [(ngModel)]="model.value" type="text" class="form-control" placeholder="{{ 'page.profile.dictionaries.value' | translate }}">
-        </div>
-      </div>
-      <div class="row sl-row">
-        <div class="col-xs-12 no-margin">
-          <button (click)="save()" class="btn sl-btn-green btn-block">{{ 'button.add' | translate }}</button>
-        </div>
-      </div>
+  <div class="row sl-row">
+    <div class="col-md-4 col-lg-3">
+      <span class="sl-label">{{ 'page.profile.dictionaries.type' | translate }}</span>
     </div>
-    <div class="col-lg-6">
+    <div class="col-md-8 col-lg-6">
+      <select class="form-control" [ngModel]="selectedType" (ngModelChange)="onTypeChange($event)">
+        <option [ngValue]="type" *ngFor="let type of types">{{ type }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row sl-row">
+    <div class="col-md-4 col-lg-3">
+      <span class="sl-label">{{ 'page.profile.dictionaries.key' | translate }}</span>
+    </div>
+    <div class="col-md-8 col-lg-6">
+      <input [(ngModel)]="model.key" type="text" class="form-control" placeholder="{{ 'page.profile.dictionaries.key' | translate }}">
+    </div>
+  </div>
+  <div class="row sl-row">
+    <div class="col-md-4 col-lg-3">
+      <span class="sl-label">{{ 'page.profile.dictionaries.value' | translate }}</span>
+    </div>
+    <div class="col-md-8 col-lg-6">
+      <input [(ngModel)]="model.value" type="text" class="form-control" placeholder="{{ 'page.profile.dictionaries.value' | translate }}">
+    </div>
+  </div>
+  <div class="row sl-row">
+    <div class="col-md-8 col-lg-6 offset-md-4 offset-lg-3">
+      <button (click)="save()" class="btn sl-btn-green btn-block">{{ 'button.add' | translate }}</button>
+    </div>
+  </div>
+  <div class="row sl-row no-bottom">
+    <div class="col-md-8 col-lg-6 offset-md-4 offset-lg-3 no-margin" *ngIf="isEmpty()">
+      <span class="sl-label sl-muted">{{ 'list.emtpy' | translate }}</span>
+    </div>
+    <div class="col-md-12 col-lg-9 no-margin">
       <ul class="list-group sl-list">
         <li class="list-group-item">
           <div class="card sl-card" *ngFor="let dictionary of dictionaries">
