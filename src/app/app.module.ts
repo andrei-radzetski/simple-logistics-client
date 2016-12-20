@@ -13,6 +13,7 @@ import { UsersModule } from './users/users.module';
 import { ApplyModule } from './apply/apply.module';
 import { ProfileModule } from './profile/profile.module';
 import { TranslateModule } from './shared/translate/translate.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { TranslateModule } from './shared/translate/translate.module';
     UsersModule,
     ProfileModule,
     ApplyModule,
+    NgbModule.forRoot(),
     routing,
     TranslateModule
   ],

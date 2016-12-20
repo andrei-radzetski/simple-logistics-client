@@ -14,6 +14,9 @@ import { ProfileRequestsComponent } from './requests/profile.requests.component'
 import { ProfileMessagesComponent } from './messages/profile.messages.component';
 import { ProfileDictionariesComponent } from './dictionaries/profile.dictionaries.component';
 import { RouteCanActiveAuthorized } from '../shared/route/route.canActiveAuthorized';
+import { BusyModule } from '../shared/components/busy/busy.module';
+import { BusyComponent } from '../shared/components/busy/busy.component';
+
 
 @NgModule({
   imports: [
@@ -24,7 +27,8 @@ import { RouteCanActiveAuthorized } from '../shared/route/route.canActiveAuthori
     TranslateModule,
     UserModule,
     AuthModule,
-    DictionaryModule
+    DictionaryModule,
+    BusyModule
   ],
   declarations: [
     ProfileComponent,
@@ -36,6 +40,9 @@ import { RouteCanActiveAuthorized } from '../shared/route/route.canActiveAuthori
   ], 
   providers: [
     RouteCanActiveAuthorized
-  ]
+  ],
+  entryComponents: [
+    BusyComponent
+  ]  
 })
 export class ProfileModule { }
