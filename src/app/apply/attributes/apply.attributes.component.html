@@ -13,7 +13,9 @@
       <span class="sl-label">{{ 'page.apply.attributes.transport' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <input type="text" class="form-control" placeholder="{{ 'page.apply.attributes.transport' | translate }}">
+      <select class="form-control" [ngModel]="applyService.transport" (ngModelChange)="applyService.onTransportChanged($event)">
+        <option [ngValue]="transport" *ngFor="let transport of applyService.transports">{{ transport.value }}</option>
+      </select>
     </div>
   </div>
    <div class="row sl-row">
