@@ -5,6 +5,7 @@ import { ProfileInfoComponent } from './info/profile.info.component';
 import { ProfileSettingsComponent } from './settings/profile.settings.component';
 import { ProfileRequestsComponent } from './requests/profile.requests.component';
 import { ProfileMessagesComponent } from './messages/profile.messages.component';
+import { ProfileDictionariesComponent } from './dictionaries/profile.dictionaries.component';
 import { RouteCanActiveAuthorized } from '../shared/route/route.canActiveAuthorized';
 
 const profileRoutes: Routes = [
@@ -34,6 +35,10 @@ const profileRoutes: Routes = [
       {
         path: 'settings',
         component: ProfileSettingsComponent
+      },
+      {
+        path: 'dictionaries',
+        component: ProfileDictionariesComponent
       }
     ]
   }

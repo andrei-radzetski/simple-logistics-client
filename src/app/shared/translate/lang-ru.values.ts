@@ -117,6 +117,7 @@ export const LANG_RU_TRANS = {
   "page.profile.nav.requests": "Заявки",
   "page.profile.nav.messages": "Сообщения",
   "page.profile.nav.settings": "Настройки",
+  "page.profile.nav.dictionaries": "Словари",
   "page.profile.nav.exit": "Выход",
   "page.profile.info.email": "Почта",
   "page.profile.info.phone": "Телефон",
@@ -125,6 +126,9 @@ export const LANG_RU_TRANS = {
   "page.profile.info.language": "Язык",
   "page.profile.info.additional": "Дополнительная информация",
   "page.profile.settings.first-name": "Имя",
-  "page.profile.settings.second-name": "Фамилия"
+  "page.profile.settings.second-name": "Фамилия",
+  "page.profile.dictionaries.type": "Тип",
+  "page.profile.dictionaries.key": "Ключ",
+  "page.profile.dictionaries.value": "Значение"
   
 }

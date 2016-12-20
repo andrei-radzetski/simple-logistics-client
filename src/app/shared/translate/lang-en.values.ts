@@ -117,6 +117,7 @@ export const LANG_EN_TRANS = {
   "page.profile.nav.requests": "Requests",
   "page.profile.nav.messages": "Messages",
   "page.profile.nav.settings": "Settings",
+  "page.profile.nav.dictionaries": "Dictionaries",
   "page.profile.nav.exit": "Exit",
   "page.profile.info.email": "Email",
   "page.profile.info.phone": "Phone",
@@ -125,5 +126,8 @@ export const LANG_EN_TRANS = {
   "page.profile.info.language": "Language",
   "page.profile.info.additional": "Additional information",
   "page.profile.settings.first-name": "First name",
-  "page.profile.settings.second-name": "Second name"
+  "page.profile.settings.second-name": "Second name",
+  "page.profile.dictionaries.type": "Type",
+  "page.profile.dictionaries.key": "Key",
+  "page.profile.dictionaries.value": "Value"
 }

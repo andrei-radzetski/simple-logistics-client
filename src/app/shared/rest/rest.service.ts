@@ -13,6 +13,7 @@ import { RestObjectCreator } from './rest.objectCreator';
 import { RestResponseError } from './rest.responseError';
 import { RestResponseObject } from './rest.responseObject';
 import { RestResponseArray } from './rest.responseArray';
+import { RestResponseSimpleArray } from './rest.responseSimpleArray';
 
 export abstract class RestService<T extends RestObject> {
 
@@ -73,7 +74,7 @@ export abstract class RestService<T extends RestObject> {
   getOne(url: string, params?: URLSearchParams): Observable<RestResponseObject<T>> {
     url = RestService.API + url;
 
-    return this.http.get(url)
+    return this.http.get(url, { search: params })
       .map((res: Response) => new RestResponseObject(res, this.creator))
       .catch((err: Response) => Observable.throw(new RestResponseError(err)));
   }
@@ -88,8 +89,23 @@ export abstract class RestService<T extends RestObject> {
   getArray(url: string, params?: URLSearchParams): Observable<RestResponseArray<T>> {
     url = RestService.API + url;
 
-    return this.http.get(url)
+    return this.http.get(url, { search: params })
       .map((res: Response) => new RestResponseArray(res, this.creator))
+      .catch((err: Response) => Observable.throw(new RestResponseError(err)));
+  }
+
+  /**
+   * Call GET method. Expects array of simple objects as response.
+   * 
+   * @param {string} url - service url.
+   * @param {URLSearchParams} params - url params.
+   * @returns {Observable<RestResponseSimpleArray<U>>}
+   */
+   getSimpleArray<U>(url: string, params?: URLSearchParams): Observable<RestResponseSimpleArray<U>> {
+    url = RestService.API + url;
+
+    return this.http.get(url)
+      .map((res: Response) => new RestResponseSimpleArray(res))
       .catch((err: Response) => Observable.throw(new RestResponseError(err)));
   }
 

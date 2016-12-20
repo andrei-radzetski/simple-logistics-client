@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HeaderModule } from '../shared/header/header.module';
 import { FormsModule } from '@angular/forms';
 import { profileRouting } from './profile.routing';
@@ -11,10 +12,12 @@ import { ProfileInfoComponent } from './info/profile.info.component';
 import { ProfileSettingsComponent } from './settings/profile.settings.component';
 import { ProfileRequestsComponent } from './requests/profile.requests.component';
 import { ProfileMessagesComponent } from './messages/profile.messages.component';
+import { ProfileDictionariesComponent } from './dictionaries/profile.dictionaries.component';
 import { RouteCanActiveAuthorized } from '../shared/route/route.canActiveAuthorized';
 
 @NgModule({
   imports: [
+    CommonModule,
     profileRouting,
     FormsModule,
     HeaderModule,
@@ -28,7 +31,8 @@ import { RouteCanActiveAuthorized } from '../shared/route/route.canActiveAuthori
     ProfileInfoComponent,
     ProfileSettingsComponent,
     ProfileRequestsComponent,
-    ProfileMessagesComponent
+    ProfileMessagesComponent,
+    ProfileDictionariesComponent
   ], 
   providers: [
     RouteCanActiveAuthorized

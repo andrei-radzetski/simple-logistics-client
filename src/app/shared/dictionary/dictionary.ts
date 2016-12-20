@@ -2,9 +2,9 @@ import { RestObject } from '../rest/rest.object';
 
 export class Dictionary extends RestObject {
 
-  key: string;
-  value: string;
-  type: string;
+  constructor(private type?: String, private key?: String, private value?: String) {
+    super()
+  }
 
   fill(object: any): void {
     this.id = object.id;
