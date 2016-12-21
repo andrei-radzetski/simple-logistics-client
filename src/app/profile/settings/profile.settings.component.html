@@ -38,7 +38,7 @@
     </div>
     <div class="col-md-8 col-lg-6">
       <select class="form-control" [ngModel]="country" (ngModelChange)="onCountryChanged($event)">
-        <option [ngValue]="country" *ngFor="let country of countries">{{ 'country.' + country.key | translate }}</option>
+        <option [ngValue]="country" *ngFor="let country of countries">{{ country.getTranslateKey() | translate }}</option>
       </select>
     </div>
   </div>
@@ -56,7 +56,7 @@
     </div>
     <div class="col-md-8 col-lg-6">
       <select class="form-control" [ngModel]="language" (ngModelChange)="onLanguageChanged($event)">
-        <option [ngValue]="language" *ngFor="let language of languages">{{ 'lang.' + language.key | translate }}</option>
+        <option [ngValue]="language" *ngFor="let language of languages">{{ language.getTranslateKey() | translate }}</option>
       </select>
     </div>
   </div>

@@ -22,7 +22,7 @@
       <span>{{ 'page.profile.info.country' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <span>{{ 'country.' + user.country | translate }}</span>
+      <span>{{ user.getCountryTranslationKey() | translate }}</span>
     </div>
   </div>
   <div class="row sl-row">
@@ -38,7 +38,7 @@
       <span>{{ 'page.profile.info.language' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <span>{{ 'lang.' + user.language | translate }}</span>
+      <span>{{ user.getLanguageTranslationKey() | translate }}</span>
     </div>
   </div>
   <div class="row sl-row">

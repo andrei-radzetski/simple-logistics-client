@@ -7,8 +7,8 @@
       <select class="form-control" [ngModel]="selectedType" (ngModelChange)="onTypeChange($event)">
         <option [ngValue]="type" *ngFor="let type of types">{{ getTranslateKey(type) | translate }}</option>
       </select>
-      <i *ngIf="!isFieldsShown" (click)="isFieldsShown = true" class="fa fa-expand sl-part-margin sl-green-icon fa-lg" aria-hidden="true"></i>
-      <i *ngIf="isFieldsShown" (click)="isFieldsShown = false" class="fa fa-compress sl-part-margin sl-green-icon fa-lg" aria-hidden="true"></i>
+      <i *ngIf="!isFieldsShown" (click)="isFieldsShown = true" class="fa fa-expand sl-part-margin sl-primary-icon fa-lg" aria-hidden="true"></i>
+      <i *ngIf="isFieldsShown" (click)="isFieldsShown = false" class="fa fa-compress sl-part-margin sl-primary-icon fa-lg" aria-hidden="true"></i>
     </div>
   </div>
   <div class="row sl-row" [ngbCollapse]="!isFieldsShown">
@@ -37,14 +37,14 @@
   </div>
   <div class="row sl-row" [ngbCollapse]="!isFieldsShown">
     <div class="col-md-8 col-lg-6 offset-md-4 offset-lg-3">
-      <button (click)="save()" class="btn sl-btn-green btn-block">{{ 'button.add' | translate }}</button>
+      <button (click)="save()" class="btn sl-btn-primary btn-block">{{ 'button.add' | translate }}</button>
     </div>
   </div>
   <div class="row sl-row no-bottom">
-    <div class="col-md-8 col-lg-6 offset-md-4 offset-lg-3 no-margin" *ngIf="isEmpty()">
+    <div class="col-md-8 col-lg-6 no-margin" *ngIf="isEmpty()">
       <span class="sl-label sl-muted">{{ 'list.emtpy' | translate }}</span>
     </div>
-    <div class="col-md-12 col-lg-9 no-margin">
+    <div class="col-md-12 col-lg-9 no-margin" *ngIf="!isEmpty()">
       <table class="table table-hover">
         <thead>
           <tr>

@@ -19,6 +19,21 @@ export const LANG_RU_TRANS = {
   "dict.country.by": "Беларусь",
   "dict.country.ru": "Россия",
 
+  "dict.request-kind.label": "Вид",
+  "dict.request-kind.supply": "Предложение",
+  "dict.request-kind.demand": "Спрос",
+
+  "dict.request-service.label": "Услуга",
+  "dict.request-service.companion": "Попутчик",
+  "dict.request-service.freight": "Грузоперевозка",
+  "dict.request-service.passenger-traffic": "Пассажироперевозка",
+
+  "dict.transport.label": "Вид транспорта",
+  "dict.transport.car": "Автомобиль",
+  "dict.transport.bus": "Автобус",
+  "dict.transport.train": "Поезд",
+  "dict.transport.plane": "Самолет",
+
   "list.label": "Список",
   "list.emtpy": "Список пуст",
 

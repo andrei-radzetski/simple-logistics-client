@@ -272,6 +272,14 @@ i.sl-green-icon {
   }
 }
 
+i.sl-primary-icon {
+  color: $nav-text-color;
+  cursor: pointer;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
 //---------------------------------------------
 //---------------SL-ICONS-END------------------
 //---------------------------------------------

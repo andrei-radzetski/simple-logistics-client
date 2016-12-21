@@ -19,6 +19,21 @@ export const LANG_EN_TRANS = {
   "dict.country.by": "Belarus",
   "dict.country.ru": "Russia",
 
+  "dict.request-kind.label": "Kind",
+  "dict.request-kind.supply": "Supply",
+  "dict.request-kind.demand": "Demand",
+
+  "dict.request-service.label": "Service",
+  "dict.request-service.companion": "Companion",
+  "dict.request-service.freight": "Freight",
+  "dict.request-service.passenger-traffic": "Passenger traffic",
+
+  "dict.transport.label": "Transport",
+  "dict.transport.car": "Car",
+  "dict.transport.bus": "Bus",
+  "dict.transport.train": "Train",
+  "dict.transport.plane": "Plane",
+
   "list.label": "List",
   "list.emtpy": "Empty list",
 

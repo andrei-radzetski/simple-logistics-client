@@ -36,4 +36,12 @@ export class User extends RestObject implements RestRequest {
     return JSON.stringify(this);
   }
 
+  getLanguageTranslationKey() {
+    return this.language ? `dict.language.${this.language}` : '';
+  }
+
+  getCountryTranslationKey() {
+    return this.country ? `dict.country.${this.country}` : '';
+  }
+
 }
