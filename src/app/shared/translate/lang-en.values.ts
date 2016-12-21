@@ -11,11 +11,13 @@ export const LANG_EN_TRANS = {
   "button.next": "Next",
   "button.add": "Add",
 
-  "lang.ru": "Русский",
-  "lang.en": "English",
+  "dict.language.label": "Язык",
+  "dict.language.ru": "Русский",
+  "dict.language.en": "English",
 
-  "country.by": "Belarus",
-  "country.ru": "Russia",
+  "dict.country.label": "Сountry",
+  "dict.country.by": "Belarus",
+  "dict.country.ru": "Russia",
 
   "list.label": "List",
   "list.emtpy": "Empty list",
@@ -135,5 +137,7 @@ export const LANG_EN_TRANS = {
   "page.profile.settings.second-name": "Second name",
   "page.profile.dictionaries.type": "Type",
   "page.profile.dictionaries.key": "Key",
-  "page.profile.dictionaries.value": "Value"
+  "page.profile.dictionaries.value": "Value",
+  "page.profile.dictionaries.description": "Description",
+  "page.profile.dictionaries.translation": "Translation"
 }

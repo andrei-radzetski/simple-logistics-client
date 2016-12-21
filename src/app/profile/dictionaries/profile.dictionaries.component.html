@@ -3,13 +3,15 @@
     <div class="col-md-4 col-lg-3">
       <span class="sl-label">{{ 'page.profile.dictionaries.type' | translate }}</span>
     </div>
-    <div class="col-md-8 col-lg-6">
+    <div class="col-md-8 col-lg-6 sl-flex">
       <select class="form-control" [ngModel]="selectedType" (ngModelChange)="onTypeChange($event)">
-        <option [ngValue]="type" *ngFor="let type of types">{{ type }}</option>
+        <option [ngValue]="type" *ngFor="let type of types">{{ getTranslateKey(type) | translate }}</option>
       </select>
+      <i *ngIf="!isFieldsShown" (click)="isFieldsShown = true" class="fa fa-expand sl-part-margin sl-green-icon fa-lg" aria-hidden="true"></i>
+      <i *ngIf="isFieldsShown" (click)="isFieldsShown = false" class="fa fa-compress sl-part-margin sl-green-icon fa-lg" aria-hidden="true"></i>
     </div>
   </div>
-  <div class="row sl-row">
+  <div class="row sl-row" [ngbCollapse]="!isFieldsShown">
     <div class="col-md-4 col-lg-3">
       <span class="sl-label">{{ 'page.profile.dictionaries.key' | translate }}</span>
     </div>
@@ -17,7 +19,7 @@
       <input [(ngModel)]="model.key" type="text" class="form-control" placeholder="{{ 'page.profile.dictionaries.key' | translate }}">
     </div>
   </div>
-  <div class="row sl-row">
+  <div class="row sl-row" [ngbCollapse]="!isFieldsShown">
     <div class="col-md-4 col-lg-3">
       <span class="sl-label">{{ 'page.profile.dictionaries.value' | translate }}</span>
     </div>
@@ -25,7 +27,15 @@
       <input [(ngModel)]="model.value" type="text" class="form-control" placeholder="{{ 'page.profile.dictionaries.value' | translate }}">
     </div>
   </div>
-  <div class="row sl-row">
+  <div class="row sl-row" [ngbCollapse]="!isFieldsShown">
+    <div class="col-md-4 col-lg-3">
+      <span class="sl-label">{{ 'page.profile.dictionaries.description' | translate }}</span>
+    </div>
+    <div class="col-md-8 col-lg-6">
+      <textarea type="text" [(ngModel)]="model.description" rows="3" class="form-control" placeholder="{{ 'page.profile.dictionaries.description' | translate }}"></textarea>
+    </div>
+  </div>
+  <div class="row sl-row" [ngbCollapse]="!isFieldsShown">
     <div class="col-md-8 col-lg-6 offset-md-4 offset-lg-3">
       <button (click)="save()" class="btn sl-btn-green btn-block">{{ 'button.add' | translate }}</button>
     </div>
@@ -35,16 +45,24 @@
       <span class="sl-label sl-muted">{{ 'list.emtpy' | translate }}</span>
     </div>
     <div class="col-md-12 col-lg-9 no-margin">
-      <ul class="list-group sl-list">
-        <li class="list-group-item">
-          <div class="card sl-card" *ngFor="let dictionary of dictionaries">
-            <div class="card-block">
-              <i (click)="remove(dictionary)" class="fa fa-times sl-rm-icon float-xs-right" aria-hidden="true"></i>
-              <p>{{ dictionary.value }} ({{ dictionary.key }})</p>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>{{ 'page.profile.dictionaries.key' | translate }}</th>
+            <th>{{ 'page.profile.dictionaries.value' | translate }}</th>
+            <th>{{ 'page.profile.dictionaries.translation' | translate }}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dictionary of dictionaries">
+            <th scope="row">{{ dictionary.key }}</th>
+            <td>{{ dictionary.value }}</td>
+            <td>{{ dictionary.getTranslateKey() | translate }}</td>
+            <td><i (click)="remove(dictionary)" class="fa fa-times sl-rm-icon" aria-hidden="true"></i></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

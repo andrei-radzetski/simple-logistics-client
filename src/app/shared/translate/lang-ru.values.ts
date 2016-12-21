@@ -11,11 +11,13 @@ export const LANG_RU_TRANS = {
   "button.next": "Далее",
   "button.add": "Добавить",
 
-  "lang.ru": "Русский",
-  "lang.en": "English",
+  "dict.language.label": "Язык",
+  "dict.language.ru": "Русский",
+  "dict.language.en": "English",
 
-  "country.by": "Беларусь",
-  "country.ru": "Россия",
+  "dict.country.label": "Страна",
+  "dict.country.by": "Беларусь",
+  "dict.country.ru": "Россия",
 
   "list.label": "Список",
   "list.emtpy": "Список пуст",
@@ -135,6 +137,8 @@ export const LANG_RU_TRANS = {
   "page.profile.settings.second-name": "Фамилия",
   "page.profile.dictionaries.type": "Тип",
   "page.profile.dictionaries.key": "Ключ",
-  "page.profile.dictionaries.value": "Значение"
+  "page.profile.dictionaries.value": "Значение",
+  "page.profile.dictionaries.description": "Описание",
+  "page.profile.dictionaries.translation": "Перевод"
   
 }

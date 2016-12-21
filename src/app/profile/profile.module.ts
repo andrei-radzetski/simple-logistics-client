@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { HeaderModule } from '../shared/header/header.module';
 import { FormsModule } from '@angular/forms';
@@ -17,10 +18,10 @@ import { RouteCanActiveAuthorized } from '../shared/route/route.canActiveAuthori
 import { BusyModule } from '../shared/components/busy/busy.module';
 import { BusyComponent } from '../shared/components/busy/busy.component';
 
-
 @NgModule({
   imports: [
     CommonModule,
+    NgbModule,
     profileRouting,
     FormsModule,
     HeaderModule,

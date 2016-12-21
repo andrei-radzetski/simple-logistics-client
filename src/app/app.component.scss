@@ -106,9 +106,6 @@ a.sl-tag {
 .sl-card {
   border-radius: 0px;
   cursor: pointer;
-  i.sl-rm-icon:hover {
-    color: $error-color;
-  }
   p {
     margin-bottom: 0px;
   }
@@ -207,6 +204,7 @@ a.sl-tag {
 //---------------------------------------------
 .row.sl-row {
   margin-bottom: $main-padding;
+  
   div:first-child:not(.row):not(.no-margin) {
     margin-bottom: 7px;
     margin-top: 7px;
@@ -217,6 +215,12 @@ a.sl-tag {
   }
   &.no-bottom {
     margin-bottom: 0px;
+  }
+  .sl-flex {
+    display: flex;
+    .sl-part-margin {
+      margin: 11px;
+    }
   }
 }
 
@@ -248,6 +252,28 @@ h1.sl-h {
 
 //---------------------------------------------
 //---------------SL-LIST-END-------------------
+//---------------------------------------------
+//---------------------------------------------
+//-----------------SL-ICONS--------------------
+//---------------------------------------------
+i.sl-rm-icon {
+  color: $nav-text-color;
+  cursor: pointer;
+  &:hover {
+    color: $error-color;
+  }
+}
+
+i.sl-green-icon {
+  color: $nav-text-color;
+  cursor: pointer;
+  &:hover {
+    color: $green-color;
+  }
+}
+
+//---------------------------------------------
+//---------------SL-ICONS-END------------------
 //---------------------------------------------
 .content.container {
   padding-top: $main-padding;

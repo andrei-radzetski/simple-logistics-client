@@ -13,10 +13,11 @@ import { RestResponseSimpleArray } from '../../shared/rest/rest.responseSimpleAr
 })
 export class ProfileDictionariesComponent implements OnInit {
 
-  private types: String[]
-  private selectedType: String
-  private dictionaries: Dictionary[]
-  private model: Dictionary
+  private types: String[];
+  private selectedType: String;
+  private dictionaries: Dictionary[];
+  private model: Dictionary;
+  private isFieldsShown: boolean = false;
 
   constructor(private dictionaryService: DictionaryService){
     this.dictionaries = new Array<Dictionary>()
@@ -87,6 +88,10 @@ export class ProfileDictionariesComponent implements OnInit {
 
   isEmpty() {
     return this.dictionaries.length === 0;
+  }
+
+  getTranslateKey(type: String) {
+    return `dict.${type}.label`
   }
 
 }
