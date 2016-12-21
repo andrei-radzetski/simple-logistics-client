@@ -9,6 +9,8 @@ import { Dictionary } from '../../shared/dictionary/dictionary';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of'
 import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/observable/from';
 import { BusyComponent } from '../../shared/components/busy/busy.component';
 
 @Component({
@@ -33,16 +35,11 @@ export class ProfileSettingsComponent implements OnInit {
   private getData() {
     this.busyIndicator.open();
     return this.dictionaryService.getCountries()
-      .flatMap((res: RestResponseArray<Dictionary>) => { 
-        this.onCountriesReceived(res.array);
-        return this.dictionaryService.getLanguages()
-      })
-      .flatMap((res: RestResponseArray<Dictionary>) => { 
-        this.onLanguagesReceived(res.array);
-        return this.userService.getProfileData();
-      })
+      .flatMap((res: RestResponseArray<Dictionary>) => this.onCountriesReceived(res.array))
+      .flatMap((res: RestResponseArray<Dictionary>) => this.onLanguagesReceived(res.array))
+      .flatMap((res: RestResponseObject<User>) => this.onUserReceived(res.object))
       .subscribe(
-        (res: RestResponseObject<User>) => this.onUserReceived(res.object),
+        (val: Dictionary) => this.language = val,
         (err: RestResponseError) => this.onError(err),
         () => this.busyIndicator.close())
   }
@@ -51,26 +48,25 @@ export class ProfileSettingsComponent implements OnInit {
     this.getData();
   }
 
-  onUserReceived(user: User) {
+  onUserReceived(user: User): Observable<Dictionary> {
     this.user = user;
-    for(let c of this.countries) {
-      if(c.key === user.country) {
-        this.country = c;
-      }
-    }
-    for(let l of this.languages) {
-      if(l.key === user.language) {
-        this.language = l;
-      }
-    }
+    return Observable.from(this.countries)
+      .filter((val: Dictionary) => val.key === this.user.country)
+      .flatMap((val: Dictionary) => { 
+        this.country = val;
+        return Observable.from(this.languages)
+          .filter((val: Dictionary) => val.key === this.user.language);
+      }); 
   }
 
-  onCountriesReceived(countries: Dictionary[]) {
+  onCountriesReceived(countries: Dictionary[]): Observable<RestResponseArray<Dictionary>> {
     this.countries = countries;
+    return this.dictionaryService.getLanguages();
   }
 
-  onLanguagesReceived(languages: Dictionary[]) {
+  onLanguagesReceived(languages: Dictionary[]): Observable<RestResponseObject<User>> {
     this.languages = languages;
+    return this.userService.getProfileData();
   }
 
   onCountryChanged(value: Dictionary) {
