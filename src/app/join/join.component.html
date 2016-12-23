@@ -16,7 +16,7 @@
             <span class="sl-label">{{ 'page.join.email' | translate }}</span>
           </div>
           <div class="col-md-8">
-            <input type="text" class="form-control" placeholder="{{ 'page.join.email' | translate }}">
+            <input type="email" [(ngModel)]="user.email" class="form-control" placeholder="{{ 'page.join.email' | translate }}">
           </div>
         </div>
         <div class="row">
@@ -24,7 +24,7 @@
             <span class="sl-label">{{ 'page.join.phone' | translate }}</span>
           </div>
           <div class="col-md-8">
-            <input type="text" class="form-control" placeholder="{{ 'page.join.phone' | translate }}">
+            <input type="text" [(ngModel)]="user.phone" class="form-control" placeholder="{{ 'page.join.phone' | translate }}">
           </div>
         </div>
         <div class="row">
@@ -32,7 +32,7 @@
             <span class="sl-label">{{ 'page.join.password' | translate }}</span>
           </div>
           <div class="col-md-8">
-            <input type="password" class="form-control" placeholder="{{ 'page.join.password' | translate }}">
+            <input type="password" [(ngModel)]="user.password" class="form-control" placeholder="{{ 'page.join.password' | translate }}">
           </div>
         </div>
         <div class="row">
@@ -40,7 +40,7 @@
             <span class="sl-label">{{ 'page.join.password-repeat' | translate }}</span>
           </div>
           <div class="col-md-8">
-            <input type="password" class="form-control" placeholder="{{ 'page.join.password-repeat' | translate }}">
+            <input type="password" [(ngModel)]="repeatPassword" class="form-control" placeholder="{{ 'page.join.password-repeat' | translate }}">
           </div>
         </div>
         <div class="row">
@@ -48,7 +48,7 @@
             <span class="sl-label">{{ 'page.join.first-name' | translate }}</span>
           </div>
           <div class="col-md-8">
-            <input type="text" class="form-control" placeholder="{{ 'page.join.first-name' | translate }}">
+            <input type="text" [(ngModel)]="user.firstName" class="form-control" placeholder="{{ 'page.join.first-name' | translate }}">
           </div>
         </div>
         <div class="row">
@@ -56,12 +56,12 @@
             <span class="sl-label">{{ 'page.join.second-name' | translate }}</span>
           </div>
           <div class="col-md-8">
-            <input type="text" class="form-control" placeholder="{{ 'page.join.second-name' | translate }}">
+            <input type="text" [(ngModel)]="user.secondName" class="form-control" placeholder="{{ 'page.join.second-name' | translate }}">
           </div>
         </div>
         <div class="row">
           <div class="col-md-8 offset-md-4">
-            <button class="btn sl-btn-primary btn-block">{{ 'button.signup' | translate }}</button>
+            <button (click)="create()" class="btn sl-btn-primary btn-block">{{ 'button.signup' | translate }}</button>
           </div>
         </div>
       </div>

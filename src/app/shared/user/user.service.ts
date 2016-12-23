@@ -20,4 +20,8 @@ export class UserService extends RestService<User> {
     return this.putOne('/profile', model);
   }
 
+  createProfile(model: User): Observable<RestResponseObject<User>> {
+    return this.postOne('/profile', model);
+  }
+
 }
