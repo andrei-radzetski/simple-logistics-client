@@ -1,3 +1,4 @@
+<sl-busy></sl-busy>
 <div class="sl-users">
   <div class="masthead">
     <div class="container">
@@ -13,7 +14,7 @@
             <span class="sl-label">{{ 'page.users.find.first-name' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <input type="text" class="form-control" placeholder="{{ 'page.users.find.first-name' | translate }}">
+            <input type="text" class="form-control" [(ngModel)]="firstName" placeholder="{{ 'page.users.find.first-name' | translate }}">
           </div>
         </div>
         <div class="row sl-row">
@@ -21,7 +22,7 @@
             <span class="sl-label">{{ 'page.users.find.second-name' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <input type="text" class="form-control" placeholder="{{ 'page.users.find.second-name' | translate }}">
+            <input type="text" class="form-control" [(ngModel)]="secondName" placeholder="{{ 'page.users.find.second-name' | translate }}">
           </div>
         </div>
         <div class="row sl-row">
@@ -29,9 +30,9 @@
             <span class="sl-label">{{ 'page.users.find.country' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <select class="form-control">
-              <option>Беларусь</option>
-              <option>Россия</option>
+            <select class="form-control" [ngModel]="country" (ngModelChange)="onCountryChanged($event)">
+              <option [ngValue]="null"></option>
+              <option [ngValue]="country" *ngFor="let country of countries">{{ country.getTranslateKey() | translate }}</option>
             </select>
           </div>
         </div>
@@ -40,7 +41,7 @@
             <span class="sl-label">{{ 'page.users.find.city' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <input type="text" class="form-control" placeholder="{{ 'page.users.find.city' | translate }}">
+            <input type="text" class="form-control" [(ngModel)]="city" placeholder="{{ 'page.users.find.city' | translate }}">
           </div>
         </div>
         <div class="row sl-row">

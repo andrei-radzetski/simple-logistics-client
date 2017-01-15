@@ -6,6 +6,8 @@ import { TranslateModule } from '../shared/translate/translate.module';
 import { UserModule } from '../shared/user/user.module';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { BusyModule } from '../shared/components/busy/busy.module';
+import { BusyComponent } from '../shared/components/busy/busy.component';
 
 @NgModule({
   imports: [
@@ -14,10 +16,14 @@ import { CommonModule } from '@angular/common';
     TranslateModule,
     UserModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    BusyModule
   ],
   declarations: [
     UsersComponent
+  ],
+  entryComponents: [
+    BusyComponent
   ]
 })
 export class UsersModule {

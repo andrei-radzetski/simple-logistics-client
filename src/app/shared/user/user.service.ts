@@ -5,6 +5,7 @@ import { RestService } from '../rest/rest.service';
 import { RestResponseObject } from '../rest/rest.responseObject';
 import { RestResponseArray } from '../rest/rest.responseArray';
 import { User } from './user';
+import { URLSearchParams } from '@angular/http';
 
 @Injectable()
 export class UserService extends RestService<User> {
@@ -13,8 +14,8 @@ export class UserService extends RestService<User> {
     super(http, { create: (): User => new User() });
   }
 
-  filter(): Observable<RestResponseArray<User>> {
-    return this.getArray('/users/filter');
+  filter(params?: URLSearchParams): Observable<RestResponseArray<User>> {
+    return this.getArray('/users/filter', params);
   }
 
   getProfileData(): Observable<RestResponseObject<User>> {

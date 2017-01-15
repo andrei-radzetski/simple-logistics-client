@@ -24,7 +24,7 @@ import { BusyComponent } from '../shared/components/busy/busy.component';
   ],
   entryComponents: [
     BusyComponent
-  ],
+  ]
 })
 export class RequestsModule {
 
