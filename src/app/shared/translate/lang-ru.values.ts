@@ -11,6 +11,8 @@ export const LANG_RU_TRANS = {
   "button.next": "Далее",
   "button.add": "Добавить",
 
+  "palceholder.date": "гггг-мм-дд",
+
   "dict.language.label": "Язык",
   "dict.language.ru": "Русский",
   "dict.language.en": "English",
@@ -75,6 +77,10 @@ export const LANG_RU_TRANS = {
 
   "page.users.title": "Пользователи",
   "page.users.description": "Какой-то текст, который описывает раздел.",
+  "page.users.find.first-name": "Имя",
+  "page.users.find.second-name": "Фамилия",
+  "page.users.find.country": "Страна",
+  "page.users.find.city": "Город",
 
   "page.apply.title": "Добавить заявку",
   "page.apply.description": "Какой-то текст, который описывает раздел.",
@@ -108,14 +114,14 @@ export const LANG_RU_TRANS = {
   "page.apply.extra.comment": "Комментарий",
 
   "page.login.title": "Вход",
-  "page.login.description": "Какой-то текст, который описывает раздел.",
+  "page.login.description": "Получите доступ к расширенным возможностям системы.",
   "page.login.login": "Логин",
   "page.login.password": "Пароль",
   "page.login.remember": "Запомнить меня",
 
   "page.join.title": "Регистрация",
-  "page.join.description": "Какой-то текст, который описывает раздел.",
-  "page.join.info": "Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел. Какой-то текст, который описывает раздел.",
+  "page.join.description": "Зарегистрируйтесь – это бесплатно!",
+  "page.join.info": "После регистрации Вы получите доступ к расширеным возможностям системы. Система позволит быть всегда в курсе поездок других попутчиков и перевозчиков, и создавать собственные поездки, путешествовать с минимальными затратами.",
   "page.join.first-name": "Имя",
   "page.join.second-name": "Фамилия",
   "page.join.email": "Почта",
@@ -135,7 +141,7 @@ export const LANG_RU_TRANS = {
   "page.requests.find.transport": "Вид транспорта",
 
   "page.profile.title": "Профиль",
-  "page.profile.description": "Какой-то текст, который описывает раздел.",
+  "page.profile.description": "Управляйте собственными данными и поездками.",
   "page.profile.nav.info": "Информация",
   "page.profile.nav.requests": "Заявки",
   "page.profile.nav.messages": "Сообщения",

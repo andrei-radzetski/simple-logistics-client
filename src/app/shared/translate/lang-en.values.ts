@@ -11,6 +11,8 @@ export const LANG_EN_TRANS = {
   "button.next": "Next",
   "button.add": "Add",
 
+  "palceholder.date": "yyyy-mm-dd",
+
   "dict.language.label": "Язык",
   "dict.language.ru": "Русский",
   "dict.language.en": "English",
@@ -108,14 +110,14 @@ export const LANG_EN_TRANS = {
   "page.apply.extra.comment": "Сomment",
 
   "page.login.title": "Login",
-  "page.login.description": "Some text, which describes the section.",
+  "page.login.description": "Access to the advanced features of the system.",
   "page.login.login": "Login",
   "page.login.password": "Password",
   "page.login.remember": "Remember me",
 
   "page.join.title": "Join",
-  "page.join.description": "Some text, which describes the section.",
-  "page.join.info": "Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.Some text, which describes the section.",
+  "page.join.description": "Sign up - it's free!",
+  "page.join.info": "After registration you will get access to the advanced capabilities of the system. The system will make it possible to be always aware of other trips for travel and carriers, and to create their own trips, travel with minimal cost.",
   "page.join.first-name": "First name",
   "page.join.second-name": "Second name",
   "page.join.email": "Email",
@@ -135,7 +137,7 @@ export const LANG_EN_TRANS = {
   "page.requests.find.transport": "Transport",
 
   "page.profile.title": "Profile",
-  "page.profile.description": "Some text, which describes the section.",
+  "page.profile.description": "Manage your own data and travel.",
   "page.profile.nav.info": "Info",
   "page.profile.nav.requests": "Requests",
   "page.profile.nav.messages": "Messages",

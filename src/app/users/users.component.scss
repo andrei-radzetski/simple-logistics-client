@@ -1,3 +1,11 @@
 /* USERS */
 
-.sl-users {}
+.sl-users {
+  .card-block {
+    .sl-card-header {
+      font-size: 25px;
+      font-weight: 200;
+    }
+  }
+
+}

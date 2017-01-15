@@ -6,6 +6,62 @@
     </div>
   </div>
   <div class="container content">
-    users
+    <div class="row">
+      <div class="col-lg-4 col-xl-3">
+        <div class="row sl-row">
+          <div class="col-xs-12 no-top">
+            <span class="sl-label">{{ 'page.users.find.first-name' | translate }}</span>
+          </div>
+          <div class="col-xs-12 no-margin">
+            <input type="text" class="form-control" placeholder="{{ 'page.users.find.first-name' | translate }}">
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-xs-12 no-top">
+            <span class="sl-label">{{ 'page.users.find.second-name' | translate }}</span>
+          </div>
+          <div class="col-xs-12 no-margin">
+            <input type="text" class="form-control" placeholder="{{ 'page.users.find.second-name' | translate }}">
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-xs-12 no-top">
+            <span class="sl-label">{{ 'page.users.find.country' | translate }}</span>
+          </div>
+          <div class="col-xs-12 no-margin">
+            <select class="form-control">
+              <option>Беларусь</option>
+              <option>Россия</option>
+            </select>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-xs-12 no-top">
+            <span class="sl-label">{{ 'page.users.find.city' | translate }}</span>
+          </div>
+          <div class="col-xs-12 no-margin">
+            <input type="text" class="form-control" placeholder="{{ 'page.users.find.city' | translate }}">
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-xs-12 no-margin">
+            <button (click)="search()" class="btn sl-btn-primary btn-block">{{ 'button.search' | translate }}</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-xl-9">
+        <ul class="list-group sl-list">
+          <li class="list-group-item" *ngFor="let item of users">
+            <div class="card sl-card">
+              <div class="card-block">
+                <p class="sl-card-header">{{ item.getFullName() }}</p>
+                <p>{{ item.getCountryTranslationKey() | translate }}, {{ item.city }}</p>
+                <p>{{ item.additionalInfo }}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

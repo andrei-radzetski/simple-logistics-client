@@ -1,3 +1,4 @@
+<sl-busy></sl-busy>
 <div class="sl-requests">
   <div class="masthead">
     <div class="container">
@@ -18,9 +19,9 @@
             <span class="sl-label">{{ 'page.requests.find.kind' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <select class="form-control">
-              <option>Спрос</option>
-              <option>Предложение</option>
+            <select class="form-control" [ngModel]="kind" (ngModelChange)="onKindChanged($event)">
+              <option [ngValue]="null"></option>
+              <option [ngValue]="kind" *ngFor="let kind of kinds">{{ kind.getTranslateKey() | translate }}</option>
             </select>
           </div>
         </div>
@@ -29,11 +30,10 @@
             <span class="sl-label">{{ 'page.requests.find.service' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <select class="form-control">
-            <option>Пассажирская перевозка</option>
-            <option>Грузоперевозка</option>
-            <option>Попутчик</option>
-          </select>
+            <select class="form-control" [ngModel]="service" (ngModelChange)="onServiceChanged($event)">
+              <option [ngValue]="null"></option>
+              <option [ngValue]="service" *ngFor="let service of services">{{ service.getTranslateKey() | translate }}</option>
+            </select>
           </div>
         </div>
         <div class="row sl-row">
@@ -41,7 +41,7 @@
             <span class="sl-label">{{ 'page.requests.find.departure' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <input type="text" class="form-control" placeholder="{{ 'page.requests.find.departure' | translate }}">
+            <input type="text" class="form-control" [(ngModel)]="departure" placeholder="{{ 'page.requests.find.departure' | translate }}">
           </div>
         </div>
         <div class="row sl-row">
@@ -49,7 +49,7 @@
             <span class="sl-label">{{ 'page.requests.find.destination' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <input type="text" class="form-control" placeholder="{{ 'page.requests.find.destination' | translate }}">
+            <input type="text" class="form-control" [(ngModel)]="destination" placeholder="{{ 'page.requests.find.destination' | translate }}">
           </div>
         </div>
         <div class="row sl-row">
@@ -57,7 +57,7 @@
             <span class="sl-label">{{ 'page.requests.find.departure-date' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <input type="date" class="form-control" placeholder="{{ 'page.requests.find.departure-date' | translate }}">
+            <input class="form-control" [(ngModel)]="departureDate" [maxDate]="destinationDate" ngbDatepicker #depDatePicker="ngbDatepicker" (click)="depDatePicker.toggle()" placeholder="{{ 'palceholder.date' | translate }}">
           </div>
         </div>
         <div class="row sl-row">
@@ -65,7 +65,7 @@
             <span class="sl-label">{{ 'page.requests.find.destination-date' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <input type="date" class="form-control" placeholder="{{ 'page.requests.find.destination-date' | translate }}">
+            <input class="form-control" [(ngModel)]="destinationDate" [minDate]="departureDate" ngbDatepicker #destDatePicker="ngbDatepicker" (click)="destDatePicker.toggle()" placeholder="{{ 'palceholder.date' | translate }}">
           </div>
         </div>
         <div class="row sl-row">
@@ -73,7 +73,15 @@
             <span class="sl-label">{{ 'page.requests.find.places' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <input type="text" class="form-control" placeholder="{{ 'page.requests.find.places' | translate }}">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" (click)="placeDown()" type="button"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+              </span>
+              <input type="number" class="form-control sl-number-input" [(ngModel)]="places" readonly="true" placeholder="{{ 'page.requests.find.places' | translate }}">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" (click)="placeUp()" type="button"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+              </span>
+            </div>
           </div>
         </div>
         <div class="row sl-row">
@@ -81,16 +89,15 @@
             <span class="sl-label">{{ 'page.requests.find.transport' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <select class="form-control">
-            <option>Пассажирская перевозка</option>
-            <option>Грузоперевозка</option>
-            <option>Попутчик</option>
-          </select>
+            <select class="form-control" [ngModel]="transport" (ngModelChange)="onTransportChanged($event)">
+              <option [ngValue]="null"></option>
+              <option [ngValue]="transport" *ngFor="let transport of transports">{{ transport.getTranslateKey() | translate }}</option>
+            </select>
           </div>
         </div>
         <div class="row sl-row">
           <div class="col-xs-12 no-margin">
-            <button (click)="find()" class="btn sl-btn-primary btn-block">{{ 'button.search' | translate }}</button>
+            <button (click)="search()" class="btn sl-btn-primary btn-block">{{ 'button.search' | translate }}</button>
           </div>
         </div>
       </div>

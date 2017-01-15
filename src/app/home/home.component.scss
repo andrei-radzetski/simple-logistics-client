@@ -16,7 +16,6 @@
     color: $on-primary-color;
     font-weight: 300;
   }
-
   .sl-fast-search {
     .row {
       margin-bottom: $main-padding;
@@ -24,7 +23,16 @@
         margin-bottom: 0px;
       }
     }
-  } 
+  }
+  .sl-google-map {
+    margin-bottom: $main-padding;
+    .sl-google-map-container {
+      border: 10px solid $nav-icon-color;
+      .sebm-google-map-container {
+        height: 400px;
+      }
+    }
+  }
 }
 
 @media (min-width: $screen-sm-min) {

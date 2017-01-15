@@ -58,6 +58,10 @@ body {
       color: $error-color;
     }
   }
+
+  &.sl-number-input[readonly] {
+    background-color: transparent;
+  }
 }
 
 //---------------------------------------------
@@ -289,6 +293,10 @@ i.sl-primary-icon {
   &.no-bottom {
     padding-bottom: 0;
   }
+}
+
+.dropdown-menu .custom-select {
+  min-width: 62px;
 }
 
 @import 'shared/components/components.scss';
