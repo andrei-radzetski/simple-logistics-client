@@ -76,7 +76,7 @@ export const LANG_RU_TRANS = {
   "page.about.description": "Какой-то текст, который описывает раздел.",
 
   "page.users.title": "Пользователи",
-  "page.users.description": "Какой-то текст, который описывает раздел.",
+  "page.users.description": "Найдите перевозчика или попутчика.",
   "page.users.find.first-name": "Имя",
   "page.users.find.second-name": "Фамилия",
   "page.users.find.country": "Страна",
@@ -130,7 +130,7 @@ export const LANG_RU_TRANS = {
   "page.join.password-repeat": "Повторите пароль",
 
   "page.requests.title": "Заявки",
-  "page.requests.description": "Какой-то текст, который описывает раздел.",
+  "page.requests.description": "Найдите свою поездку.",
   "page.requests.find.kind": "Вид",
   "page.requests.find.service": "Услуга",
   "page.requests.find.departure": "Пункт отправления",

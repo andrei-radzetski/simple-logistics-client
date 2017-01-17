@@ -4,24 +4,45 @@
     <div class="col-md-4 col-lg-3">
       <span>{{ 'page.apply.points.name' | translate }}</span>
     </div>
-    <div class="col-md-8 col-lg-6">
-      <input type="text" class="form-control" placeholder="{{ 'page.apply.points.name' | translate }}">
+    <div class="col-md-8 col-lg-6 sl-flex">
+      <div ngbDropdown style="width: 100%;">
+        <input type="text" [(ngModel)]="name" (keyup)="find($event.target.value)" ngbDropdownToggle id="nameMenu" class="form-control" placeholder="{{ 'page.apply.points.name' | translate }}">
+        <div class="dropdown-menu" style="width: 100%;" aria-labelledby="nameMenu">
+          <button (click)="selectGeo(geo)" class="dropdown-item" *ngFor="let geo of geos">{{ geo.getDisplay() }}</button>
+        </div>
+      </div>
+      <i (click)="rawLocation()" class="fa fa-map-marker sl-part-margin sl-primary-icon fa-2x" aria-hidden="true"></i>
     </div>
   </div>
-  <div class="row sl-row">
+  <!--<div class="row sl-row">
     <div class="col-md-4 col-lg-3">
       <span>{{ 'page.apply.points.radius' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <input type="text" class="form-control" placeholder="{{ 'page.apply.points.radius' | translate }}">
+      <input type="number" [(ngModel)]="radius" class="form-control" placeholder="{{ 'page.apply.points.radius' | translate }}">
     </div>
-  </div>
+  </div>-->
   <div class="row sl-row">
     <div class="col-md-4 col-lg-3">
       <span>{{ 'page.apply.points.arrival-datetime' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <input type="datetime" class="form-control" placeholder="{{ 'page.apply.points.arrival-datetime' | translate }}">
+      <div class="input-group">
+        <input class="form-control" [(ngModel)]="destinationDate" [maxDate]="departureDate" ngbDatepicker #destDatePicker="ngbDatepicker"
+          (click)="destDatePicker.toggle()" placeholder="{{ 'palceholder.date' | translate }}">
+        <div ngbDropdown class="input-group-btn">
+          <button class="btn btn-secondary" id="destinationHourMenu" ngbDropdownToggle>{{ destinationHour }}</button>
+          <div class="dropdown-menu sl-tight" aria-labelledby="destinationHourMenu">
+            <button (click)="destinationHour = hour" class="dropdown-item" *ngFor="let hour of applyService.hours">{{ hour }}</button>
+          </div>
+        </div>
+        <div ngbDropdown class="input-group-btn">
+          <button class="btn btn-secondary" id="destinationMinMenu" ngbDropdownToggle>{{ destinationMin }}</button>
+          <div class="dropdown-menu sl-tight" aria-labelledby="destinationMinMenu">
+            <button (click)="destinationMin = min" class="dropdown-item" *ngFor="let min of applyService.mins">{{ min }}</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row sl-row">
@@ -29,26 +50,21 @@
       <span>{{ 'page.apply.points.departure-datetime' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <input type="datetime" class="form-control" placeholder="{{ 'page.apply.points.departure-datetime' | translate }}">
-    </div>
-  </div>
-  <div class="row sl-row">
-    <div class="col-md-8 col-lg-6 offset-md-4 offset-lg-3 no-margin">
-      <div class="checkbox no-margin">
-        <label>
-          <input type="checkbox">
-          {{ 'page.apply.points.start-point' | translate }}
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="row sl-row no-margin">
-    <div class="col-md-8 col-lg-6 offset-md-4 offset-lg-3 no-margin">
-      <div class="checkbox no-margin">
-        <label>
-          <input type="checkbox">
-          {{ 'page.apply.points.finish-point' | translate }}
-        </label>
+      <div class="input-group">
+        <input class="form-control" [(ngModel)]="departureDate" [minDate]="destinationDate" ngbDatepicker #depDatePicker="ngbDatepicker"
+          (click)="depDatePicker.toggle()" placeholder="{{ 'palceholder.date' | translate }}">
+        <div ngbDropdown class="input-group-btn">
+          <button class="btn btn-secondary" id="departureHourMenu" ngbDropdownToggle>{{ departureHour }}</button>
+          <div class="dropdown-menu sl-tight" aria-labelledby="departureHourMenu">
+            <button (click)="departureHour = hour" class="dropdown-item" *ngFor="let hour of applyService.hours">{{ hour }}</button>
+          </div>
+        </div>
+        <div ngbDropdown class="input-group-btn">
+          <button class="btn btn-secondary" id="departureMinMenu" ngbDropdownToggle>{{ departureMin }}</button>
+          <div class="dropdown-menu sl-tight" aria-labelledby="departureMinMenu">
+            <button (click)="departureMin = min" class="dropdown-item" *ngFor="let min of applyService.mins">{{ min }}</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -57,12 +73,18 @@
       <button class="btn sl-btn-primary btn-block" (click)="addPoint()">{{ 'button.add' | translate }}</button>
     </div>
   </div>
-  <div class="points-list" [dragula]="'bag-one'" [dragulaModel]="items">
-    <div *ngFor="let item of items" class="row sl-row">
+  <div class="points-list" [dragula]="'bag-one'" [dragulaModel]="applyService.points">
+    <div *ngFor="let point of applyService.points" class="row sl-row">
       <div class="col-md-12 col-lg-9 no-margin">
         <div class="card sl-card">
           <div class="card-block">
-            {{item}} Basic panel example
+            <span class="sl-card-header">{{ point.order + 1 }}. {{ point.name }}
+              <i (click)="location(point)" class="fa fa-map-marker sl-primary-icon" aria-hidden="true"></i>
+            </span>
+            <i (click)="remove(point.order)" class="fa fa-times sl-rm-icon float-xs-right sl-list-points-icons" aria-hidden="true"></i>
+            <p>{{ 'page.apply.points.arrival-datetime' | translate }}: {{ point.arrivalDatetime | date: 'yyyy-MM-dd HH:mm' }}</p>
+            <p>{{ 'page.apply.points.departure-datetime' | translate }}: {{ point.departureDatetime | date: 'yyyy-MM-dd HH:mm'
+              }}</p>
           </div>
         </div>
       </div>

@@ -113,6 +113,13 @@ a.sl-tag {
   p {
     margin-bottom: 0px;
   }
+
+  .card-block {
+    .sl-card-header {
+      font-size: 25px;
+      font-weight: 200;
+    }
+  }
 }
 
 .sl-tag-card {
@@ -295,8 +302,16 @@ i.sl-primary-icon {
   }
 }
 
-.dropdown-menu .custom-select {
-  min-width: 62px;
+.dropdown-menu {
+  &.sl-tight {
+    height: 200px;
+    overflow: scroll;
+    min-width: 0px;
+  }
+
+  .custom-select {
+    min-width: 62px;
+  }
 }
 
 @import 'shared/components/components.scss';

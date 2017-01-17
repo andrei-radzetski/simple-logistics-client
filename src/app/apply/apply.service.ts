@@ -3,11 +3,15 @@ import { DictionaryService } from '../shared/dictionary/dictionary.service';
 import { Dictionary } from '../shared/dictionary/dictionary';
 import { RestResponseError } from '../shared/rest/rest.responseError';
 import { RestResponseArray } from '../shared/rest/rest.responseArray';
+import { Point } from '../shared/point/point';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of'
 
 @Injectable()
 export class ApplyService {
+
+  hours: string[];
+  mins: string[];
 
   kinds: Dictionary[];
   services: Dictionary[];
@@ -17,16 +21,22 @@ export class ApplyService {
   service: Dictionary;
   transport: Dictionary;
 
+  points: Point[];
+
   constructor(private dictionaryService: DictionaryService) {
     this.kinds = new Array<Dictionary>();
     this.services = new Array<Dictionary>();
     this.transports = new Array<Dictionary>();
+    this.points = new Array<Point>();
+    this.hours = this.createTimeArray(24);
+    this.mins = this.createTimeArray(60);
   }
 
   commit() {
     console.log(this.kind);
     console.log(this.service);
     console.log(this.transport);
+    console.log(this.points);
   }
 
   initDictionares(): Observable<Boolean> {
@@ -70,6 +80,16 @@ export class ApplyService {
 
   onTransportChanged(value: Dictionary) {
     this.transport = value;
+  }
+
+  private createTimeArray(max: number): string[] {
+    let arr = [];
+    for(let i = 0; i < max; i++) {
+        let number = i.toString();
+        if(i < 10) number = '0' + i;
+        arr.push(number);
+    }
+    return arr;
   }
 
 }

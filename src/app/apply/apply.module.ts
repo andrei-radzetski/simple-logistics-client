@@ -14,6 +14,8 @@ import { DragulaModule } from 'ng2-dragula';
 import { BusyModule } from '../shared/components/busy/busy.module';
 import { BusyComponent } from '../shared/components/busy/busy.component';
 import { ApplyService } from './apply.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GeoModule } from '../shared/geo/geo.module';
 
 @NgModule({
   imports: [
@@ -23,7 +25,9 @@ import { ApplyService } from './apply.service';
     HeaderModule,
     TranslateModule,
     DragulaModule,
-    CommonModule
+    CommonModule,
+    NgbModule,
+    GeoModule
   ],
   declarations: [
     ApplyComponent,

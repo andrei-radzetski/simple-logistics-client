@@ -76,7 +76,11 @@ export const LANG_EN_TRANS = {
   "page.about.description": "Some text, which describes the section.",
 
   "page.users.title": "Users",
-  "page.users.description": "Some text, which describes the section.",
+  "page.users.description": "Find the carrier or companion.",
+  "page.users.find.first-name": "First name",
+  "page.users.find.second-name": "Second name",
+  "page.users.find.country": "Country",
+  "page.users.find.city": "City",
 
   "page.apply.title": "Add request",
   "page.apply.description": "Some text, which describes the section.",
@@ -126,7 +130,7 @@ export const LANG_EN_TRANS = {
   "page.join.password-repeat": "Repeat password",
 
   "page.requests.title": "Requests",
-  "page.requests.description": "Some text, which describes the section.",
+  "page.requests.description": "Find your trip.",
   "page.requests.find.kind": "Kind",
   "page.requests.find.service": "Service",
   "page.requests.find.departure": "Departure",
