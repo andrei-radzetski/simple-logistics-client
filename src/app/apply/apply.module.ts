@@ -16,6 +16,8 @@ import { BusyComponent } from '../shared/components/busy/busy.component';
 import { ApplyService } from './apply.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GeoModule } from '../shared/geo/geo.module';
+import { GeoDialogModule } from '../shared/geo/dialog/geo.dialog.module';
+import { GeoDialogComponent } from '../shared/geo/dialog/geo.dialog.component';
 
 @NgModule({
   imports: [
@@ -27,7 +29,8 @@ import { GeoModule } from '../shared/geo/geo.module';
     DragulaModule,
     CommonModule,
     NgbModule,
-    GeoModule
+    GeoModule,
+    GeoDialogModule
   ],
   declarations: [
     ApplyComponent,
@@ -38,7 +41,8 @@ import { GeoModule } from '../shared/geo/geo.module';
     ApplyExtraComponent
   ],
   entryComponents: [
-    BusyComponent
+    BusyComponent,
+    GeoDialogComponent
   ],
   providers: [
     ApplyService

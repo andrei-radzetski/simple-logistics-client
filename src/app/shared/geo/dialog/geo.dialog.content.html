@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h4 class="modal-title float-xs-left">{{ getTitle() | translate }}</h4>
+  <i (click)="dismiss()" style="line-height: 35px;" class="fa fa-times sl-rm-icon float-xs-right" aria-hidden="true"></i>
+</div>
+<div class="modal-body">
+  <sebm-google-map [latitude]="centerLatitude" [longitude]="centerLongitude" [zoom]="zoom" (mapClick)="mapClicked($event)">
+    <sebm-google-map-marker *ngIf="!readOnly" [latitude]="latitude" [longitude]="longitude"></sebm-google-map-marker>
+    <sebm-google-map-marker [label]="point.getOffsetOrderStr()" [openInfoWindow]="true" [latitude]="point.latitude" [longitude]="point.longitude"
+      *ngFor="let point of points">
+      <sebm-google-map-info-window>
+        <h5>{{ point.getOffsetOrderStr() }}. {{ point.name }}</h5>
+        <p>{{ 'page.apply.points.arrival-datetime' | translate }}: {{ point.arrivalDatetime | date: 'yyyy-MM-dd HH:mm' }}</p>
+        <p>{{ 'page.apply.points.departure-datetime' | translate }}: {{ point.departureDatetime | date: 'yyyy-MM-dd HH:mm' }}
+        </p>
+      </sebm-google-map-info-window>
+      </sebm-google-map-marker>
+  </sebm-google-map>
+</div>
+<div *ngIf="!readOnly" class="modal-footer">
+  <button (click)="close()" type="button" class="btn btn-secondary">{{ 'button.select' | translate }}</button>
+</div>

@@ -1,17 +1,23 @@
+<sl-geo-dialog [(latitude)]="latitude" [(longitude)]="longitude"></sl-geo-dialog>
 <div class="sl-apply-points">
   <h1 class="sl-h">{{ 'page.apply.points.label' | translate }}</h1>
   <div class="row sl-row">
     <div class="col-md-4 col-lg-3">
-      <span>{{ 'page.apply.points.name' | translate }}</span>
+      <span class="sl-label" [ngClass]="{ 'sl-error': nameError || longitudeError || latitudeError }">{{ 'page.apply.points.name' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6 sl-flex">
       <div ngbDropdown style="width: 100%;">
-        <input type="text" [(ngModel)]="name" (keyup)="find($event.target.value)" ngbDropdownToggle id="nameMenu" class="form-control" placeholder="{{ 'page.apply.points.name' | translate }}">
+        <input type="text" [(ngModel)]="name" 
+          (keyup)="find($event.target.value)" 
+          ngbDropdownToggle id="nameMenu" 
+          class="form-control" 
+          placeholder="{{ 'page.apply.points.name' | translate }}"
+          [ngClass]="{ 'sl-error': nameError }">
         <div class="dropdown-menu" style="width: 100%;" aria-labelledby="nameMenu">
           <button (click)="selectGeo(geo)" class="dropdown-item" *ngFor="let geo of geos">{{ geo.getDisplay() }}</button>
         </div>
       </div>
-      <i (click)="rawLocation()" class="fa fa-map-marker sl-part-margin sl-primary-icon fa-2x" aria-hidden="true"></i>
+      <i (click)="rawLocation()" [ngClass]="{ 'sl-error': longitudeError || latitudeError }" class="fa fa-map-marker sl-part-margin sl-primary-icon fa-2x" aria-hidden="true"></i>
     </div>
   </div>
   <!--<div class="row sl-row">
@@ -24,10 +30,10 @@
   </div>-->
   <div class="row sl-row">
     <div class="col-md-4 col-lg-3">
-      <span>{{ 'page.apply.points.arrival-datetime' | translate }}</span>
+      <span class="sl-label" [ngClass]="{ 'sl-error': destinationDateError }">{{ 'page.apply.points.arrival-datetime' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <div class="input-group">
+      <div class="input-group" [ngClass]="{ 'sl-error': destinationDateError }">
         <input class="form-control" [(ngModel)]="destinationDate" [maxDate]="departureDate" ngbDatepicker #destDatePicker="ngbDatepicker"
           (click)="destDatePicker.toggle()" placeholder="{{ 'palceholder.date' | translate }}">
         <div ngbDropdown class="input-group-btn">
@@ -47,11 +53,11 @@
   </div>
   <div class="row sl-row">
     <div class="col-md-4 col-lg-3">
-      <span>{{ 'page.apply.points.departure-datetime' | translate }}</span>
+      <span class="sl-label" [ngClass]="{ 'sl-error': departureDateError }">{{ 'page.apply.points.departure-datetime' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <div class="input-group">
-        <input class="form-control" [(ngModel)]="departureDate" [minDate]="destinationDate" ngbDatepicker #depDatePicker="ngbDatepicker"
+      <div class="input-group" [ngClass]="{ 'sl-error': departureDateError }">
+        <input class="form-control"  [(ngModel)]="departureDate" [minDate]="destinationDate" ngbDatepicker #depDatePicker="ngbDatepicker"
           (click)="depDatePicker.toggle()" placeholder="{{ 'palceholder.date' | translate }}">
         <div ngbDropdown class="input-group-btn">
           <button class="btn btn-secondary" id="departureHourMenu" ngbDropdownToggle>{{ departureHour }}</button>

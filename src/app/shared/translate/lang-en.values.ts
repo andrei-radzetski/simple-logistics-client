@@ -10,6 +10,7 @@ export const LANG_EN_TRANS = {
   "button.search": "Search",
   "button.next": "Next",
   "button.add": "Add",
+  "button.select": "Select",
 
   "palceholder.date": "yyyy-mm-dd",
 
@@ -160,5 +161,8 @@ export const LANG_EN_TRANS = {
   "page.profile.dictionaries.key": "Key",
   "page.profile.dictionaries.value": "Value",
   "page.profile.dictionaries.description": "Description",
-  "page.profile.dictionaries.translation": "Translation"
+  "page.profile.dictionaries.translation": "Translation",
+
+  "dialog.geo.title.pick": "Pick a point",
+  "dialog.geo.title.points": "Points"
 }

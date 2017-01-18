@@ -10,6 +10,7 @@ export const LANG_RU_TRANS = {
   "button.search": "Поиск",
   "button.next": "Далее",
   "button.add": "Добавить",
+  "button.select": "Выбрать",
 
   "palceholder.date": "гггг-мм-дд",
 
@@ -160,6 +161,9 @@ export const LANG_RU_TRANS = {
   "page.profile.dictionaries.key": "Ключ",
   "page.profile.dictionaries.value": "Значение",
   "page.profile.dictionaries.description": "Описание",
-  "page.profile.dictionaries.translation": "Перевод"
-  
+  "page.profile.dictionaries.translation": "Перевод",
+
+  "dialog.geo.title.pick": "Укажите точку",
+  "dialog.geo.title.points": "Точки"
+
 }

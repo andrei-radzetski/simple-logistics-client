@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApplyService } from '../apply.service';
 import { Point } from '../../shared/point/point';
@@ -10,14 +10,18 @@ import 'rxjs/add/operator/map'
 import { GeoService } from '../../shared/geo/geo.service';
 import { Geo } from '../../shared/geo/geo';
 import { RestResponseArray } from '../../shared/rest/rest.responseArray';
-import { RestResponseError } from '../../shared/rest/rest.responseError'
+import { RestResponseError } from '../../shared/rest/rest.responseError';
+import { GeoDialogComponent } from '../../shared/geo/dialog/geo.dialog.component';
 
 @Component({
   moduleId: 'app/apply/points/',
-  selector: 'sl-apply-',
+  selector: 'sl-apply-points',
   templateUrl: './apply.points.component.html'
 })
 export class ApplyPointsComponent implements OnInit {
+
+  @ViewChild(GeoDialogComponent)
+  private geoDialogComponent: GeoDialogComponent;
 
   private counter: number = 0;
 
@@ -35,6 +39,12 @@ export class ApplyPointsComponent implements OnInit {
   private departureDate: NgbDateStruct;
   private departureHour: string = '00';
   private departureMin: string = '00';
+
+  private nameError: boolean = false;
+  private latitudeError: boolean = false;
+  private longitudeError: boolean = false;
+  private destinationDateError: boolean = false;
+  private departureDateError: boolean = false;
 
   constructor(private router: Router,
     private applyService: ApplyService,
@@ -56,16 +66,18 @@ export class ApplyPointsComponent implements OnInit {
   }
 
   addPoint() {
-    let point = new Point();
-    point.name = this.name;
-    point.order = this.applyService.points.length;
-    point.arrivalDatetime = this.parseDate(this.destinationDate, this.destinationHour, this.destinationMin);
-    point.departureDatetime = this.parseDate(this.departureDate, this.departureHour, this.departureMin);
-    point.latitude = this.latitude;
-    point.longitude = this.longitude;
-    point.placeId = this.placeId;
-    this.applyService.points.push(point);
-    this.clear();
+    if(this.validateForm()) {
+      let point = new Point();
+      point.name = this.name;
+      point.order = this.applyService.points.length;
+      point.arrivalDatetime = this.parseDate(this.destinationDate, this.destinationHour, this.destinationMin);
+      point.departureDatetime = this.parseDate(this.departureDate, this.departureHour, this.departureMin);
+      point.latitude = this.latitude;
+      point.longitude = this.longitude;
+      point.placeId = this.placeId;
+      this.applyService.points.push(point);
+      this.clear();
+    }
   }
 
   next() {
@@ -81,11 +93,11 @@ export class ApplyPointsComponent implements OnInit {
   }
 
   location(point: Point) {
-    console.log(point);
+    this.geoDialogComponent.open(true, point.latitude, point.longitude, this.applyService.points);
   }
 
   rawLocation() {
-    console.log(this.name, this.latitude, this.longitude, this.placeId)
+    this.geoDialogComponent.open(false, this.latitude, this.longitude);
   }
 
   find(name: string) {
@@ -148,6 +160,47 @@ export class ApplyPointsComponent implements OnInit {
       return newDate;
     }
     return null;
+  }
+
+  private validateForm(): boolean {
+    let valid = true;
+
+    if(this.name == null || this.name.trim().length === 0) {
+      this.nameError = true;
+      valid = false;
+    } else {
+      this.nameError = false;
+    }
+
+    if(this.latitude == null) {
+      this.latitudeError = true;
+      valid = false;
+    } else {
+      this.latitudeError = false;
+    }
+
+    if(this.longitude == null) {
+      this.longitudeError = true;
+      valid = false;
+    } else {
+      this.longitudeError = false;
+    }
+
+    if(this.departureDate == null) {
+      this.departureDateError = true;
+      valid = false;
+    } else {
+      this.departureDateError = false;
+    }
+
+    if(this.destinationDate == null) {
+      this.destinationDateError = true;
+      valid = false;
+    } else {
+      this.destinationDateError = false;
+    }
+
+    return valid;
   }
 
 }

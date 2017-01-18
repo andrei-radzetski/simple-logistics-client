@@ -58,9 +58,29 @@ body {
       color: $error-color;
     }
   }
-
   &.sl-number-input[readonly] {
     background-color: transparent;
+  }
+}
+
+.input-group {
+  &.sl-error {
+    .form-control {
+      border-color: $error-color;
+      color: $error-color;
+      &:focus {
+        border-color: $error-color;
+        color: $error-color;
+      }
+    }
+    .input-group-btn button {
+      border-color: $error-color;
+      color: $error-color;
+      &:focus {
+        border-color: $error-color;
+        color: $error-color;
+      }
+    }
   }
 }
 
@@ -113,7 +133,6 @@ a.sl-tag {
   p {
     margin-bottom: 0px;
   }
-
   .card-block {
     .sl-card-header {
       font-size: 25px;
@@ -215,7 +234,6 @@ a.sl-tag {
 //---------------------------------------------
 .row.sl-row {
   margin-bottom: $main-padding;
-  
   div:first-child:not(.row):not(.no-margin) {
     margin-bottom: 7px;
     margin-top: 7px;
@@ -291,6 +309,10 @@ i.sl-primary-icon {
   }
 }
 
+i.sl-error {
+  color: $error-color !important;
+}
+
 //---------------------------------------------
 //---------------SL-ICONS-END------------------
 //---------------------------------------------
@@ -308,7 +330,6 @@ i.sl-primary-icon {
     overflow: scroll;
     min-width: 0px;
   }
-
   .custom-select {
     min-width: 62px;
   }
@@ -325,3 +346,4 @@ i.sl-primary-icon {
 @import 'users/users.component.scss';
 @import 'apply/apply.component.scss';
 @import 'profile/profile.component.scss';
+@import 'shared/geo/dialog/geo.dialog.component.scss'

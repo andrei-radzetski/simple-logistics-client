@@ -23,6 +23,10 @@ export class Point extends RestObject implements RestRequest {
     return JSON.stringify(this);
   }
 
+  getOffsetOrderStr(): string {
+    return this.order != null ? (this.order + 1).toString() : undefined;
+  }
+
   getArrivalHourStr(): string {
     return this.arrivalDatetime ? this.getTimeStr(this.arrivalDatetime.getHours()) : undefined;
   }
