@@ -4,8 +4,11 @@ import { Dictionary } from '../shared/dictionary/dictionary';
 import { RestResponseError } from '../shared/rest/rest.responseError';
 import { RestResponseArray } from '../shared/rest/rest.responseArray';
 import { Point } from '../shared/point/point';
+import { Request } from '../shared/request/request';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of'
+import { RequestService } from '../shared/request/request.service';
+import { RestResponseObject } from '../shared/rest/rest.responseObject';
 
 @Injectable()
 export class ApplyService {
@@ -18,12 +21,38 @@ export class ApplyService {
   transports: Dictionary[];
   
   kind: Dictionary;
+  kindInvalid: boolean = false;
   service: Dictionary;
+  serviceInvalid: boolean = false;
+  typeInvalid: boolean = false;
+  
+  places: number;
+  placesInvalid: boolean = false;
   transport: Dictionary;
+  transportInvalid: boolean = false;
+  cargoName: string;
+  cargoNameInvalid: boolean = false;
+  cargoWidth: number;
+  cargoWidthInvalid: boolean = false;
+  cargoHeight: number;
+  cargoHeightInvalid: boolean = false;
+  cargoLength: number;
+  cargoLengthInvalid: boolean = false;
+  cargoWeight: number;
+  cargoWeightInvalid: boolean = false;
+  attrsInvalid: boolean = false;
 
   points: Point[];
+  pointsInvalid: boolean = false;
 
-  constructor(private dictionaryService: DictionaryService) {
+  displayEmail: boolean = false;
+  displayPhone: boolean = false;
+
+  comment: string;
+
+  invalid: boolean = false;
+
+  constructor(private dictionaryService: DictionaryService, private requestService: RequestService) {
     this.kinds = new Array<Dictionary>();
     this.services = new Array<Dictionary>();
     this.transports = new Array<Dictionary>();
@@ -32,11 +61,71 @@ export class ApplyService {
     this.mins = this.createTimeArray(60);
   }
 
-  commit() {
-    console.log(this.kind);
-    console.log(this.service);
-    console.log(this.transport);
-    console.log(this.points);
+  commit(): Observable<RestResponseObject<Request>> {
+    if(this.validate()) {
+      let request = new Request();
+    
+      request.kind = this.kind.key.toString();
+      request.service = this.service.key.toString();
+      
+      request.seatsNumber = this.places;
+      request.transport = this.transport.key.toString();
+      request.name = this.cargoName;
+      request.width = this.cargoWidth;
+      request.height = this.cargoHeight;
+      request.length = this.cargoLength;
+      request.weight = this.cargoWeight;
+      
+      request.points = this.points;
+
+      request.displayEmail = this.displayEmail;
+      request.displayPhone = this.displayPhone;
+
+      request.comment = this.comment;
+
+      console.log(request);
+      return this.requestService.create(request);
+    }
+  }
+
+  validate(): boolean {
+    let tv = this.isTypeValid();
+    let at = this.isAttrsValid();
+    let pv = this.isPointsValid();
+
+    return tv && at && pv;
+  }
+
+  isAttrsValid(): boolean {
+    this.placesInvalid = this.places == null || this.places < 1;
+    this.transportInvalid = this.transport == null;
+    this.cargoNameInvalid = this.isCargo() && (this.cargoName == null || this.cargoName.trim().length < 2);
+    this.cargoWidthInvalid = this.isCargo() && (!this.isNumeric(this.cargoWidth) || this.cargoWidth == null || this.cargoWidth < 0);
+    this.cargoHeightInvalid = this.isCargo() && (!this.isNumeric(this.cargoHeight) || this.cargoHeight == null || this.cargoHeight < 0);
+    this.cargoLengthInvalid = this.isCargo() && (!this.isNumeric(this.cargoLength) || this.cargoLength == null || this.cargoLength < 0);
+    this.cargoWeightInvalid = this.isCargo() && (!this.isNumeric(this.cargoWeight) || this.cargoWeight == null || this.cargoWeight < 0);
+    this.attrsInvalid = this.placesInvalid || this.transportInvalid || this.cargoNameInvalid || this.cargoWidthInvalid 
+                          || this.cargoHeightInvalid || this.cargoLengthInvalid || this.cargoWeightInvalid;
+
+    return !this.attrsInvalid;
+  }
+
+  isTypeValid(): boolean {
+    this.kindInvalid = this.kind == null;
+    this.serviceInvalid = this.service == null;
+    this.typeInvalid = this.kindInvalid || this.serviceInvalid;
+
+    return !this.typeInvalid;
+  }
+
+  isPointsValid(): boolean {
+    this.pointsInvalid = this.points == null || this.points.length < 2;
+
+    return !this.pointsInvalid;
+  }
+
+  isNumeric(n: any) : n is number | string {
+    return !isNaN(parseFloat(n)) && isFinite(n);
   }
 
   initDictionares(): Observable<Boolean> {
@@ -80,6 +169,10 @@ export class ApplyService {
 
   onTransportChanged(value: Dictionary) {
     this.transport = value;
+  }
+
+  isCargo(): boolean {
+    return this.service && this.service.key === 'freight';
   }
 
   private createTimeArray(max: number): string[] {

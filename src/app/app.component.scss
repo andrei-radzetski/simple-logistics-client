@@ -335,6 +335,10 @@ i.sl-error {
   }
 }
 
+.sl-error {
+  color: $error-color !important;
+}
+
 @import 'shared/components/components.scss';
 @import 'shared/nav/nav.component.scss';
 @import 'shared/header/header.component.scss';

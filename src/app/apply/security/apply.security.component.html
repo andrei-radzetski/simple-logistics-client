@@ -4,7 +4,7 @@
     <div class="col-md-8 col-lg-6 no-margin">
       <div class="checkbox no-margin">
         <label>
-          <input type="checkbox">
+          <input type="checkbox" [(ngModel)]="applyService.displayEmail">
           {{ 'page.apply.security.display-email' | translate }}
         </label>
       </div>
@@ -14,7 +14,7 @@
     <div class="col-md-8 col-lg-6 no-margin">
       <div class="checkbox no-margin">
         <label>
-          <input type="checkbox">
+          <input type="checkbox" [(ngModel)]="applyService.displayPhone">
           {{ 'page.apply.security.display-phone' | translate }}
         </label>
       </div>

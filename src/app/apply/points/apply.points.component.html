@@ -79,6 +79,9 @@
       <button class="btn sl-btn-primary btn-block" (click)="addPoint()">{{ 'button.add' | translate }}</button>
     </div>
   </div>
+  <div class="col-md-12 col-lg-9" style="margin-bottom: 15px;" *ngIf="applyService.pointsInvalid">
+      <span class="sl-label sl-error">{{ 'page.apply.points.error' | translate }}</span>
+  </div>
   <div class="points-list" [dragula]="'bag-one'" [dragulaModel]="applyService.points">
     <div *ngFor="let point of applyService.points" class="row sl-row">
       <div class="col-md-12 col-lg-9 no-margin">

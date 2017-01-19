@@ -106,6 +106,7 @@ export const LANG_EN_TRANS = {
   "page.apply.points.departure-datetime": "Date and time departure",
   "page.apply.points.start-point": "Start point",
   "page.apply.points.finish-point": "Finish poin",
+  "page.apply.points.error": "The number of points must be at least two, arranged in chronological order.",
   
   "page.apply.security.label": "Security",
   "page.apply.security.display-email": "Показывать на заявке email адрес",

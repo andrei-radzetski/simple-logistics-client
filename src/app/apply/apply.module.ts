@@ -18,6 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GeoModule } from '../shared/geo/geo.module';
 import { GeoDialogModule } from '../shared/geo/dialog/geo.dialog.module';
 import { GeoDialogComponent } from '../shared/geo/dialog/geo.dialog.component';
+import { RequestModule } from '../shared/request/request.module';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { GeoDialogComponent } from '../shared/geo/dialog/geo.dialog.component';
     CommonModule,
     NgbModule,
     GeoModule,
-    GeoDialogModule
+    GeoDialogModule,
+    RequestModule
   ],
   declarations: [
     ApplyComponent,

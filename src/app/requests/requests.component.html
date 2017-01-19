@@ -106,10 +106,10 @@
           <li class="list-group-item" *ngFor="let item of items">
             <div class="card sl-card">
               <div class="card-block">
-                <p>Гродно &rarr; Минск &rarr; Смоленск &rarr; Москва</p>
+                <p>{{ item.getDirection() }}</p>
                 <p>Дата отправления: 19.05.2017</p>
                 <p>Дата приезда: 20.05.2017</p>
-                <p>sf jhsgf jsdhfg dsjhfg sjdhfg sjdfgjsfg jsgfjhds fgjhs gdfjhsgdj fgsdjfgdsjhfg jdsgfjhsgdfkj sdgf jshgdfhjsdg fjhfsjd fgshjfg sdj</p>
+                <p>{{ item.comment }}</p>
               </div>
             </div>
           </li>

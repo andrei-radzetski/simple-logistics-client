@@ -2,60 +2,68 @@
   <h1 class="sl-h">{{ 'page.apply.attributes.label' | translate }}</h1>
   <div class="row sl-row">
     <div class="col-md-4 col-lg-3">
-      <span class="sl-label">{{ 'page.apply.attributes.places' | translate }}</span>
+      <span class="sl-label" [ngClass]="{ 'sl-error': applyService.placesInvalid }">{{ 'page.apply.attributes.places' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <input type="text" class="form-control" placeholder="{{ 'page.apply.attributes.places' | translate }}">
+      <div class="input-group" [ngClass]="{ 'sl-error': applyService.placesInvalid }">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" (click)="placeDown()" type="button"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+      </span>
+      <input type="number" class="form-control sl-number-input" [(ngModel)]="applyService.places" readonly="true" placeholder="{{ 'page.requests.find.places' | translate }}">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" (click)="placeUp()" type="button"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+      </span>
+      </div>
     </div>
   </div>
   <div class="row sl-row">
     <div class="col-md-4 col-lg-3">
-      <span class="sl-label">{{ 'page.apply.attributes.transport' | translate }}</span>
+      <span class="sl-label" [ngClass]="{ 'sl-error': applyService.transportInvalid }">{{ 'page.apply.attributes.transport' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <select class="form-control" [ngModel]="applyService.transport" (ngModelChange)="applyService.onTransportChanged($event)">
+      <select class="form-control" [ngClass]="{ 'sl-error': applyService.transportInvalid }" [ngModel]="applyService.transport" (ngModelChange)="applyService.onTransportChanged($event)">
         <option [ngValue]="transport" *ngFor="let transport of applyService.transports">{{ transport.getTranslateKey() | translate }}</option>
       </select>
     </div>
   </div>
-   <div class="row sl-row">
+   <div *ngIf="isCargo()" class="row sl-row">
     <div class="col-md-4 col-lg-3">
-      <span class="sl-label">{{ 'page.apply.attributes.cargo.name' | translate }}</span>
+      <span class="sl-label" [ngClass]="{ 'sl-error': applyService.cargoNameInvalid }">{{ 'page.apply.attributes.cargo.name' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <input type="text" class="form-control" placeholder="{{ 'page.apply.attributes.cargo.name' | translate }}">
+      <input type="text" [(ngModel)]="applyService.cargoName" [ngClass]="{ 'sl-error': applyService.cargoNameInvalid }" class="form-control" placeholder="{{ 'page.apply.attributes.cargo.name' | translate }}">
     </div>
   </div>
-  <div class="row sl-row">
+  <div *ngIf="isCargo()" class="row sl-row">
     <div class="col-md-4 col-lg-3">
-      <span class="sl-label">{{ 'page.apply.attributes.cargo.width' | translate }}</span>
+      <span class="sl-label" [ngClass]="{ 'sl-error': applyService.cargoWidthInvalid }">{{ 'page.apply.attributes.cargo.width' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <input type="text" class="form-control" placeholder="{{ 'page.apply.attributes.cargo.width' | translate }}">
+      <input type="text" [(ngModel)]="applyService.cargoWidth" [ngClass]="{ 'sl-error': applyService.cargoWidthInvalid }" class="form-control" placeholder="{{ 'page.apply.attributes.cargo.width' | translate }}">
     </div>
   </div>
-  <div class="row sl-row">
+  <div *ngIf="isCargo()" class="row sl-row">
     <div class="col-md-4 col-lg-3">
-      <span class="sl-label">{{ 'page.apply.attributes.cargo.height' | translate }}</span>
+      <span class="sl-label" [ngClass]="{ 'sl-error': applyService.cargoHeightInvalid }">{{ 'page.apply.attributes.cargo.height' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <input type="text" class="form-control" placeholder="{{ 'page.apply.attributes.cargo.height' | translate }}">
+      <input type="text" [(ngModel)]="applyService.cargoHeight" [ngClass]="{ 'sl-error': applyService.cargoHeightInvalid }" class="form-control" placeholder="{{ 'page.apply.attributes.cargo.height' | translate }}">
     </div>
   </div>
-  <div class="row sl-row">
+  <div *ngIf="isCargo()" class="row sl-row">
     <div class="col-md-4 col-lg-3">
-      <span class="sl-label">{{ 'page.apply.attributes.cargo.length' | translate }}</span>
+      <span class="sl-label" [ngClass]="{ 'sl-error': applyService.cargoLengthInvalid }">{{ 'page.apply.attributes.cargo.length' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <input type="text" class="form-control" placeholder="{{ 'page.apply.attributes.cargo.length' | translate }}">
+      <input type="text" [(ngModel)]="applyService.cargoLength" [ngClass]="{ 'sl-error': applyService.cargoLengthInvalid }" class="form-control" placeholder="{{ 'page.apply.attributes.cargo.length' | translate }}">
     </div>
   </div>
-  <div class="row sl-row">
+  <div *ngIf="isCargo()" class="row sl-row">
     <div class="col-md-4 col-lg-3">
-      <span class="sl-label">{{ 'page.apply.attributes.cargo.weight' | translate }}</span>
+      <span class="sl-label" [ngClass]="{ 'sl-error': applyService.cargoWeightInvalid }">{{ 'page.apply.attributes.cargo.weight' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <input type="text" class="form-control" placeholder="{{ 'page.apply.attributes.cargo.weight' | translate }}">
+      <input type="text" [(ngModel)]="applyService.cargoWeight" [ngClass]="{ 'sl-error': applyService.cargoWeightInvalid }" class="form-control" placeholder="{{ 'page.apply.attributes.cargo.weight' | translate }}">
     </div>
   </div>
   <div class="row sl-row">

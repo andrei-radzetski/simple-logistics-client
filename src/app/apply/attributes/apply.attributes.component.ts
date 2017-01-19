@@ -15,4 +15,25 @@ export class ApplyAttributesComponent {
     this.router.navigate(['/apply/points']);
   }
 
+  isCargo(): boolean {
+    return this.applyService.isCargo();
+  }
+
+  placeUp() {
+    if (!this.applyService.places) {
+      this.applyService.places = 0;
+    }
+    this.applyService.places++;
+  }
+
+  placeDown() {
+    if (this.applyService.places != null) {
+      this.applyService.places--;
+    }
+
+    if (this.applyService.places == 0) {
+      this.applyService.places = null;
+    }
+  }
+
 }

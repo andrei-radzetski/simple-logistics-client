@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApplyService } from '../apply.service';
 
 @Component({
   moduleId: 'app/apply/extra/',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './apply.extra.component.html'
 })
 export class ApplyExtraComponent {
+
+  constructor(private applyService: ApplyService) {}
 
 }

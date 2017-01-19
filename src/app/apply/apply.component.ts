@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { RestResponseError } from '../shared/rest/rest.responseError';
+import { RestResponseObject } from '../shared/rest/rest.responseObject';
+import { Request } from '../shared/request/request';
 import { BusyComponent } from '../shared/components/busy/busy.component';
 import { ApplyService } from './apply.service';
 
@@ -30,7 +32,14 @@ export class ApplyComponent implements OnInit {
   }
  
   save() {
-    this.applyService.commit();
+    let observable = this.applyService.commit();
+    if(observable) {
+      this.busyIndicator.open()
+      observable.subscribe(
+        (res: RestResponseObject<Request>) => this.busyIndicator.close(),
+        (err: RestResponseError) => this.onError(err),
+        () => this.busyIndicator.close());
+    }
   }
 
 }

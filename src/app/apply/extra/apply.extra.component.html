@@ -5,7 +5,7 @@
       <span>{{ 'page.apply.extra.comment' | translate }}</span>
     </div>
     <div class="col-md-8 col-lg-6">
-      <textarea rows="3" placeholder="{{ 'page.apply.extra.comment' | translate }}" class="form-control"></textarea>
+      <textarea rows="3" [(ngModel)]="applyService.comment" placeholder="{{ 'page.apply.extra.comment' | translate }}" class="form-control"></textarea>
     </div>
   </div>
 </div>

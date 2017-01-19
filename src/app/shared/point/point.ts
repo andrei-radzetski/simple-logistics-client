@@ -14,9 +14,21 @@ export class Point extends RestObject implements RestRequest {
   departureDatetime: Date;
   order: number;
   placeId: string;
+  editable: boolean;
 
   fill(object: any) {
-
+    this.id = object.id;
+    this.latitude = object.latitude;
+    this.longitude = object.longitude;
+    this.name = object.name;
+    this.radius = object.radius;
+    this.radiusUnitFactor = object.radiusUnitFactor;
+    this.start = object.start;
+    this.end = object.end;
+    this.arrivalDatetime = object.arrivalDatetime;
+    this.departureDatetime = object.departureDatetime;
+    this.order = object.order;
+    this.placeId = object.placeId;
   }
 
   toRequest(): string {

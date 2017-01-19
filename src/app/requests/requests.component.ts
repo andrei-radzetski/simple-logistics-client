@@ -7,6 +7,8 @@ import { RestResponseArray } from '../shared/rest/rest.responseArray';
 import { Observable } from 'rxjs/Observable';
 import { DictionaryService } from '../shared/dictionary/dictionary.service';
 import { BusyComponent } from '../shared/components/busy/busy.component';
+import { RequestService } from '../shared/request/request.service';
+import { Request } from '../shared/request/request';
 
 @Component({
   moduleId: 'app/requests/',
@@ -15,7 +17,7 @@ import { BusyComponent } from '../shared/components/busy/busy.component';
 })
 export class RequestsComponent implements OnInit {
 
-  private items: number[] = [1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7];
+  private items: Request[];
 
   kinds: Dictionary[];
   services: Dictionary[];
@@ -37,10 +39,12 @@ export class RequestsComponent implements OnInit {
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
     private formatter: NgbDateParserFormatter,
-    private dictionaryService: DictionaryService) {
+    private dictionaryService: DictionaryService, 
+    private requestService: RequestService) {
     this.kinds = new Array<Dictionary>();
     this.services = new Array<Dictionary>();
     this.transports = new Array<Dictionary>();
+    this.items = new Array<Request>();
   }
 
   ngOnInit() {
@@ -57,12 +61,15 @@ export class RequestsComponent implements OnInit {
       .flatMap((res: RestResponseArray<Dictionary>) => {
         this.transports = res.array;
         return this.activatedRoute.queryParams;
-      }).subscribe(params => {
+      }).flatMap(params => {
         this.departure = params['departure'] || null;
         this.departureDate = this.formatter.parse(params['departureDate']);
         this.destination = params['destination'] || null;
         this.destinationDate = this.formatter.parse(params['destinationDate']);
         this.places = params['places'];
+        return this.requestService.filter();
+      }).subscribe((res: RestResponseArray<Request>) => {
+        this.items = res.array;
         this.busyIndicator.close()
       },
       (err: RestResponseError) => this.onError(err),

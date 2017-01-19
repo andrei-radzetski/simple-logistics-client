@@ -91,7 +91,7 @@ export const LANG_RU_TRANS = {
   "page.apply.type.service": "Услуга",
 
   "page.apply.attributes.label": "Атрибуты",
-  "page.apply.attributes.places": "Количество",
+  "page.apply.attributes.places": "Количество мест",
   "page.apply.attributes.transport": "Вид транспорта",
   "page.apply.attributes.cargo.name": "Наименование",
   "page.apply.attributes.cargo.width": "Ширина (см)",
@@ -106,6 +106,7 @@ export const LANG_RU_TRANS = {
   "page.apply.points.departure-datetime": "Дата и время отбытия",
   "page.apply.points.start-point": "Начальная точка",
   "page.apply.points.finish-point": "Конечная точка",
+  "page.apply.points.error": "Количество точек должно быть не менее двух, расположенных в хронологическом порядке.",
 
   "page.apply.security.label": "Безопасность",
   "page.apply.security.display-email": "Показывать на заявке email адрес",
