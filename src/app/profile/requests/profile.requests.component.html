@@ -1,1 +1,19 @@
-profile requests
+<sl-busy></sl-busy>
+<div class="sl-profile-requests">
+  <div class="row">
+    <div class="col-lg-8 col-xl-9">
+      <ul class="list-group sl-list">
+        <li class="list-group-item" *ngFor="let item of items">
+          <div class="card sl-card">
+            <div class="card-block">
+              <p>{{ item.getDirection() }}</p>
+              <p>Дата отправления: 19.05.2017</p>
+              <p>Дата приезда: 20.05.2017</p>
+              <p>{{ item.comment }}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

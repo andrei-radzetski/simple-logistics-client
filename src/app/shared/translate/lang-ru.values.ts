@@ -84,7 +84,7 @@ export const LANG_RU_TRANS = {
   "page.users.find.city": "Город",
 
   "page.apply.title": "Добавить заявку",
-  "page.apply.description": "Какой-то текст, который описывает раздел.",
+  "page.apply.description": "Создайте свою заявку.",
 
   "page.apply.type.label": "Тип",
   "page.apply.type.kind": "Вид",

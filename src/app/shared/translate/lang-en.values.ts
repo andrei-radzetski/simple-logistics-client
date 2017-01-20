@@ -84,7 +84,7 @@ export const LANG_EN_TRANS = {
   "page.users.find.city": "City",
 
   "page.apply.title": "Add request",
-  "page.apply.description": "Some text, which describes the section.",
+  "page.apply.description": "Create your request.",
 
   "page.apply.type.label": "Type",
   "page.apply.type.kind": "Kind",

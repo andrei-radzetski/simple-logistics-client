@@ -4,6 +4,7 @@ import { RestResponseObject } from '../shared/rest/rest.responseObject';
 import { Request } from '../shared/request/request';
 import { BusyComponent } from '../shared/components/busy/busy.component';
 import { ApplyService } from './apply.service';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: 'app/apply/',
@@ -15,7 +16,7 @@ export class ApplyComponent implements OnInit {
   @ViewChild(BusyComponent)
   private busyIndicator: BusyComponent;
 
-  constructor(private applyService: ApplyService) {}
+  constructor(private applyService: ApplyService, private router: Router,) {}
 
   ngOnInit() {
     this.busyIndicator.open()
@@ -38,7 +39,7 @@ export class ApplyComponent implements OnInit {
       observable.subscribe(
         (res: RestResponseObject<Request>) => this.busyIndicator.close(),
         (err: RestResponseError) => this.onError(err),
-        () => this.busyIndicator.close());
+        () => this.router.navigate(['/profile/requests']));
     }
   }
 
