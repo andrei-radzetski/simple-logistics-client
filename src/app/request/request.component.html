@@ -1,0 +1,112 @@
+<div class="masthead">
+  <div class="container">
+    <sl-header [title]="'page.request.title' | translate" [description]="'page.request.description' | translate">
+    </sl-header>
+  </div>
+</div>
+<div class="sl-request">
+  <div class="container content no-bottom">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row sl-row">
+          <div class="col-xs-12">
+            <button class="btn sl-btn-green">Добавить в избраное</button>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-md-5 col-lg-4 no-margin">
+            <span>Вид</span>
+          </div>
+          <div class="col-md-7 col-lg-6">
+            <span>Спрос</span>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-md-5 col-lg-4 no-margin">
+            <span>Услуга</span>
+          </div>
+          <div class="col-md-7 col-lg-7">
+            <span>Пассажироперевозка</span>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-md-5 col-lg-4 no-margin">
+            <span>Пользователь</span>
+          </div>
+          <div class="col-md-7 col-lg-7">
+            <span>Андрей Радецкий</span>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-md-5 col-lg-4 no-margin">
+            <span>Количество мест</span>
+          </div>
+          <div class="col-md-7 col-lg-7">
+            <span>1</span>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-md-5 col-lg-4 no-margin">
+            <span>Телефон</span>
+          </div>
+          <div class="col-md-7 col-lg-7">
+            <span>3758989898989</span>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-md-5 col-lg-4 no-margin">
+            <span>Комментарий</span>
+          </div>
+          <div class="col-md-7 col-lg-7">
+            <span>Нужен очень водитель! Срочно!</span>
+          </div>
+        </div>
+        <div class="row sl-google-map">
+          <div class="col-md-12 col-lg-12 no-margin">
+            <div class="sl-google-map-container">
+              <sebm-google-map [latitude]="53.42" [longitude]="23.43" [zoom]="8">
+                <sebm-google-map-marker [latitude]="53.42" [longitude]="23.43"></sebm-google-map-marker>
+              </sebm-google-map>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row sl-row">
+          <div class="col-md-12 col-lg-9 no-margin">
+            <div class="card sl-card">
+              <div class="card-block">
+                <span class="sl-card-header">1. Сокулка</span>
+                <p>{{ 'page.apply.points.arrival-datetime' | translate }}: 2017-01-26 10:00</p>
+                <p>{{ 'page.apply.points.departure-datetime' | translate }}: 2017-01-26 10:00
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-md-12 col-lg-9 no-margin">
+            <div class="card sl-card">
+              <div class="card-block">
+                <span class="sl-card-header">2. Минск</span>
+                <p>{{ 'page.apply.points.arrival-datetime' | translate }}: 2017-01-26 16:00</p>
+                <p>{{ 'page.apply.points.departure-datetime' | translate }}: 2017-01-26 16:00
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-md-12 col-lg-9 no-margin">
+            <div class="card sl-card">
+              <div class="card-block">
+                <span class="sl-card-header">3. Москва</span>
+                <p>{{ 'page.apply.points.arrival-datetime' | translate }}: 2017-01-27 01:00</p>
+                <p>{{ 'page.apply.points.departure-datetime' | translate }}: 2017-01-27 01:00
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

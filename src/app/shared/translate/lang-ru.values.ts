@@ -58,7 +58,7 @@ export const LANG_RU_TRANS = {
   "footer.link.about": "О системе",
   "footer.link.autor": "Андрей Радецкий",
   "footer.link.ng2": "AngularJS 2",
-  "footer.link.bootstrap": "Bootstrap 3",
+  "footer.link.bootstrap": "Bootstrap 4",
   "footer.link.google-maps": "Google Maps",
 
   "page.home.title": "Simple Logistics",
@@ -165,6 +165,9 @@ export const LANG_RU_TRANS = {
   "page.profile.dictionaries.translation": "Перевод",
 
   "dialog.geo.title.pick": "Укажите точку",
-  "dialog.geo.title.points": "Точки"
+  "dialog.geo.title.points": "Точки",
+
+  "page.request.title": "Заявка",
+  "page.request.description": "Дополнительная информация заявки"
 
 }

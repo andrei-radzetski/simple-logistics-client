@@ -58,7 +58,7 @@ export const LANG_EN_TRANS = {
   "footer.link.about": "About",
   "footer.link.autor": "Andrei Radzetski",
   "footer.link.ng2": "AngularJS 2",
-  "footer.link.bootstrap": "Bootstrap 3",
+  "footer.link.bootstrap": "Bootstrap 4",
   "footer.link.google-maps": "Google Maps",
 
   "page.home.title": "Simple Logistics",
@@ -165,5 +165,8 @@ export const LANG_EN_TRANS = {
   "page.profile.dictionaries.translation": "Translation",
 
   "dialog.geo.title.pick": "Pick a point",
-  "dialog.geo.title.points": "Points"
+  "dialog.geo.title.points": "Points",
+
+  "page.request.title": "Request",
+  "page.request.description": "Request additional information"
 }

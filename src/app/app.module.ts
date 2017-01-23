@@ -15,6 +15,8 @@ import { ProfileModule } from './profile/profile.module';
 import { TranslateModule } from './shared/translate/translate.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { RequestModule } from './request/request.module';
+import { UserPageModule } from './user/user.module';
 
 @NgModule({
   imports: [
@@ -32,7 +34,9 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     TranslateModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAUlTKaJgsuwTyFfUk-Kg8F2jBiUaFe8so'
-    })
+    }),
+    RequestModule,
+    UserPageModule
   ],
   declarations: [
     AppComponent,

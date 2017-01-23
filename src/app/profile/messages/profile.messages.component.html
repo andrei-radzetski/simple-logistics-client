@@ -1,1 +1,37 @@
-profile messages
+<sl-busy></sl-busy>
+<div class="sl-profile-messages">
+  <div class="row sl-profile-messages-navbar">
+    <div class="col-xs-12 text-center">
+      <div class="btn-group" role="group" aria-label="">
+        <button type="button" class="btn btn-secondary" [ngClass]="{ 'active': inbox }" (click)="inOutBox()">Входящие</button>
+        <button type="button" class="btn btn-secondary" [ngClass]="{ 'active': !inbox }" (click)="inOutBox()">Исходящие</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xl-9" *ngIf="items.length === 0">
+      <span class="sl-label sl-muted">{{ 'list.emtpy' | translate }}</span>
+    </div>
+    <div class="col-lg-8 col-xl-9">
+      <table class="table table-hover">
+        <tbody>
+          <tr *ngFor="let item of items" [ngClass]="{ 'sl-new-message': !item.read }" (click)="read(item)">
+            <td>
+              <div class="row">
+                <div class="col-xs-12">
+                  <span class="sl-message-list-person">{{ inbox ? item.senderName : item.recipientName }}</span>
+                  <span class="float-xs-right sl-message-list-date">{{ item.date | date: 'yyyy-MM-dd HH:mm' }}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <span class="sl-message-list-message">{{ item.text }}</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

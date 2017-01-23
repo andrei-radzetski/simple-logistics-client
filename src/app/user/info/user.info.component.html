@@ -1,0 +1,28 @@
+<sl-busy></sl-busy>
+<div class="sl-user-info">
+  <h1>{{ user.getFullName() }}</h1>
+  <div class="row sl-row">
+    <div class="col-md-4 col-lg-3 no-margin">
+      <span>{{ 'page.profile.info.country' | translate }}</span>
+    </div>
+    <div class="col-md-8 col-lg-6">
+      <span>{{ user.getCountryTranslationKey() | translate }}</span>
+    </div>
+  </div>
+  <div class="row sl-row">
+    <div class="col-md-4 col-lg-3 no-margin">
+      <span>{{ 'page.profile.info.city' | translate }}</span>
+    </div>
+    <div class="col-md-8 col-lg-6">
+      <span>{{ user.city }}</span>
+    </div>
+  </div>
+  <div class="row sl-row">
+    <div class="col-md-4 col-lg-3 no-margin">
+      <span>{{ 'page.profile.info.additional' | translate }}</span>
+    </div>
+    <div class="col-md-8 col-lg-6">
+      <span>{{ user.additionalInfo }}</span>
+    </div>
+  </div>
+</div>

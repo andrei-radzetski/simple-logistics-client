@@ -30,4 +30,8 @@ export class UserService extends RestService<User> {
     return this.postOne('/profile', model);
   }
 
+  get(id: string): Observable<RestResponseObject<User>> {
+    return this.getOne('/users/' + id);
+  }
+
 }

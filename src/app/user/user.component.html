@@ -1,0 +1,29 @@
+<sl-busy></sl-busy>
+<div class="masthead">
+  <div class="container">
+    <sl-header [title]="'Пользователь'" [description]="'Дополнительная информация пользователя'">
+    </sl-header>
+  </div>
+</div>
+<div class="sl-profile">
+  <div class="container content no-bottom">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="apply-cotainer">
+          <button class="btn sl-btn-green btn-block" (click)="sendMessage()">Отправить сообщение</button>
+        </div>
+        <ul class="nav sl-side-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="info" routerLinkActive="active">Информация</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="requests" routerLinkActive="active">Заявки</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-9">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

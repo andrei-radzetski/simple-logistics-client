@@ -1,0 +1,42 @@
+.sl-profile-messages {
+  .sl-profile-messages-navbar {
+    margin-bottom: $main-padding;
+  }
+
+  .table {
+    table-layout: fixed;
+  }
+
+  .table tr {
+    cursor: pointer;
+
+    &.sl-new-message {
+      background-color: #E8EAF6;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.075); 
+      }
+    }
+
+    .sl-message-list-person {
+    }
+
+    .sl-message-list-date {
+      font-size: 13px;
+    }
+
+    .sl-message-list-message {
+      color: $muted-text-color;
+      white-space: nowrap;
+      overflow: hidden !important;
+      display: inherit;
+      text-overflow: ellipsis;
+      font-size: 13px;
+    }
+
+  }
+
+  .table tbody:last-child th,
+  .table tbody:last-child td {
+    border-bottom: 1px solid #eceeef;
+  }
+}

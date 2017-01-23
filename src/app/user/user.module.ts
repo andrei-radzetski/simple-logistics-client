@@ -1,33 +1,33 @@
 import { NgModule } from '@angular/core';
 import { HeaderModule } from '../shared/header/header.module';
-import { CommonModule } from '@angular/common';
-import { RequestsComponent } from './requests.component';
-import { requestsRouting } from './requests.routing';
+import { UserComponent } from './user.component';
+import { UserInfoComponent } from './info/user.info.component';
+import { userRouting } from './user.routing';
 import { TranslateModule } from '../shared/translate/translate.module';
+import { UserModule } from '../shared/user/user.module';
 import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
 import { BusyModule } from '../shared/components/busy/busy.module';
 import { BusyComponent } from '../shared/components/busy/busy.component';
-import { AgmCoreModule } from 'angular2-google-maps/core';
 
 @NgModule({
   imports: [
-    requestsRouting,
+    userRouting,
     HeaderModule,
     TranslateModule,
-    CommonModule,
+    UserModule,
     FormsModule,
-    NgbModule,
-    BusyModule,
-    AgmCoreModule
+    CommonModule,
+    BusyModule
   ],
   declarations: [
-    RequestsComponent
+    UserComponent,
+    UserInfoComponent
   ],
   entryComponents: [
     BusyComponent
   ]
 })
-export class RequestsModule {
+export class UserPageModule {
 
 }

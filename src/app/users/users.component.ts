@@ -66,6 +66,10 @@ export class UsersComponent implements OnInit {
     this.userService.filter(this.createQueryParams());
   }
 
+  info(id: string) {
+    this.router.navigate(['/users', id]);
+  }
+
   private createQueryParams(): URLSearchParams {
       let params = new URLSearchParams();
       if(this.firstName) params.set('firstName', this.firstName);

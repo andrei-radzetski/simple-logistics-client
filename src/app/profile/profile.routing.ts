@@ -6,6 +6,7 @@ import { ProfileSettingsComponent } from './settings/profile.settings.component'
 import { ProfileRequestsComponent } from './requests/profile.requests.component';
 import { ProfileMessagesComponent } from './messages/profile.messages.component';
 import { ProfileDictionariesComponent } from './dictionaries/profile.dictionaries.component';
+import { ProfileMessageComponent } from './message/profile.message.component';
 import { RouteCanActiveAuthorized } from '../shared/route/route.canActiveAuthorized';
 
 const profileRoutes: Routes = [
@@ -31,6 +32,14 @@ const profileRoutes: Routes = [
       {
         path: 'messages',
         component: ProfileMessagesComponent
+      },
+      {
+        path: 'messages/read/:userId/:id',
+        component: ProfileMessageComponent
+      },
+      {
+        path: 'messages/create/:userId',
+        component: ProfileMessageComponent
       },
       {
         path: 'settings',

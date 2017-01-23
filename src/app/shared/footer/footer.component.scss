@@ -8,6 +8,7 @@
   background-color: $footer-bg-color;
   .container {
     padding-top: 40px;
+    padding-bottom: $main-padding;
     color: $footer-muted-color;
     a {
       color: $footer-link-color;

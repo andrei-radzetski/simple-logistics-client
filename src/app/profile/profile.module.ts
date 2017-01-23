@@ -13,10 +13,12 @@ import { ProfileInfoComponent } from './info/profile.info.component';
 import { ProfileSettingsComponent } from './settings/profile.settings.component';
 import { ProfileRequestsComponent } from './requests/profile.requests.component';
 import { ProfileMessagesComponent } from './messages/profile.messages.component';
+import { ProfileMessageComponent } from './message/profile.message.component';
 import { ProfileDictionariesComponent } from './dictionaries/profile.dictionaries.component';
 import { RouteCanActiveAuthorized } from '../shared/route/route.canActiveAuthorized';
 import { BusyModule } from '../shared/components/busy/busy.module';
 import { BusyComponent } from '../shared/components/busy/busy.component';
+import { MessageModule } from '../shared/message/message.module';
 
 @NgModule({
   imports: [
@@ -29,7 +31,8 @@ import { BusyComponent } from '../shared/components/busy/busy.component';
     UserModule,
     AuthModule,
     DictionaryModule,
-    BusyModule
+    BusyModule,
+    MessageModule
   ],
   declarations: [
     ProfileComponent,
@@ -37,7 +40,8 @@ import { BusyComponent } from '../shared/components/busy/busy.component';
     ProfileSettingsComponent,
     ProfileRequestsComponent,
     ProfileMessagesComponent,
-    ProfileDictionariesComponent
+    ProfileDictionariesComponent,
+    ProfileMessageComponent
   ], 
   providers: [
     RouteCanActiveAuthorized

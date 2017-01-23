@@ -52,7 +52,7 @@
       </div>
       <div class="col-lg-8 col-xl-9">
         <ul class="list-group sl-list">
-          <li class="list-group-item" *ngFor="let item of users">
+          <li class="list-group-item" *ngFor="let item of users" (click)="info(item.id)">
             <div class="card sl-card">
               <div class="card-block">
                 <p class="sl-card-header">{{ item.getFullName() }}</p>

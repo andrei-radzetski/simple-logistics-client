@@ -1,0 +1,11 @@
+.sl-request {
+  .sl-google-map {
+    margin-bottom: $main-padding;
+    .sl-google-map-container {
+      border: 10px solid $nav-icon-color;
+      .sebm-google-map-container {
+        height: 400px;
+      }
+    }
+  }
+}
