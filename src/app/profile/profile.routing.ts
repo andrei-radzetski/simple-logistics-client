@@ -8,6 +8,8 @@ import { ProfileMessagesComponent } from './messages/profile.messages.component'
 import { ProfileDictionariesComponent } from './dictionaries/profile.dictionaries.component';
 import { ProfileMessageComponent } from './message/profile.message.component';
 import { RouteCanActiveAuthorized } from '../shared/route/route.canActiveAuthorized';
+import { RouteCanActiveAdmin } from '../shared/route/route.canActiveAdmin';
+import { ProfileHistoriesComponent } from './histories/profile.histories.component';
 
 const profileRoutes: Routes = [
   {
@@ -47,7 +49,13 @@ const profileRoutes: Routes = [
       },
       {
         path: 'dictionaries',
-        component: ProfileDictionariesComponent
+        component: ProfileDictionariesComponent,
+        canActivate: [RouteCanActiveAdmin]
+      },
+      {
+        path: 'histories',
+        component: ProfileHistoriesComponent,
+        canActivate: [RouteCanActiveAdmin]
       }
     ]
   }

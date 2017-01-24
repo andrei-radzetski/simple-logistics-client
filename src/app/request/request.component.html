@@ -1,3 +1,4 @@
+<sl-busy></sl-busy>
 <div class="masthead">
   <div class="container">
     <sl-header [title]="'page.request.title' | translate" [description]="'page.request.description' | translate">
@@ -7,7 +8,7 @@
 <div class="sl-request">
   <div class="container content no-bottom">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <div class="row sl-row">
           <div class="col-xs-12">
             <button class="btn sl-btn-green">Добавить в избраное</button>
@@ -15,10 +16,18 @@
         </div>
         <div class="row sl-row">
           <div class="col-md-5 col-lg-4 no-margin">
+            <span>Пользователь</span>
+          </div>
+          <div class="col-md-7 col-lg-7">
+            <span>{{ request.userName }}</span>
+          </div>
+        </div>
+        <div class="row sl-row">
+          <div class="col-md-5 col-lg-4 no-margin">
             <span>Вид</span>
           </div>
           <div class="col-md-7 col-lg-6">
-            <span>Спрос</span>
+            <span>{{ request.getKindTranslationKey() | translate }}</span>
           </div>
         </div>
         <div class="row sl-row">
@@ -26,15 +35,55 @@
             <span>Услуга</span>
           </div>
           <div class="col-md-7 col-lg-7">
-            <span>Пассажироперевозка</span>
+            <span>{{ request.getServiceTranslationKey() | translate }}</span>
           </div>
         </div>
         <div class="row sl-row">
           <div class="col-md-5 col-lg-4 no-margin">
-            <span>Пользователь</span>
+            <span>Транспорт</span>
           </div>
           <div class="col-md-7 col-lg-7">
-            <span>Андрей Радецкий</span>
+            <span>{{ request.getTransportTranslationKey() | translate }}</span>
+          </div>
+        </div>
+        <div class="row sl-row" *ngIf="showCargo()">
+          <div class="col-md-5 col-lg-4 no-margin">
+            <span>Наименование</span>
+          </div>
+          <div class="col-md-7 col-lg-7">
+            <span>{{ request.name }}</span>
+          </div>
+        </div>
+        <div class="row sl-row" *ngIf="showCargo()">
+          <div class="col-md-5 col-lg-4 no-margin">
+            <span>Ширина (см)</span>
+          </div>
+          <div class="col-md-7 col-lg-7">
+            <span>{{ request.width }}</span>
+          </div>
+        </div>
+        <div class="row sl-row" *ngIf="showCargo()">
+          <div class="col-md-5 col-lg-4 no-margin">
+            <span>Высота (см)</span>
+          </div>
+          <div class="col-md-7 col-lg-7">
+            <span>{{ request.height }}</span>
+          </div>
+        </div>
+        <div class="row sl-row" *ngIf="showCargo()">
+          <div class="col-md-5 col-lg-4 no-margin">
+            <span>Длина (см)</span>
+          </div>
+          <div class="col-md-7 col-lg-7">
+            <span>{{ request.length }}</span>
+          </div>
+        </div>
+        <div class="row sl-row" *ngIf="showCargo()">
+          <div class="col-md-5 col-lg-4 no-margin">
+            <span>Вес (кг)</span>
+          </div>
+          <div class="col-md-7 col-lg-7">
+            <span>{{ request.weight }}</span>
           </div>
         </div>
         <div class="row sl-row">
@@ -42,71 +91,75 @@
             <span>Количество мест</span>
           </div>
           <div class="col-md-7 col-lg-7">
-            <span>1</span>
+            <span>{{ request.seatsNumber }}</span>
           </div>
         </div>
-        <div class="row sl-row">
+        <div class="row sl-row" *ngIf="request.displayPhone">
           <div class="col-md-5 col-lg-4 no-margin">
             <span>Телефон</span>
           </div>
           <div class="col-md-7 col-lg-7">
-            <span>3758989898989</span>
+            <span>{{ request.phone }}</span>
           </div>
         </div>
-        <div class="row sl-row">
+        <div class="row sl-row" *ngIf="request.displayEmail">
+          <div class="col-md-5 col-lg-4 no-margin">
+            <span>Email</span>
+          </div>
+          <div class="col-md-7 col-lg-7">
+            <span>{{ request.email }}</span>
+          </div>
+        </div>
+        <div class="row sl-row" *ngIf="showComment()">
           <div class="col-md-5 col-lg-4 no-margin">
             <span>Комментарий</span>
           </div>
           <div class="col-md-7 col-lg-7">
-            <span>Нужен очень водитель! Срочно!</span>
+            <span>{{ request.comment }}</span>
           </div>
         </div>
+      </div>
+      <div class="col-lg-6">
         <div class="row sl-google-map">
-          <div class="col-md-12 col-lg-12 no-margin">
+          <div class="col-lg-12 no-margin">
             <div class="sl-google-map-container">
-              <sebm-google-map [latitude]="53.42" [longitude]="23.43" [zoom]="8">
-                <sebm-google-map-marker [latitude]="53.42" [longitude]="23.43"></sebm-google-map-marker>
+              <sebm-google-map [latitude]="getCenterLat()" [longitude]="getCenterLong()" [zoom]="2">
+                <sebm-google-map-marker [label]="point.getOffsetOrderStr()" [openInfoWindow]="true" [latitude]="point.latitude" [longitude]="point.longitude"
+                  *ngFor="let point of request.points">
+                  <sebm-google-map-info-window>
+                    <h5>{{ point.getOffsetOrderStr() }}. {{ point.name }}</h5>
+                    <p>{{ 'page.apply.points.arrival-datetime' | translate }}: {{ point.arrivalDatetime | date: 'yyyy-MM-dd HH:mm' }}</p>
+                    <p>{{ 'page.apply.points.departure-datetime' | translate }}: {{ point.departureDatetime | date: 'yyyy-MM-dd HH:mm' }}</p>
+                  </sebm-google-map-info-window>
+                  </sebm-google-map-marker>
               </sebm-google-map>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="row sl-row">
-          <div class="col-md-12 col-lg-9 no-margin">
-            <div class="card sl-card">
-              <div class="card-block">
-                <span class="sl-card-header">1. Сокулка</span>
-                <p>{{ 'page.apply.points.arrival-datetime' | translate }}: 2017-01-26 10:00</p>
-                <p>{{ 'page.apply.points.departure-datetime' | translate }}: 2017-01-26 10:00
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row sl-row">
-          <div class="col-md-12 col-lg-9 no-margin">
-            <div class="card sl-card">
-              <div class="card-block">
-                <span class="sl-card-header">2. Минск</span>
-                <p>{{ 'page.apply.points.arrival-datetime' | translate }}: 2017-01-26 16:00</p>
-                <p>{{ 'page.apply.points.departure-datetime' | translate }}: 2017-01-26 16:00
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row sl-row">
-          <div class="col-md-12 col-lg-9 no-margin">
-            <div class="card sl-card">
-              <div class="card-block">
-                <span class="sl-card-header">3. Москва</span>
-                <p>{{ 'page.apply.points.arrival-datetime' | translate }}: 2017-01-27 01:00</p>
-                <p>{{ 'page.apply.points.departure-datetime' | translate }}: 2017-01-27 01:00
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+    </div>
+    <h1>Точки</h1>
+    <div class="row">
+      <div class="col-lg-12">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>{{ 'page.profile.dictionaries.value' | translate }}</th>
+              <th>{{ 'page.apply.points.departure-datetime' | translate }}</th>
+              <th>{{ 'page.apply.points.arrival-datetime' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let point of request.points">
+              <th scope="row">{{ point.order + 1 }}</th>
+              <td>{{ point.name }}</td>
+              <td>{{ point.departureDatetime | date: 'yyyy-MM-dd HH:mm' }}</td>
+              <td>{{ point.arrivalDatetime | date: 'yyyy-MM-dd HH:mm' }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
+  </div>
+</div>

@@ -4,6 +4,7 @@ import { RestObjectCreator } from './rest.objectCreator';
 export abstract class RestResponse {
 
   public original: Response;
+  public count: number;
 
   constructor(original: Response) {
     this.original = original;
@@ -16,6 +17,7 @@ export abstract class RestResponse {
 
   protected getRaw(): any {
     let temp = this.original.json();
+    this.count = temp ? temp.count : undefined;
     return temp ? temp.response : undefined;
   }
 

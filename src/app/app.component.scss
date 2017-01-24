@@ -339,6 +339,21 @@ i.sl-error {
   color: $error-color !important;
 }
 
+.page-item.active .page-link,
+.page-item.active .page-link:focus,
+.page-item.active .page-link:hover {
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
+.page-link {
+  color: $primary-color;
+  &:focus,
+  &:hover {
+    color: $primary-deep-color;
+  }
+}
+
 @import 'shared/components/components.scss';
 @import 'shared/nav/nav.component.scss';
 @import 'shared/header/header.component.scss';

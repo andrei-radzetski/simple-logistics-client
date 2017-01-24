@@ -57,7 +57,8 @@
             <span class="sl-label">{{ 'page.requests.find.departure-date' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <input class="form-control" [(ngModel)]="departureDate" [maxDate]="destinationDate" ngbDatepicker #depDatePicker="ngbDatepicker" (click)="depDatePicker.toggle()" placeholder="{{ 'palceholder.date' | translate }}">
+            <input class="form-control" [(ngModel)]="departureDate" [maxDate]="destinationDate" ngbDatepicker #depDatePicker="ngbDatepicker"
+              (click)="depDatePicker.toggle()" placeholder="{{ 'palceholder.date' | translate }}">
           </div>
         </div>
         <div class="row sl-row">
@@ -65,7 +66,8 @@
             <span class="sl-label">{{ 'page.requests.find.destination-date' | translate }}</span>
           </div>
           <div class="col-xs-12 no-margin">
-            <input class="form-control" [(ngModel)]="destinationDate" [minDate]="departureDate" ngbDatepicker #destDatePicker="ngbDatepicker" (click)="destDatePicker.toggle()" placeholder="{{ 'palceholder.date' | translate }}">
+            <input class="form-control" [(ngModel)]="destinationDate" [minDate]="departureDate" ngbDatepicker #destDatePicker="ngbDatepicker"
+              (click)="destDatePicker.toggle()" placeholder="{{ 'palceholder.date' | translate }}">
           </div>
         </div>
         <div class="row sl-row">
@@ -104,21 +106,26 @@
       <div class="col-lg-8 col-xl-9">
         <ul class="list-group sl-list">
           <li class="list-group-item" *ngFor="let item of items">
-            <div class="card sl-card">
-              <div class="card-block">
-                <p>{{ item.getDirection() }}</p>
-                <p>Дата отправления: 19.05.2017</p>
-                <p>Дата приезда: 20.05.2017</p>
-                <p>{{ item.comment }}</p>
+            <a class="card-link" routerLink="{{ item.id }}">
+              <div class="card sl-card">
+                <div class="card-block">
+                  <p><strong>{{ item.getDirection() }}</strong></p>
+                  <p>Дата: <strong>{{ item.getDepartureDate() | date: 'yyyy-MM-dd' }} - {{ item.getDestinationDate() | date: 'yyyy-MM-dd' }}</strong></p>
+                  <p>Пользователь: <strong>{{ item.userName }}</strong>; {{ 'dict.request-kind.label' | translate }}: <strong>{{ 'dict.request-kind.' + item.kind | translate }}</strong>;
+                    {{ 'dict.request-service.label' | translate }}: <strong>{{ 'dict.request-service.' + item.service | translate }}</strong>;
+                    {{ 'dict.transport.label' | translate }}: <strong>{{ 'dict.transport.' + item.transport | translate }}</strong>;
+                    Мест: <strong>{{ item.seatsNumber }}</strong></p>
+                  <p style="margin-top: 10px;"><em>{{ item.comment }}</em></p>
+                </div>
               </div>
-            </div>
+            </a>
           </li>
         </ul>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12" style="text-align: center;">
-        <ngb-pagination [collectionSize]="70" [page]="1" [directionLinks]="false"></ngb-pagination>
+        <ngb-pagination [pageSize]="limit" [collectionSize]="count" [maxSize]="10" [(page)]="page" (pageChange)="pageChange()" [directionLinks]="false"></ngb-pagination>
       </div>
     </div>
   </div>

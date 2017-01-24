@@ -19,7 +19,7 @@ export class AuthService extends RestService<Auth> {
   login(model: AuthRequest): Observable<RestResponseObject<Auth>> {
     return this.postOne('/login', model, true)
       .flatMap((res: RestResponseObject<Auth>) => {
-        RestCredential.setCredential(res.object.accessToken, res.object.expires);
+        RestCredential.setCredential(res.object.accessToken, res.object.expires, res.object.scope, res.object.user);
         return Observable.of(res);
       });
   }

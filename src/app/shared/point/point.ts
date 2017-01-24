@@ -59,4 +59,8 @@ export class Point extends RestObject implements RestRequest {
     return time < 10 ? ('0'+ time) : time.toString();
   }
 
+  getDisplay(): string {
+    return `${this.order + 1}. ${this.name}`;
+  }
+
 }

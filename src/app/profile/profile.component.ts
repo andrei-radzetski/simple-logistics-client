@@ -5,6 +5,7 @@ import { RestResponseObject } from '../shared/rest/rest.responseObject';
 import { AuthService } from '../shared/auth/auth.service';
 import { Auth } from '../shared/auth/auth';
 import { BusyComponent } from '../shared/components/busy/busy.component';
+import { RestCredential } from '../shared/rest/rest.credential';
 
 @Component({
   moduleId: 'app/profile/',
@@ -34,6 +35,10 @@ export class ProfileComponent {
     // TODO: proccess error
     console.log(err.message);
      this.busyIndicator.close();
+  }
+
+  private isAdmin(): boolean {
+    return RestCredential.isAdmin();
   }
 
   gotoApply() {

@@ -62,7 +62,7 @@ export const LANG_EN_TRANS = {
   "footer.link.google-maps": "Google Maps",
 
   "page.home.title": "Simple Logistics",
-  "page.home.description": "Some text, which describes the project.",
+  "page.home.description": "Search for travel and drivers to travel around Belarus and abroad.",
   "page.home.tag.add-request": "Add request",
   "page.home.tag.find-request": "Requests",
   "page.home.tag.find-user": "Users",
@@ -149,6 +149,7 @@ export const LANG_EN_TRANS = {
   "page.profile.nav.messages": "Messages",
   "page.profile.nav.settings": "Settings",
   "page.profile.nav.dictionaries": "Dictionaries",
+  "page.profile.nav.histories": "Histories",
   "page.profile.nav.exit": "Exit",
   "page.profile.info.email": "Email",
   "page.profile.info.phone": "Phone",

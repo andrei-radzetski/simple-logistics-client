@@ -25,8 +25,11 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="settings" routerLinkActive="active">{{ 'page.profile.nav.settings' | translate }}</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="isAdmin()">
             <a class="nav-link" routerLink="dictionaries" routerLinkActive="active">{{ 'page.profile.nav.dictionaries' | translate }}</a>
+          </li>
+          <li class="nav-item" *ngIf="isAdmin()">
+            <a class="nav-link" routerLink="histories" routerLinkActive="active">{{ 'page.profile.nav.histories' | translate }}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" (click)="logout()">{{ 'page.profile.nav.exit' | translate }}</a>

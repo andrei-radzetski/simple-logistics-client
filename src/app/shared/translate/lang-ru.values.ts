@@ -62,7 +62,7 @@ export const LANG_RU_TRANS = {
   "footer.link.google-maps": "Google Maps",
 
   "page.home.title": "Simple Logistics",
-  "page.home.description": "Какой-то текст, который описывает проект.",
+  "page.home.description": "Поиск попутчиков и водителей для поездок по Беларуси и за рубеж.",
   "page.home.tag.add-request": "Добавить заявку",
   "page.home.tag.find-request": "Заявки",
   "page.home.tag.find-user": "Пользователи",
@@ -149,6 +149,7 @@ export const LANG_RU_TRANS = {
   "page.profile.nav.messages": "Сообщения",
   "page.profile.nav.settings": "Настройки",
   "page.profile.nav.dictionaries": "Словари",
+  "page.profile.nav.histories": "История",
   "page.profile.nav.exit": "Выход",
   "page.profile.info.email": "Почта",
   "page.profile.info.phone": "Телефон",

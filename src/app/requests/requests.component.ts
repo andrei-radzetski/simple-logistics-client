@@ -9,6 +9,7 @@ import { DictionaryService } from '../shared/dictionary/dictionary.service';
 import { BusyComponent } from '../shared/components/busy/busy.component';
 import { RequestService } from '../shared/request/request.service';
 import { Request } from '../shared/request/request';
+import { URLSearchParams } from '@angular/http';
 
 @Component({
   moduleId: 'app/requests/',
@@ -35,6 +36,15 @@ export class RequestsComponent implements OnInit {
 
   @ViewChild(BusyComponent)
   private busyIndicator: BusyComponent;
+
+  
+  private sortField: string = 'creationDate';
+  private sortType: string = 'desc';
+
+  private limit: number = 10;
+  private skip: number = 0;
+  private count: number = 0;
+  private page: number = 1;
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -67,13 +77,33 @@ export class RequestsComponent implements OnInit {
         this.destination = params['destination'] || null;
         this.destinationDate = this.formatter.parse(params['destinationDate']);
         this.places = params['places'];
-        return this.requestService.filter();
+        this.page = params['page'] || 1;
+        this.calcPage();
+        return this.requestService.filter(this.createQueryParams());
       }).subscribe((res: RestResponseArray<Request>) => {
         this.items = res.array;
-        this.busyIndicator.close()
+        this.count = res.count;
+        this.busyIndicator.close();
       },
       (err: RestResponseError) => this.onError(err),
       () => this.busyIndicator.close());
+  }
+
+  private createQueryParams(): URLSearchParams {
+      let params = new URLSearchParams();
+      if(this.departure) params.set('departure', this.departure);
+      if(this.departureDate) params.set('departureDate', this.formatDate(this.departureDate));
+      if(this.destination) params.set('destination', this.destination);
+      if(this.destinationDate) params.set('destinationDate', this.formatDate(this.destinationDate));
+      if(this.places != null) params.set('places', this.places.toString());
+      if(this.kind) params.set('kind', this.kind.key.toString());
+      if(this.service) params.set('service', this.service.key.toString());
+      if(this.transport) params.set('transport', this.transport.key.toString());
+      if(this.limit != null) params.set('limit', this.limit.toString());
+      if(this.skip != null) params.set('skip', this.skip.toString());
+      if(this.sortField) params.set('sortField', this.sortField.toString());
+      if(this.sortType) params.set('sortType', this.sortType.toString());
+      return params
   }
 
   onError(err: RestResponseError) {
@@ -133,8 +163,18 @@ export class RequestsComponent implements OnInit {
         destinationDate: this.formatDate(this.destinationDate),
         places: this.places,
         transport: this.transport ? this.transport.key : undefined,
+        page: this.page
       }
     }
+  }
+
+  private pageChange() {
+    this.calcPage();
+    this.search();
+  }
+
+  private calcPage() {
+    this.skip = (this.page - 1) * this.limit;
   }
 
 }

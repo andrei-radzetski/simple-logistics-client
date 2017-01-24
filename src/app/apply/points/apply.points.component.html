@@ -87,7 +87,7 @@
       <div class="col-md-12 col-lg-9 no-margin">
         <div class="card sl-card">
           <div class="card-block">
-            <span class="sl-card-header">{{ point.order + 1 }}. {{ point.name }}
+            <span class="sl-card-header">{{ point.getDisplay() }}
               <i (click)="location(point)" class="fa fa-map-marker sl-primary-icon" aria-hidden="true"></i>
             </span>
             <i (click)="remove(point.order)" class="fa fa-times sl-rm-icon float-xs-right sl-list-points-icons" aria-hidden="true"></i>
